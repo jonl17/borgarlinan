@@ -1,10 +1,10 @@
 import React from "react"
-import Header from "../components/header"
+import Frontpage from "../components/frontpage"
 
 const index = () => {
   return (
     <div>
-      <Header></Header>
+      <Frontpage></Frontpage>
       <div>
         <p>NEWSOO</p>
       </div>
