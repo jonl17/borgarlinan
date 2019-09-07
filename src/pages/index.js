@@ -1,13 +1,12 @@
 import React from "react"
 import Frontpage from "../components/frontpage"
+import NewsSection from "../components/newsSection"
 
 const index = () => {
   return (
     <div>
       <Frontpage></Frontpage>
-      <div>
-        <p>NEWSOO</p>
-      </div>
+      <NewsSection></NewsSection>
     </div>
   )
 }

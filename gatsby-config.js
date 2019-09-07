@@ -28,6 +28,7 @@ module.exports = {
         path: `${__dirname}/static/news/`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
   ],
 }
