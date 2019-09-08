@@ -7,3 +7,8 @@ export const START = "START"
 export const setStart = () => ({
   type: START,
 })
+export const GET_HEIGHT = "GET_HEIGHT"
+export const getHeight = height => ({
+  type: GET_HEIGHT,
+  height,
+})

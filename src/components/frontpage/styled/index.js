@@ -8,7 +8,7 @@ export const Container = styled.div`
   z-index: 4;
 `
 export const TitleContainer = styled.div`
-  height: ${props => (props.started ? "100%" : "400px")};
+  height: ${props => (props.started ? props.height : "400px")};
   width: 900px;
   position: absolute;
   left: 50%;

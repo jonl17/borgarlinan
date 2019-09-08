@@ -5,24 +5,25 @@ import Footer from "../components/footer"
 import styled from "styled-components"
 
 import { connect } from "react-redux"
-import { setStart } from "../state/actions"
+import { setStart, getHeight } from "../state/actions"
 
-const Body = styled.div`
-  height: 100%;
-`
+const Body = styled.div``
 
 class index extends React.Component {
   componentDidMount() {
+    /* get full height */
+    const height = this.bodyelement.clientHeight
+    this.props.dispatch(getHeight(height))
+    /* start the line  */
     window.addEventListener("scroll", () => {
       if (!this.props.started) {
         this.props.dispatch(setStart())
       }
     })
   }
-
   render() {
     return (
-      <Body>
+      <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
         <Frontpage></Frontpage>
         <NewsSection></NewsSection>
         <Footer></Footer>

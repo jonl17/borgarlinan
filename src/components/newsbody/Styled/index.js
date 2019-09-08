@@ -9,8 +9,8 @@ export const Title = styled.p`
   color: ${styles.Blue};
   font-size: 26px;
   font-weight: bold;
-  padding-bottom: 35px;
-  padding-top: 35px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   background-color: white;
   &&:hover {
     cursor: pointer;
@@ -49,7 +49,7 @@ export const Group = styled.div`
 /* borgarlínan sjálf */
 export const LineBlock = styled.div`
   border-left: 4px solid ${styles.Blue};
-  min-height: 75px;
+  height: 100;
   width: 100%;
   position: absolute;
   top: 75px;
@@ -60,6 +60,6 @@ export const LineBlock = styled.div`
   ${props =>
     props.minimize &&
     css`
-      height: 150px;
+      height: 0px;
     `}
 `

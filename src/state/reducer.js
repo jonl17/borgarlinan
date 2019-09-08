@@ -1,8 +1,9 @@
-import { SET_DEVICE, START } from "./actions"
+import { SET_DEVICE, START, GET_HEIGHT } from "./actions"
 
 const initialState = {
   device: undefined,
   started: false,
+  height: undefined,
 }
 
 export default (state = initialState, action) => {
@@ -21,6 +22,8 @@ export default (state = initialState, action) => {
       return { ...state, device: device }
     case START:
       return { ...state, started: true }
+    case GET_HEIGHT:
+      return { ...state, height: action.height }
     default:
       return state
   }
