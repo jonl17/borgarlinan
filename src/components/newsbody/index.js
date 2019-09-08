@@ -1,5 +1,15 @@
 import React from "react"
-import { Body, Group, Title, List, ListItem, Text, More } from "./Styled"
+import {
+  Body,
+  Group,
+  Title,
+  List,
+  ListItem,
+  Text,
+  More,
+  LineBlock,
+  Line,
+} from "./Styled"
 import ShowHide from "../buttons/showhide"
 
 class NewsBody extends React.Component {
@@ -19,9 +29,9 @@ class NewsBody extends React.Component {
     const { item, index } = this.props
     const { minimize } = this.state
     return (
-      <Body>
+      <Body key={index}>
         <Group>
-          <Title>
+          <Title onClick={() => this.handleClick()}>
             {index + 1 + ". "}
             {item.node.frontmatter.title}
           </Title>
@@ -32,12 +42,17 @@ class NewsBody extends React.Component {
         </Group>
         <List minimize={minimize}>
           {item.node.frontmatter.subject.map((subj, index) => (
-            <ListItem key={index}>
-              <Text>{subj}</Text>
-            </ListItem>
+            <div key={index}>
+              <ListItem key={index}>
+                <Text>{subj}</Text>
+              </ListItem>
+            </div>
           ))}
         </List>
         <More></More>
+        <LineBlock minimize={minimize}>
+          <Line></Line>
+        </LineBlock>
       </Body>
     )
   }

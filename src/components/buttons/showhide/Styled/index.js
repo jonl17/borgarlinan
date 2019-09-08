@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components"
 import { styles } from "../../../../constants"
-import { tvist } from "../../../../animations"
 
 export const Container = styled.div`
   height: 20px;

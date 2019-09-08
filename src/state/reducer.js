@@ -1,7 +1,8 @@
-import { SET_DEVICE } from "./actions"
+import { SET_DEVICE, START } from "./actions"
 
 const initialState = {
   device: undefined,
+  started: false,
 }
 
 export default (state = initialState, action) => {
@@ -18,6 +19,8 @@ export default (state = initialState, action) => {
         device = `browser`
       }
       return { ...state, device: device }
+    case START:
+      return { ...state, started: true }
     default:
       return state
   }

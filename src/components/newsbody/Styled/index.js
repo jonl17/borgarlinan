@@ -2,15 +2,23 @@ import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
 
 /* each news item */
-export const Body = styled.div``
+export const Body = styled.div`
+  position: relative;
+`
 export const Title = styled.p`
   color: ${styles.Blue};
   font-size: 26px;
   font-weight: bold;
-  margin-bottom: 35px;
-  margin-top: 35px;
+  padding-bottom: 35px;
+  padding-top: 35px;
+  background-color: white;
+  &&:hover {
+    cursor: pointer;
+  }
 `
 export const List = styled.ul`
+  position: relative;
+  padding-left: 30px;
   list-style: none;
   height: 100%;
   transition: 0.2s;
@@ -19,9 +27,12 @@ export const List = styled.ul`
     css`
       height: 0;
       opacity: 0;
+      padding-left: 0;
     `}
 `
 export const ListItem = styled.li``
+
+export const Line = styled.span``
 export const Text = styled.p`
   color: ${styles.Gray};
   font-size: 18px;
@@ -33,4 +44,22 @@ export const Group = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`
+
+/* borgarlínan sjálf */
+export const LineBlock = styled.div`
+  border-left: 4px solid ${styles.Blue};
+  min-height: 75px;
+  width: 100%;
+  position: absolute;
+  top: 75px;
+  left: 5px;
+  transition: 1s;
+  height: 100%;
+  z-index: -1;
+  ${props =>
+    props.minimize &&
+    css`
+      height: 150px;
+    `}
 `

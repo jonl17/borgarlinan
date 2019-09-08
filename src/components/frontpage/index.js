@@ -22,11 +22,13 @@ class Frontpage extends React.Component {
     window.removeEventListener("resize", this.updateDevice)
   }
   render() {
+    const { started } = this.props
+    console.log(started)
     return (
       <Container>
         <Video></Video>
         <Menu></Menu>
-        <TitleContainer>
+        <TitleContainer started={started}>
           <Title>Lorem ipsum Borgarlínan</Title>
         </TitleContainer>
       </Container>
@@ -36,6 +38,7 @@ class Frontpage extends React.Component {
 
 const mapStateToProps = state => ({
   device: state.reducer.device,
+  started: state.reducer.started,
 })
 
 export default connect(mapStateToProps)(Frontpage)
