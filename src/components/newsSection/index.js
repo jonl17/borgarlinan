@@ -1,13 +1,6 @@
 import React from "react"
-import {
-  Container,
-  NewsBody,
-  Title,
-  List,
-  ListItem,
-  Text,
-  More,
-} from "./Styled"
+import { Container } from "./Styled"
+import NewsBody from "../newsbody"
 
 import { graphql, StaticQuery } from "gatsby"
 
@@ -30,20 +23,7 @@ const GetNews = () => (
     `}
     render={data =>
       data.allMarkdownRemark.edges.map((item, index) => (
-        <NewsBody key={index}>
-          <Title>
-            {index + 1 + ". "}
-            {item.node.frontmatter.title}
-          </Title>
-          <List>
-            {item.node.frontmatter.subject.map((subj, index) => (
-              <ListItem key={index}>
-                <Text>{subj}</Text>
-              </ListItem>
-            ))}
-          </List>
-          <More></More>
-        </NewsBody>
+        <NewsBody index={index} key={index} item={item}></NewsBody>
       ))
     }
   ></StaticQuery>
