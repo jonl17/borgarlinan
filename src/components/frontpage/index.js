@@ -18,6 +18,7 @@ class Frontpage extends React.Component {
   componentDidMount() {
     this.props.dispatch(setDevice(window.innerWidth))
     window.addEventListener("resize", this.updateDevice)
+    console.log(this.props.language)
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDevice)
@@ -50,6 +51,7 @@ const mapStateToProps = state => ({
   height: state.reducer.height,
   lineHeight: state.reducer.lineHeight,
   firstLineStop: state.reducer.firstLineStop,
+  language: state.reducer.language,
 })
 
 export default connect(mapStateToProps)(Frontpage)

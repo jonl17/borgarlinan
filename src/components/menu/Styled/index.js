@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 export const Navbar = styled.div`
   height: 75px;
-  width: 35%;
+  width: 45%;
   display: flex;
   position: absolute;
   right: 0;
@@ -16,6 +16,14 @@ export const Item = styled(Link)`
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  ${props =>
+    props.page === "um-verkefnastofu" &&
+    css`
+      color: lightgray;
+    `}
 `
 export const Button = styled.div`
   flex-grow: 1;
@@ -29,5 +37,4 @@ export const Button = styled.div`
 export const Text = styled.p`
   text-transform: uppercase;
   font-weight: bold;
-  color: white;
 `

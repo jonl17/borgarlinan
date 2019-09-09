@@ -22,3 +22,7 @@ export const setFirstlineStop = stop => ({
   type: SET_FIRSTLINE_STOP,
   stop,
 })
+export const SET_LANGUAGE = "SET_LANGUAGE"
+export const setLanguage = () => ({
+  type: SET_LANGUAGE,
+})

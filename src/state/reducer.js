@@ -4,6 +4,7 @@ import {
   GET_HEIGHT,
   SET_LINEHEIGHT,
   SET_FIRSTLINE_STOP,
+  SET_LANGUAGE,
 } from "./actions"
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   height: undefined,
   lineHeight: 0,
   firstLineStop: 0,
+  language: `icelandic`,
 }
 
 export default (state = initialState, action) => {
@@ -36,6 +38,14 @@ export default (state = initialState, action) => {
       return { ...state, lineHeight: action.height }
     case SET_FIRSTLINE_STOP:
       return { ...state, firstLineStop: action.stop }
+    case SET_LANGUAGE:
+      let language
+      if (state.language === `icelandic`) {
+        language = `english`
+      } else {
+        language = `icelandic`
+      }
+      return { ...state, language: language }
     default:
       return state
   }

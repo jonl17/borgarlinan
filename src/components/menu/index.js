@@ -1,36 +1,26 @@
 import React from "react"
-import { Navbar, Item, Text, Button } from "./Styled"
-import { graphql, StaticQuery } from "gatsby"
+import { Navbar, Item, Text } from "./Styled"
+import { connect } from "react-redux"
+import { setLanguage } from "../../state/actions"
 
-const GimmeMenuItems = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            navbaritems
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Item to="/">
-          <Text>{data.site.siteMetadata.navbaritems[0]}</Text>
-        </Item>
-        <Item to="/um-verkefnastofu">
-          <Text>{data.site.siteMetadata.navbaritems[1]}</Text>
-        </Item>
-        <Button>
-          <Text>{data.site.siteMetadata.navbaritems[2]}</Text>
-        </Button>
-      </>
-    )}
-  ></StaticQuery>
-)
-
-const Menu = () => {
-  return <Navbar>{GimmeMenuItems()}</Navbar>
+const Menu = ({ page, dispatch }) => {
+  return (
+    <Navbar>
+      <Item page={page} to="/" activeStyle={{ color: "#7f7f7f" }}>
+        <Text>Borgarlínan</Text>
+      </Item>
+      <Item
+        page={page}
+        activeStyle={{ color: "#7f7f7f" }}
+        to="/um-verkefnastofu"
+      >
+        <Text>Um verkefnastofu</Text>
+      </Item>
+      <Item onClick={() => dispatch(setLanguage())} to="/" page={page}>
+        <Text>English</Text>
+      </Item>
+    </Navbar>
+  )
 }
 
-export default Menu
+export default connect()(Menu)
