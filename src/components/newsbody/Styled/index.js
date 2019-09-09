@@ -26,7 +26,21 @@ export const Paragraph = styled.p`
   line-height: 140%;
 `
 export const Line = styled.div`
-  height: 100%;
+${props =>
+  props.action === `full` &&
+  css`
+    height: 100%;
+  `}
+  ${props =>
+    props.action === `empty` &&
+    css`
+      height: 0;
+    `}
+  ${props =>
+    props.action === "fill" &&
+    css`
+      height: ${props => props.height + "px"};
+    `}
   width: 100%;
   position: absolute;
   top: 0;
@@ -35,6 +49,5 @@ export const Line = styled.div`
     css`
       border-left: 4px solid ${styles.Blue};
       left: -10px;
-      transition: 0.3s;
     `}
 `

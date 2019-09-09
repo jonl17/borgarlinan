@@ -4,6 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import NewsBody from "../newsbody"
 import { connect } from "react-redux"
 import { setFirstlineStop } from "../../state/actions"
+import { getPosition } from "../../methods"
 
 const GetNews = () => (
   <StaticQuery
@@ -33,24 +34,13 @@ const GetNews = () => (
 
 class NewsSection extends React.Component {
   componentDidMount() {
-    const distanceFromTop = this.getPosition(this.titleElement)
-    console.log(distanceFromTop)
+    const distanceFromTop = getPosition(this.titleElement)
     this.props.dispatch(
       setFirstlineStop(
         /* distance from top of page minus total height of element stops the line */
         distanceFromTop.y - distanceFromTop.y / 6
       )
     )
-  }
-  getPosition(elem) {
-    var yPosition = 0
-
-    while (elem) {
-      yPosition += elem.offsetTop - elem.scrollTop + elem.clientTop
-      elem = elem.offsetParent
-    }
-
-    return { y: yPosition }
   }
   render() {
     return (

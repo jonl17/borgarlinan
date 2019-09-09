@@ -4,7 +4,7 @@ import { Container, Item } from "./Styled"
 const Footer = () => {
   return (
     <Container>
-      <Item to="um-verkefnastofu">Um verkefnastofu</Item>
+      <Item to="/um-verkefnastofu">Um verkefnastofu</Item>
     </Container>
   )
 }
