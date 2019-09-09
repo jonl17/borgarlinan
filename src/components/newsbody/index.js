@@ -10,7 +10,7 @@ import {
   LineBlock,
   Line,
 } from "./Styled"
-import ShowHide from "../buttons/showhide"
+// import ShowHide from "../buttons/showhide"
 
 class NewsBody extends React.Component {
   constructor(props) {
@@ -31,16 +31,17 @@ class NewsBody extends React.Component {
     return (
       <Body key={index}>
         <Group>
-          <Title onClick={() => this.handleClick()}>
+          <Title /*onClick={() => this.handleClick()} */>
             {index + 1 + ". "}
             {item.node.frontmatter.title}
           </Title>
+          {/*
           <ShowHide
             onClick={() => this.handleClick}
             minimize={minimize}
-          ></ShowHide>
+          ></ShowHide > */}
         </Group>
-        <List minimize={minimize}>
+        <List /* minimize={minimize} */>
           {item.node.frontmatter.subject.map((subj, index) => (
             <div key={index}>
               <ListItem key={index}>

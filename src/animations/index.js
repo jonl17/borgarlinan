@@ -1,10 +1,14 @@
 import { keyframes } from "styled-components"
+import { styles } from "../constants"
 
 export const tvist = keyframes`
-    from {
-        transform: rotate(0deg);
+    0% {
+        background-color: ${styles.Blue};
     }
-    to {
-        transform: rotate(90deg);
+    50% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: ${styles.Blue};
     }
 `

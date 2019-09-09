@@ -12,3 +12,8 @@ export const getHeight = height => ({
   type: GET_HEIGHT,
   height,
 })
+export const SET_LINEHEIGHT = "SET_LINEHEIGHT"
+export const setLineHeight = height => ({
+  type: SET_LINEHEIGHT,
+  height,
+})

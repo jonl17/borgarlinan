@@ -5,7 +5,7 @@ import Footer from "../components/footer"
 import styled from "styled-components"
 
 import { connect } from "react-redux"
-import { setStart, getHeight } from "../state/actions"
+import { setStart, getHeight, setLineHeight } from "../state/actions"
 
 const Body = styled.div``
 
@@ -16,6 +16,7 @@ class index extends React.Component {
     this.props.dispatch(getHeight(height))
     /* start the line  */
     window.addEventListener("scroll", () => {
+      this.props.dispatch(setLineHeight(document.scrollingElement.scrollTop))
       if (!this.props.started) {
         this.props.dispatch(setStart())
       }
@@ -34,6 +35,7 @@ class index extends React.Component {
 
 const mapStateToProps = state => ({
   started: state.reducer.started,
+  lineHeight: state.reducer.lineHeight,
 })
 
 export default connect(mapStateToProps)(index)

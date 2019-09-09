@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { styles } from "../../../constants"
+import { styles, sizes } from "../../../constants"
 
 export const Container = styled.div`
   height: 100vh;
@@ -8,19 +8,26 @@ export const Container = styled.div`
   z-index: 4;
 `
 export const TitleContainer = styled.div`
-  height: ${props => (props.started ? props.height : "400px")};
-  width: 900px;
+  height: ${props => props.height + "px"};
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -445px;
   margin-top: -150px;
   padding-left: 25px;
   border-left: 4px solid ${styles.Blue};
-  transition: 5s;
+  transition: 0.1s;
+  width: 900px;
+  margin-left: -445px;
 `
 export const Title = styled.h1`
   margin: 0 auto;
-  font-size: 100px;
+  font-size: 90px;
   color: white;
+`
+
+/* tablet */
+
+export const TitleContainerTablet = styled(TitleContainer)`
+  width: ${sizes.tabletwidth + "px"};
+  margin-left: -300px;
 `

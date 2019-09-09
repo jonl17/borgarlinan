@@ -1,9 +1,10 @@
-import { SET_DEVICE, START, GET_HEIGHT } from "./actions"
+import { SET_DEVICE, START, GET_HEIGHT, SET_LINEHEIGHT } from "./actions"
 
 const initialState = {
   device: undefined,
   started: false,
   height: undefined,
+  lineHeight: 0,
 }
 
 export default (state = initialState, action) => {
@@ -24,6 +25,8 @@ export default (state = initialState, action) => {
       return { ...state, started: true }
     case GET_HEIGHT:
       return { ...state, height: action.height }
+    case SET_LINEHEIGHT:
+      return { ...state, lineHeight: action.height }
     default:
       return state
   }

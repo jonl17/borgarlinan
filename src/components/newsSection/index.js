@@ -1,6 +1,7 @@
 import React from "react"
 import { Container } from "./Styled"
 import NewsBody from "../newsbody"
+import { connect } from "react-redux"
 
 import { graphql, StaticQuery } from "gatsby"
 
@@ -29,8 +30,12 @@ const GetNews = () => (
   ></StaticQuery>
 )
 
-const NewsSection = () => {
-  return <Container>{GetNews()}</Container>
+const NewsSection = ({ device }) => {
+  return <Container device={device}>{GetNews()}</Container>
 }
 
-export default NewsSection
+const mapStateToProps = state => ({
+  device: state.reducer.device,
+})
+
+export default connect(mapStateToProps)(NewsSection)

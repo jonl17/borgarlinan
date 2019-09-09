@@ -1,11 +1,17 @@
 import React from "react"
 import { Container, Line } from "./Styled"
 
+const openSesame = minimize => {
+  if (minimize) return "close"
+  return "open"
+}
+
 const ShowHide = ({ minimize, onClick }) => {
+  console.log(openSesame(minimize))
   return (
     <Container onClick={onClick()}>
       <Line></Line>
-      <Line minimize={minimize}></Line>
+      <Line status={openSesame(minimize)} minimize={minimize}></Line>
     </Container>
   )
 }

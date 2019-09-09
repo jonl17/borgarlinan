@@ -48,7 +48,6 @@ export const Group = styled.div`
 
 /* borgarlínan sjálf */
 export const LineBlock = styled.div`
-  border-left: 4px solid ${styles.Blue};
   height: 100;
   width: 100%;
   position: absolute;
@@ -57,9 +56,4 @@ export const LineBlock = styled.div`
   transition: 1s;
   height: 100%;
   z-index: -1;
-  ${props =>
-    props.minimize &&
-    css`
-      height: 0px;
-    `}
 `

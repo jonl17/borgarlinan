@@ -2,7 +2,12 @@ import React from "react"
 import { connect } from "react-redux"
 import { setDevice, getHeight } from "../../state/actions"
 
-import { Container, Title, TitleContainer } from "./styled"
+import {
+  Container,
+  Title,
+  TitleContainer,
+  TitleContainerTablet,
+} from "./styled"
 
 import Menu from "../menu"
 import Video from "../video"
@@ -17,21 +22,28 @@ class Frontpage extends React.Component {
     this.props.dispatch(getHeight(window.innerHeight))
   }
   componentDidMount() {
+    this.props.dispatch(setDevice(window.innerWidth))
     window.addEventListener("resize", this.updateDevice)
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDevice)
   }
   render() {
-    const { started, height } = this.props
-    console.log(height)
+    const { started, height, device, lineHeight } = this.props
+    console.log(device)
     return (
       <Container>
         <Video></Video>
         <Menu></Menu>
-        <TitleContainer height={height / 2 + "px"} started={started}>
-          <Title>Lorem ipsum Borgarlínan</Title>
-        </TitleContainer>
+        {device === `browser` ? (
+          <TitleContainer height={lineHeight} started={started}>
+            <Title device={device}>Lorem ipsum Borgarlínan</Title>
+          </TitleContainer>
+        ) : (
+          <TitleContainerTablet height={height / 2 + "px"} started={started}>
+            <Title device={device}>Lorem ipsum Borgarlínan</Title>
+          </TitleContainerTablet>
+        )}
       </Container>
     )
   }
@@ -41,6 +53,7 @@ const mapStateToProps = state => ({
   device: state.reducer.device,
   started: state.reducer.started,
   height: state.reducer.height,
+  lineHeight: state.reducer.lineHeight,
 })
 
 export default connect(mapStateToProps)(Frontpage)
