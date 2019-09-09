@@ -38,14 +38,9 @@ class Frontpage extends React.Component {
             <TitleContainer height={lineHeight} started={started}>
               <Title device={device}>Lorem ipsum Borgarlínan</Title>
             </TitleContainer>
-            <TitleContainer white height={lineHeight} started={started}>
-              <Title device={device}></Title>
-            </TitleContainer>
           </>
         ) : (
-          <TitleContainerTablet height={height / 2 + "px"} started={started}>
-            <Title device={device}>Lorem ipsum Borgarlínan</Title>
-          </TitleContainerTablet>
+          <></>
         )}
       </Container>
     )
