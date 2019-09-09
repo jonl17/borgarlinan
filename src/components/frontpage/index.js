@@ -2,12 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { setDevice, getHeight } from "../../state/actions"
 
-import {
-  Container,
-  Title,
-  TitleContainer,
-  TitleContainerTablet,
-} from "./styled"
+import { Container, Title, TitleContainer } from "./styled"
 
 import Video from "../video"
 
@@ -28,14 +23,16 @@ class Frontpage extends React.Component {
     window.removeEventListener("resize", this.updateDevice)
   }
   render() {
-    const { started, height, device, lineHeight } = this.props
-    console.log(lineHeight)
+    const { started, device, lineHeight, firstLineStop } = this.props
     return (
       <Container>
         <Video></Video>
         {device === `browser` ? (
           <>
-            <TitleContainer height={lineHeight} started={started}>
+            <TitleContainer
+              height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
+              started={started}
+            >
               <Title device={device}>Lorem ipsum Borgarlínan</Title>
             </TitleContainer>
           </>
@@ -52,6 +49,7 @@ const mapStateToProps = state => ({
   started: state.reducer.started,
   height: state.reducer.height,
   lineHeight: state.reducer.lineHeight,
+  firstLineStop: state.reducer.firstLineStop,
 })
 
 export default connect(mapStateToProps)(Frontpage)

@@ -1,8 +1,12 @@
 import React from "react"
-import { Container } from "./Styled"
+import { Container, Item } from "./Styled"
 
 const Footer = () => {
-  return <Container></Container>
+  return (
+    <Container>
+      <Item to="um-verkefnastofu">Um verkefnastofu</Item>
+    </Container>
+  )
 }
 
 export default Footer

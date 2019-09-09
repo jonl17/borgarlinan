@@ -17,3 +17,8 @@ export const setLineHeight = height => ({
   type: SET_LINEHEIGHT,
   height,
 })
+export const SET_FIRSTLINE_STOP = "SET_FIRSTLINE_STOP"
+export const setFirstlineStop = stop => ({
+  type: SET_FIRSTLINE_STOP,
+  stop,
+})
