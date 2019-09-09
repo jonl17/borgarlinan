@@ -38,7 +38,7 @@ class NewsSection extends React.Component {
     this.props.dispatch(
       setFirstlineStop(
         /* distance from top of page minus total height of element stops the line */
-        distance.y - window.innerHeight / 3
+        distance.y - window.innerHeight / 2.6
       )
     )
   }
