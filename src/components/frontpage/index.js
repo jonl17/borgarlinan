@@ -29,7 +29,7 @@ class Frontpage extends React.Component {
   }
   render() {
     const { started, height, device, lineHeight } = this.props
-    console.log(device)
+    console.log(lineHeight)
     return (
       <Container>
         <Video></Video>

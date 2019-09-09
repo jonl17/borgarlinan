@@ -8,7 +8,8 @@ export const Container = styled.div`
   z-index: 4;
 `
 export const TitleContainer = styled.div`
-  height: ${props => props.height + "px"};
+  height: ${props =>
+    props.height === undefined ? "0px" : props.height + "px"};
   position: absolute;
   left: 50%;
   top: 50%;
