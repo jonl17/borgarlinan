@@ -13,14 +13,14 @@ class NewsBody extends React.Component {
 
   componentDidMount() {
     const distance = getPosition(this.newsEl)
+    const precision = -distance.y + window.innerHeight * 0.8
     this.setState({
       threshold: distance.y,
     })
     window.addEventListener("scroll", () => {
       this.setState({
-        threshold: -distance.y + 500 + this.props.lineHeight,
+        threshold: precision + this.props.lineHeight,
       })
-      console.log(-distance.y + this.props.lineHeight)
     })
   }
 

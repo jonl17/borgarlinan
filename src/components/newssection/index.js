@@ -34,11 +34,11 @@ const GetNews = () => (
 
 class NewsSection extends React.Component {
   componentDidMount() {
-    const distanceFromTop = getPosition(this.titleElement)
+    const distance = getPosition(this.titleElement)
     this.props.dispatch(
       setFirstlineStop(
         /* distance from top of page minus total height of element stops the line */
-        distanceFromTop.y - distanceFromTop.y / 6
+        distance.y - window.innerHeight / 3
       )
     )
   }
