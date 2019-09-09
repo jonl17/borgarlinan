@@ -11,7 +11,7 @@ module.exports = {
         sveitarfélögin á höfuðborgarsvæðinu undirbúa nú í sameiningu. Borgarlína 
         mun aka á sérakreinum að mestu aðskilin frá almennri umferð og tengja saman 
         sveitarfélögin á höfuðborgarsvæðinu.`,
-    navbaritems: [`item1`, `item2`, `item3`],
+    navbaritems: [`Borgarlínan`, `Um Verkefnastofu`, `English`],
   },
   plugins: [
     {
@@ -19,6 +19,13 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/static/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `qanda`,
+        path: `${__dirname}/static/qanda/`,
       },
     },
     {

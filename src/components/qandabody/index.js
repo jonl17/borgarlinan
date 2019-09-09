@@ -12,7 +12,7 @@ import {
 } from "./Styled"
 // import ShowHide from "../buttons/showhide"
 
-class NewsBody extends React.Component {
+class QandABody extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -59,4 +59,4 @@ class NewsBody extends React.Component {
   }
 }
 
-export default NewsBody
+export default QandABody

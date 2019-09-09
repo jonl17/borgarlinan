@@ -9,7 +9,6 @@ import {
   TitleContainerTablet,
 } from "./styled"
 
-import Menu from "../menu"
 import Video from "../video"
 
 class Frontpage extends React.Component {
@@ -34,11 +33,15 @@ class Frontpage extends React.Component {
     return (
       <Container>
         <Video></Video>
-        <Menu></Menu>
         {device === `browser` ? (
-          <TitleContainer height={lineHeight} started={started}>
-            <Title device={device}>Lorem ipsum Borgarlínan</Title>
-          </TitleContainer>
+          <>
+            <TitleContainer height={lineHeight} started={started}>
+              <Title device={device}>Lorem ipsum Borgarlínan</Title>
+            </TitleContainer>
+            <TitleContainer white height={lineHeight} started={started}>
+              <Title device={device}></Title>
+            </TitleContainer>
+          </>
         ) : (
           <TitleContainerTablet height={height / 2 + "px"} started={started}>
             <Title device={device}>Lorem ipsum Borgarlínan</Title>

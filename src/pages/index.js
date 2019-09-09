@@ -1,8 +1,10 @@
 import React from "react"
 import Frontpage from "../components/frontpage"
-import NewsSection from "../components/newsSection"
+import QandASection from "../components/qandasection"
+import NewsSection from "../components/newssection"
 import Footer from "../components/footer"
 import styled from "styled-components"
+import Menu from "../components/menu"
 
 import { connect } from "react-redux"
 import { setStart, getHeight, setLineHeight } from "../state/actions"
@@ -25,7 +27,9 @@ class index extends React.Component {
   render() {
     return (
       <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
+        <Menu></Menu>
         <Frontpage></Frontpage>
+        <QandASection></QandASection>
         <NewsSection></NewsSection>
         <Footer></Footer>
       </Body>

@@ -12,9 +12,6 @@ export const Title = styled.p`
   padding-bottom: 15px;
   padding-top: 15px;
   background-color: white;
-  &&:hover {
-    cursor: pointer;
-  }
 `
 export const List = styled.ul`
   position: relative;
@@ -22,6 +19,7 @@ export const List = styled.ul`
   list-style: none;
   height: 100%;
   transition: 0.2s;
+  /*
   ${props =>
     props.minimize &&
     css`
@@ -29,6 +27,7 @@ export const List = styled.ul`
       opacity: 0;
       padding-left: 0;
     `}
+    */
 `
 export const ListItem = styled.li``
 
