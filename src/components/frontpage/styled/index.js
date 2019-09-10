@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { styles, sizes } from "../../../constants"
+import { styles } from "../../../constants"
 
 export const Container = styled.div`
   height: 100vh;
@@ -40,6 +40,31 @@ export const Title = styled.h1`
 /* tablet */
 
 export const TitleContainerTablet = styled(TitleContainer)`
-  width: ${sizes.tabletwidth + "px"};
-  margin-left: -300px;
+  height: ${props =>
+    props.height === undefined ? "0px" : props.height + "px"};
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -150px;
+  padding-left: 25px;
+  border-left: 4px solid ${styles.Blue};
+  ${props =>
+    props.white &&
+    css`
+      border-left: 4px solid white;
+    `}
+  transition: 0.1s;
+  width: 100%;
+  margin-left: 0;
+`
+export const TitleTablet = styled(Title)`
+  margin: 0 auto;
+  font-size: 45px;
+  color: white;
+  ${props =>
+    props.sub &&
+    css`
+      width: 100%;
+      font-size: 35px;
+    `}
 `

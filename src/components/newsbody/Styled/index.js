@@ -11,7 +11,6 @@ export const Body = styled.div`
     !props.even &&
     css`
       margin-left: 25%;
-    /*  border-left: 4px solid ${styles.Blue};*/
       padding-left: 25px;
     `}
 `
@@ -50,4 +49,10 @@ ${props =>
       border-left: 4px solid ${styles.Blue};
       left: -10px;
     `}
+`
+/* tablet */
+
+export const BodyTablet = styled(Body)`
+  margin-left: 0;
+  padding-left: 0;
 `

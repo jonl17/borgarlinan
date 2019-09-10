@@ -25,6 +25,7 @@ class index extends React.Component {
       }
     })
   }
+
   render() {
     const { title, subtitle } = this.props.data.site.siteMetadata
     return (

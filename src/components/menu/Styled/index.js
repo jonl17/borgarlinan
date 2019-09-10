@@ -12,7 +12,7 @@ export const Navbar = styled.div`
   margin: 0 75px 0 75px;
 `
 export const Item = styled(Link)`
-  flex-grow: 1;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -21,3 +21,10 @@ export const Title = styled.p`
   z-index: 8;
   margin: 25px 0 25px 0;
 `
+/* tablet */
+export const ContainerTablet = styled(Container)`
+  width: 100%;
+  margin: 50px auto auto auto;
+  padding-top: 75px;
+  padding-bottom: 75px;
+`
