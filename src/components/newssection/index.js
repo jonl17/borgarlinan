@@ -61,10 +61,10 @@ class NewsSection extends React.Component {
     )
   }
   render() {
-    const { language } = this.props
+    const { language, device } = this.props
     return (
       <PageContainer>
-        <Container>
+        <Container device={device}>
           <Title
             className="bold"
             ref={titleElement => (this.titleElement = titleElement)}
@@ -81,6 +81,7 @@ class NewsSection extends React.Component {
 const mapStateToProps = state => ({
   language: state.reducer.language,
   firstLineStop: state.reducer.firstLineStop,
+  device: state.reducer.device,
 })
 
 export default connect(mapStateToProps)(NewsSection)

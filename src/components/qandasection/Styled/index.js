@@ -1,11 +1,23 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 /* full section container */
 export const Container = styled.div`
   display: grid;
   margin: 125px auto auto auto;
-  width: 900px;
   align-items: center;
+  width: 900px;
+  ${props =>
+    props.device === `tablet` &&
+    css`
+      width: 90%;
+      margin: 50px auto 75px auto;
+    `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 95%;
+      margin: 25px auto 50px auto;
+    `}
 `
 export const ContainerTablet = styled(Container)`
   width: 100%;

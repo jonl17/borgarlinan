@@ -13,6 +13,14 @@ export const Body = styled.div`
       margin-left: 25%;
       padding-left: 25px;
     `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      margin-left: 0;
+      padding-left: 0;
+      width: 95%;
+      margin-top: 0;
+    `}
 `
 export const Date = styled.p`
   color: ${styles.Gray};

@@ -24,6 +24,22 @@ export const TitleContainer = styled.div`
   transition: 0.1s;
   width: 1000px;
   margin-left: -445px;
+  ${props =>
+    props.device === `tablet` &&
+    css`
+      width: 4px;
+      margin-left: 0;
+      left: 45%;
+      top: 65%;
+    `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 4px;
+      margin-left: 0;
+      left: 50%;
+      top: 65%;
+    `}
 `
 export const Title = styled.h1`
   margin: 0 auto;
@@ -35,6 +51,37 @@ export const Title = styled.h1`
       width: 1000px;
       font-size: 70px;
     `}
+
+  ${props =>
+    props.device === `tablet` &&
+    css`
+      font-size: 75px;
+      width: 700px;
+      position: absolute;
+      left: -300px;
+      top: -200px;
+      ${props =>
+        props.sub &&
+        css`
+          font-size: 55px;
+          top: -100px;
+        `}
+    `}
+    ${props =>
+      props.device === `mobile` &&
+      css`
+        font-size: 55px;
+        width: 300px;
+        position: absolute;
+        left: -150px;
+        top: -150px;
+        ${props =>
+          props.sub &&
+          css`
+            font-size: 35px;
+            top: -85px;
+          `}
+      `}
 `
 
 /* tablet */

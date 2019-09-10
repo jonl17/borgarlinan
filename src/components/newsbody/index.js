@@ -40,20 +40,33 @@ class NewsBody extends React.Component {
     }
   }
   render() {
-    const { item, no } = this.props
+    const { item, no, device } = this.props
     return (
-      <Body ref={newsEl => (this.newsEl = newsEl)} even={this.isEven(no)}>
+      <Body
+        device={device}
+        ref={newsEl => (this.newsEl = newsEl)}
+        even={this.isEven(no)}
+      >
         <Date>{item.node.frontmatter.dagsetning}</Date>
         <NewsTitle className="bold">{item.node.frontmatter.title}</NewsTitle>
         {item.node.frontmatter.subject.map((para, index) => (
           <Paragraph key={index}>{para}</Paragraph>
         ))}
-        <Line
-          ref={lineref => (this.lineref = lineref)}
-          action={this.getAction(this.state.threshold)}
-          height={this.state.threshold > 0 ? this.state.threshold : 0}
-          even={this.isEven(no)}
-        ></Line>
+        {device !== `mobile` ? (
+          <Line
+            ref={lineref => (this.lineref = lineref)}
+            action={this.getAction(this.state.threshold)}
+            height={this.state.threshold > 0 ? this.state.threshold : 0}
+            even={this.isEven(no)}
+          ></Line>
+        ) : (
+          <Line
+            ref={lineref => (this.lineref = lineref)}
+            action={this.getAction(this.state.threshold)}
+            height={0}
+            even={this.isEven(no)}
+          ></Line>
+        )}
       </Body>
     )
   }
@@ -61,6 +74,7 @@ class NewsBody extends React.Component {
 
 const mapStateToProps = state => ({
   lineHeight: state.reducer.lineHeight,
+  device: state.reducer.device,
 })
 
 export default connect(mapStateToProps)(NewsBody)

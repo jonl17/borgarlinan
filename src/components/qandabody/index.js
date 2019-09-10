@@ -14,18 +14,18 @@ import { connect } from "react-redux"
 
 class QandABody extends React.Component {
   render() {
-    const { item, index, language } = this.props
+    const { item, index, language, device } = this.props
     return (
       <Body key={index}>
         <Group>
-          <Title className="bold">
+          <Title device={device} className="bold">
             {index + 1 + ". "}
             {language === "icelandic"
               ? item.node.frontmatter.title
               : item.node.frontmatter.englishTitle}
           </Title>
         </Group>
-        <List>
+        <List device={device}>
           {language === "icelandic"
             ? item.node.frontmatter.subject.map((subj, index) => (
                 <div key={index}>
@@ -53,6 +53,7 @@ class QandABody extends React.Component {
 
 const mapStateToProps = state => ({
   language: state.reducer.language,
+  device: state.reducer.device,
 })
 
 export default connect(mapStateToProps)(QandABody)

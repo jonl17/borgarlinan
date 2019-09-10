@@ -12,6 +12,13 @@ export const Title = styled.p`
   padding-bottom: 15px;
   padding-top: 15px;
   background-color: white;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    `}
 `
 export const List = styled.ul`
   position: relative;
@@ -19,15 +26,21 @@ export const List = styled.ul`
   list-style: none;
   height: 100%;
   transition: 0.2s;
-  /*
   ${props =>
-    props.minimize &&
+    props.device === `tablet` &&
     css`
-      height: 0;
-      opacity: 0;
       padding-left: 0;
+      background-color: white;
+      z-index: 4;
     `}
-    */
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      padding-left: 0;
+      text-align: center;
+      background-color: white;
+      z-index: 4;
+    `}
 `
 export const ListItem = styled.li``
 
@@ -47,7 +60,7 @@ export const Group = styled.div`
 
 /* borgarlínan sjálf */
 export const LineBlock = styled.div`
-  height: 100;
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 75px;

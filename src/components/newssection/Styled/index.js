@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
 
 export const PageContainer = styled.div`
@@ -11,6 +11,20 @@ export const Container = styled.div`
   margin: 125px auto auto auto;
   padding-top: 150px;
   padding-bottom: 150px;
+  ${props =>
+    props.device === `tablet` &&
+    css`
+      width: 90%;
+      margin: 50px auto auto auto;
+      padding-top: 50px;
+    `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 95%;
+      margin: 25px auto auto auto;
+      padding-top: 25px;
+    `}
 `
 export const Title = styled.p`
   color: ${styles.Blue};
