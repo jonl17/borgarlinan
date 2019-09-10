@@ -7,6 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: `Borgarlínan`,
+    subtitle: `beinustu leið til framtíðar`,
     about: `Borgarlína er nýtt og afkastamikið almenningssamgöngukerfi sem 
         sveitarfélögin á höfuðborgarsvæðinu undirbúa nú í sameiningu. Borgarlína 
         mun aka á sérakreinum að mestu aðskilin frá almennri umferð og tengja saman 

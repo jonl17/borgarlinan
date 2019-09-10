@@ -2,13 +2,14 @@ import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 export const Navbar = styled.div`
-  height: 75px;
-  width: 45%;
+  height: 100px;
+  width: 35%;
   display: flex;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 2;
+  margin: 0 75px 0 75px;
 `
 export const Item = styled(Link)`
   flex-grow: 1;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { styles, sizes } from "../../../constants"
 
 export const Container = styled.div`
@@ -17,13 +17,19 @@ export const TitleContainer = styled.div`
   padding-left: 25px;
   border-left: 4px solid ${styles.Blue};
   transition: 0.1s;
-  width: 900px;
+  width: 1000px;
   margin-left: -445px;
 `
 export const Title = styled.h1`
   margin: 0 auto;
   font-size: 90px;
   color: white;
+  ${props =>
+    props.sub &&
+    css`
+      width: 1000px;
+      font-size: 70px;
+    `}
 `
 
 /* tablet */

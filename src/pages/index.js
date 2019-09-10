@@ -6,6 +6,7 @@ import Footer from "../components/footer"
 import styled from "styled-components"
 import Menu from "../components/menu"
 
+import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setStart, getHeight, setLineHeight } from "../state/actions"
 
@@ -25,10 +26,11 @@ class index extends React.Component {
     })
   }
   render() {
+    const { title, subtitle } = this.props.data.site.siteMetadata
     return (
       <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
         <Menu></Menu>
-        <Frontpage></Frontpage>
+        <Frontpage title={title} subtitle={subtitle}></Frontpage>
         <QandASection></QandASection>
         <NewsSection></NewsSection>
         <Footer></Footer>
@@ -36,6 +38,17 @@ class index extends React.Component {
     )
   }
 }
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        subtitle
+      }
+    }
+  }
+`
 
 const mapStateToProps = state => ({
   started: state.reducer.started,

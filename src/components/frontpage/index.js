@@ -24,7 +24,14 @@ class Frontpage extends React.Component {
     window.removeEventListener("resize", this.updateDevice)
   }
   render() {
-    const { started, device, lineHeight, firstLineStop } = this.props
+    const {
+      started,
+      device,
+      lineHeight,
+      firstLineStop,
+      title,
+      subtitle,
+    } = this.props
     return (
       <Container>
         <Video></Video>
@@ -34,7 +41,10 @@ class Frontpage extends React.Component {
               height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
               started={started}
             >
-              <Title device={device}>Lorem ipsum Borgarlínan</Title>
+              <Title device={device}>{title}</Title>
+              <Title sub device={device}>
+                {subtitle}
+              </Title>
             </TitleContainer>
           </>
         ) : (
