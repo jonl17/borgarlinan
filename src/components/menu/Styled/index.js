@@ -26,10 +26,18 @@ export const Item = styled(Link)`
     `}
 `
 export const Button = styled.div`
-  flex-grow: 1;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  ${props =>
+    props.page === "um-verkefnastofu" &&
+    css`
+      color: lightgray;
+    `}
   &&:hover {
     cursor: pointer;
   }

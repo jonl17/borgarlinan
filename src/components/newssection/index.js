@@ -33,14 +33,34 @@ const GetNews = () => (
 )
 
 class NewsSection extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      linestop: -1,
+    }
+  }
   componentDidMount() {
     const distance = getPosition(this.titleElement)
+    this.setState({
+      linestop: distance.y - window.innerHeight / 2.6,
+    })
     this.props.dispatch(
       setFirstlineStop(
         /* distance from top of page minus total height of element stops the line */
         distance.y - window.innerHeight / 2.6
       )
     )
+  }
+  componentDidUpdate() {
+    const distance = getPosition(this.titleElement)
+    if (this.state.linestop !== this.props.firstLineStop) {
+      this.props.dispatch(
+        setFirstlineStop(
+          /* distance from top of page minus total height of element stops the line */
+          distance.y - window.innerHeight / 2.6
+        )
+      )
+    }
   }
   render() {
     const { language } = this.props
@@ -63,6 +83,7 @@ class NewsSection extends React.Component {
 
 const mapStateToProps = state => ({
   language: state.reducer.language,
+  firstLineStop: state.reducer.firstLineStop,
 })
 
 export default connect(mapStateToProps)(NewsSection)
