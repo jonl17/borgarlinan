@@ -6,7 +6,6 @@ import { setWhitelineStop } from "../../state/actions"
 
 class Video extends React.Component {
   componentDidMount() {
-    console.log(this.videoElement)
     this.props.dispatch(setWhitelineStop(this.videoElement.clientHeight))
   }
   render() {

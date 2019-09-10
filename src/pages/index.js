@@ -37,7 +37,7 @@ class index extends React.Component {
           <Frontpage title={title} subtitle={subtitle}></Frontpage>
           <QandASection></QandASection>
           <NewsSection></NewsSection>
-          <Footer></Footer>
+          <Footer page={"frontpage"}></Footer>
         </Body>
       </>
     )

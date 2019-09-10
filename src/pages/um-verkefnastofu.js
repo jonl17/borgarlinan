@@ -3,6 +3,7 @@ import Menu from "../components/menu"
 import { styles } from "../constants"
 import styled from "styled-components"
 import SVG from "../../static/data/svg/skipurit_skjar.svg"
+import Footer from "../components/footer"
 
 const Body = styled.div``
 const Container = styled.div`
@@ -31,7 +32,6 @@ const SVGImage = styled.img`
 `
 
 const index = () => {
-  console.log(SVG)
   return (
     <Body>
       <Menu page={"um-verkefnastofu"}></Menu>
@@ -91,6 +91,7 @@ const index = () => {
       <ImageContainer>
         <SVGImage src={SVG} alt="SVG"></SVGImage>
       </ImageContainer>
+      <Footer page={"infopage"}></Footer>
     </Body>
   )
 }
