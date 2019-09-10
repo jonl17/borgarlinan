@@ -54,8 +54,10 @@ class Frontpage extends React.Component {
               ref={this.titleElement}
               height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
             >
-              <Title device={device}>{title}</Title>
-              <Title sub device={device}>
+              <Title className="bold" device={device}>
+                {title}
+              </Title>
+              <Title className="bold" sub device={device}>
                 {subtitle}
               </Title>
             </TitleContainer>

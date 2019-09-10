@@ -3,6 +3,7 @@ import { Provider } from "react-redux"
 import { createStore as createBorgarlinanStore } from "redux"
 import rootReducer from "./src/state/index"
 import { GlobCSS } from "./src/components/globalstyles"
+import "./src/fonts/font.css"
 
 const createStore = () => createBorgarlinanStore(rootReducer)
 

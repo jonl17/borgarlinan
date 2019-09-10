@@ -4,7 +4,9 @@ import { Container, Item } from "./Styled"
 const Footer = () => {
   return (
     <Container>
-      <Item to="/um-verkefnastofu">Um verkefnastofu</Item>
+      <Item className="bold" to="/um-verkefnastofu">
+        Um verkefnastofu
+      </Item>
     </Container>
   )
 }

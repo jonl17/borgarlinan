@@ -14,7 +14,7 @@ const Menu = ({ page, dispatch, device }) => {
           borderBottom: `4px solid ${styles.Blue}`,
         }}
       >
-        <Text>Borgarlínan</Text>
+        <Text className="bold">Borgarlínan</Text>
       </Item>
       <Item
         page={page}
@@ -23,10 +23,10 @@ const Menu = ({ page, dispatch, device }) => {
         }}
         to="/um-verkefnastofu"
       >
-        <Text>Um verkefnastofu</Text>
+        <Text className="bold">Um verkefnastofu</Text>
       </Item>
       <Item onClick={() => dispatch(setLanguage())} to="/" page={page}>
-        <Text>English</Text>
+        <Text className="bold">English</Text>
       </Item>
     </Navbar>
   )

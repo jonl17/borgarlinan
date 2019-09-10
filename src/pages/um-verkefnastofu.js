@@ -36,7 +36,7 @@ const index = () => {
     <Body>
       <Menu page={"um-verkefnastofu"}></Menu>
       <Container>
-        <Title>Um verkefnastofu</Title>
+        <Title className="bold">Um verkefnastofu</Title>
         <Paragraph>
           Verkefnastofa Borgarlínu sinnir undirbúningi fyrstu framkvæmda
           Borgarlínu.

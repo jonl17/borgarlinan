@@ -46,7 +46,10 @@ class NewsSection extends React.Component {
     return (
       <PageContainer>
         <Container>
-          <Title ref={titleElement => (this.titleElement = titleElement)}>
+          <Title
+            className="bold"
+            ref={titleElement => (this.titleElement = titleElement)}
+          >
             Fréttir
           </Title>
           {GetNews()}

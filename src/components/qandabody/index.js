@@ -31,7 +31,7 @@ class QandABody extends React.Component {
     return (
       <Body key={index}>
         <Group>
-          <Title /*onClick={() => this.handleClick()} */>
+          <Title className="bold" /*onClick={() => this.handleClick()} */>
             {index + 1 + ". "}
             {item.node.frontmatter.title}
           </Title>

@@ -18,7 +18,6 @@ export const Item = styled(Link)`
   justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
   color: white;
   ${props =>
     props.page === "um-verkefnastofu" &&

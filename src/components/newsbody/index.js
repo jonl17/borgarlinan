@@ -42,7 +42,7 @@ class NewsBody extends React.Component {
     return (
       <Body ref={newsEl => (this.newsEl = newsEl)} even={this.isEven(no)}>
         <Date>{item.node.frontmatter.dagsetning}</Date>
-        <NewsTitle>{item.node.frontmatter.title}</NewsTitle>
+        <NewsTitle className="bold">{item.node.frontmatter.title}</NewsTitle>
         {item.node.frontmatter.subject.map((para, index) => (
           <Paragraph key={index}>{para}</Paragraph>
         ))}

@@ -1,0 +1,17 @@
+@font-face {
+  font-family: MaisonBook;
+  src: url("./MAISON/MaisonNeue-Book.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: MaisonBold;
+  src: url("./MAISON/MaisonNeue-Bold.otf") format("opentype");
+  font-weight: bold;
+}
+* {
+  font-family: MaisonBook;
+}
+
+.bold {
+  font-family: MaisonBold !important;
+}
