@@ -12,10 +12,10 @@ export const TitleContainer = styled.div`
     props.height === undefined ? "0px" : props.height + "px"};
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 52.5%;
   margin-top: -150px;
   padding-left: 25px;
-  border-left: 4px solid ${styles.Blue};
+  border-left: 4px solid ${styles.LinuLitur};
   ${props =>
     props.white &&
     css`
@@ -38,18 +38,21 @@ export const TitleContainer = styled.div`
       width: 4px;
       margin-left: 0;
       left: 50%;
-      top: 65%;
+      top: 85%;
     `}
 `
 export const Title = styled.h1`
   margin: 0 auto;
   font-size: 90px;
   color: white;
+  position: absolute;
+  top: -17.5px;
   ${props =>
     props.sub &&
     css`
       width: 1000px;
       font-size: 70px;
+      top: 90px;
     `}
 
   ${props =>

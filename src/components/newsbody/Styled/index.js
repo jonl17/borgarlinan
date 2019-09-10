@@ -27,10 +27,16 @@ export const Date = styled.p`
 `
 export const NewsTitle = styled.h1`
   color: ${styles.Blue};
+  font-size: 45px;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      font-size: 30px;
+    `}
 `
 export const Paragraph = styled.p`
   color: ${styles.Gray};
-  line-height: 140%;
+  line-height: 160%;
 `
 export const Line = styled.div`
 ${props =>
@@ -54,7 +60,7 @@ ${props =>
   ${props =>
     !props.even &&
     css`
-      border-left: 4px solid ${styles.Blue};
+      border-left: 4px solid ${styles.LinuLitur};
       left: -10px;
     `}
 `

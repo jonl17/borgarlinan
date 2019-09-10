@@ -26,6 +26,7 @@ const Container = styled.div`
 `
 const Title = styled.h1`
   color: ${styles.Blue};
+  font-size: 25px;
   ${props =>
     props.device === `tablet` &&
     css`
@@ -39,7 +40,7 @@ const Title = styled.h1`
 `
 const Paragraph = styled.p`
   color: ${styles.Gray};
-  line-height: 140%;
+  line-height: 160%;
   width: 75%;
   font-size: 19px;
   ${props =>
@@ -64,6 +65,7 @@ const ImageContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: 150px;
+  display: grid;
   background-color: ${styles.BackGroundGray};
   ${props =>
     props.device === `tablet` &&
@@ -77,7 +79,13 @@ const ImageContainer = styled.div`
     `}
 `
 const SVGImage = styled.img`
-  width: 100%;
+  width: 75%;
+  margin: auto;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 100%;
+    `}
 `
 
 class UmVerkefnaStofu extends React.Component {
@@ -157,7 +165,7 @@ class UmVerkefnaStofu extends React.Component {
           </Paragraph>
         </Container>
         <ImageContainer device={device}>
-          <SVGImage src={SVG} alt="SVG"></SVGImage>
+          <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
         </ImageContainer>
         <Footer page={"infopage"}></Footer>
       </Body>

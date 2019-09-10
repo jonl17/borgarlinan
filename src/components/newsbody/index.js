@@ -48,7 +48,9 @@ class NewsBody extends React.Component {
         even={this.isEven(no)}
       >
         <Date>{item.node.frontmatter.dagsetning}</Date>
-        <NewsTitle className="bold">{item.node.frontmatter.title}</NewsTitle>
+        <NewsTitle device={device} className="bold">
+          {item.node.frontmatter.title}
+        </NewsTitle>
         {item.node.frontmatter.subject.map((para, index) => (
           <Paragraph key={index}>{para}</Paragraph>
         ))}
@@ -56,7 +58,7 @@ class NewsBody extends React.Component {
           <Line
             ref={lineref => (this.lineref = lineref)}
             action={this.getAction(this.state.threshold)}
-            height={this.state.threshold > 0 ? this.state.threshold : 0}
+            height={this.state.threshold > -200 ? this.state.threshold : 0}
             even={this.isEven(no)}
           ></Line>
         ) : (

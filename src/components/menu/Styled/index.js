@@ -57,4 +57,6 @@ export const Button = styled.div`
 export const Text = styled.p`
   text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 0px;
+  font-size: 15px;
 `

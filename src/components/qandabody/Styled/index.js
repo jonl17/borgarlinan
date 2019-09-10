@@ -7,7 +7,7 @@ export const Body = styled.div`
 `
 export const Title = styled.p`
   color: ${styles.Blue};
-  font-size: 26px;
+  font-size: 25px;
   font-weight: bold;
   padding-bottom: 15px;
   padding-top: 15px;
@@ -36,8 +36,9 @@ export const List = styled.ul`
   ${props =>
     props.device === `mobile` &&
     css`
-      padding-left: 0;
+      width: 100%;
       text-align: center;
+      padding-left: 0;
       background-color: white;
       z-index: 4;
     `}
@@ -48,7 +49,13 @@ export const Line = styled.span``
 export const Text = styled.p`
   color: ${styles.Gray};
   font-size: 18px;
-  line-height: 140%;
+  line-height: 160%;
+  width: 85%;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 100%;
+    `}
 `
 export const More = styled.div``
 

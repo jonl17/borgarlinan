@@ -30,14 +30,14 @@ class QandABody extends React.Component {
             ? item.node.frontmatter.subject.map((subj, index) => (
                 <div key={index}>
                   <ListItem key={index}>
-                    <Text>{subj}</Text>
+                    <Text device={device}>{subj}</Text>
                   </ListItem>
                 </div>
               ))
             : item.node.frontmatter.englishSubject.map((subj, index) => (
                 <div key={index}>
                   <ListItem key={index}>
-                    <Text>{subj}</Text>
+                    <Text device={device}>{subj}</Text>
                   </ListItem>
                 </div>
               ))}

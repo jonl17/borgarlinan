@@ -15,4 +15,5 @@ export const Item = styled(Link)`
   color: white;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 15px;
 `
