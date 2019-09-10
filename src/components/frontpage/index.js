@@ -10,27 +10,40 @@ class Frontpage extends React.Component {
   constructor(props) {
     super(props)
     this.updateDevice = this.updateDevice.bind(this)
+    this.startScroll = this.startScroll.bind(this)
+    this.titleElement = React.createRef()
+    this.state = {
+      whiteLineOffset: undefined,
+    }
   }
   updateDevice() {
     this.props.dispatch(setDevice(window.innerWidth))
     this.props.dispatch(getHeight(window.innerHeight))
   }
+  startScroll() {
+    if (this.state.whiteLineOffset !== this.titleElement.current.offsetTop) {
+      this.setState({
+        whiteLineOffset: this.titleElement.current.offsetTop,
+      })
+    }
+  }
   componentDidMount() {
     this.props.dispatch(setDevice(window.innerWidth))
     window.addEventListener("resize", this.updateDevice)
-    console.log(this.props.language)
+    window.addEventListener("scroll", this.startScroll)
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDevice)
+    window.removeEventListener("scroll", this.startScroll)
   }
   render() {
     const {
-      started,
       device,
       lineHeight,
       firstLineStop,
       title,
       subtitle,
+      whiteLineStop,
     } = this.props
     return (
       <Container>
@@ -38,14 +51,22 @@ class Frontpage extends React.Component {
         {device === `browser` ? (
           <>
             <TitleContainer
+              ref={this.titleElement}
               height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
-              started={started}
             >
               <Title device={device}>{title}</Title>
               <Title sub device={device}>
                 {subtitle}
               </Title>
             </TitleContainer>
+            <TitleContainer
+              white
+              height={
+                lineHeight >= whiteLineStop - this.state.whiteLineOffset
+                  ? whiteLineStop - this.state.whiteLineOffset
+                  : lineHeight
+              }
+            ></TitleContainer>
           </>
         ) : (
           <></>
@@ -62,6 +83,7 @@ const mapStateToProps = state => ({
   lineHeight: state.reducer.lineHeight,
   firstLineStop: state.reducer.firstLineStop,
   language: state.reducer.language,
+  whiteLineStop: state.reducer.whiteLineStop,
 })
 
 export default connect(mapStateToProps)(Frontpage)

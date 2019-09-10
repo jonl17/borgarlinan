@@ -4,7 +4,7 @@ export const Container = styled.div`
   max-height: 100vh;
   overflow: hidden;
 `
-export const Video = styled.video`
+export const VideoStyle = styled.video`
   width: 100%;
   height: 100%;
   min-width: 100%;

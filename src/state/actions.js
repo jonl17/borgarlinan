@@ -26,3 +26,8 @@ export const SET_LANGUAGE = "SET_LANGUAGE"
 export const setLanguage = () => ({
   type: SET_LANGUAGE,
 })
+export const SET_WHITELINE_STOP = "SET_WHITELINE_STOP"
+export const setWhitelineStop = stop => ({
+  type: SET_WHITELINE_STOP,
+  stop,
+})

@@ -16,6 +16,11 @@ export const TitleContainer = styled.div`
   margin-top: -150px;
   padding-left: 25px;
   border-left: 4px solid ${styles.Blue};
+  ${props =>
+    props.white &&
+    css`
+      border-left: 4px solid white;
+    `}
   transition: 0.1s;
   width: 1000px;
   margin-left: -445px;

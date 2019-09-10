@@ -5,6 +5,7 @@ import {
   SET_LINEHEIGHT,
   SET_FIRSTLINE_STOP,
   SET_LANGUAGE,
+  SET_WHITELINE_STOP,
 } from "./actions"
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   lineHeight: 0,
   firstLineStop: 0,
   language: `icelandic`,
+  whiteLineStop: undefined,
 }
 
 export default (state = initialState, action) => {
@@ -46,6 +48,8 @@ export default (state = initialState, action) => {
         language = `icelandic`
       }
       return { ...state, language: language }
+    case SET_WHITELINE_STOP:
+      return { ...state, whiteLineStop: action.stop }
     default:
       return state
   }

@@ -1,14 +1,29 @@
 import React from "react"
-import { Container, Video, Source, Blur } from "./Styled"
+import { Container, VideoStyle, Source, Blur } from "./Styled"
 import theVideo from "./video.mp4"
+import { connect } from "react-redux"
+import { setWhitelineStop } from "../../state/actions"
 
-export default () => {
-  return (
-    <Container>
-      <Blur></Blur>
-      <Video autoPlay muted loop>
-        <Source src={theVideo}></Source>
-      </Video>
-    </Container>
-  )
+class Video extends React.Component {
+  componentDidMount() {
+    console.log(this.videoElement)
+    this.props.dispatch(setWhitelineStop(this.videoElement.clientHeight))
+  }
+  render() {
+    return (
+      <Container>
+        <Blur></Blur>
+        <VideoStyle
+          ref={videoElement => (this.videoElement = videoElement)}
+          autoPlay
+          muted
+          loop
+        >
+          <Source src={theVideo}></Source>
+        </VideoStyle>
+      </Container>
+    )
+  }
 }
+
+export default connect()(Video)
