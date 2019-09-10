@@ -6,7 +6,7 @@ import { styles } from "../../constants"
 
 const Menu = ({ page, dispatch, device, language }) => {
   return (
-    <Navbar>
+    <Navbar device={device}>
       <Item
         page={page}
         to="/"

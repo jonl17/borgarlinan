@@ -34,6 +34,16 @@ const SEO = () => (
               content={data.site.siteMetadata.about}
             />
           )}
+          {data.site.siteMetadata.seoTitle && (
+            <meta
+              name="keywords"
+              content={
+                data.site.siteMetadata.seoTitle +
+                ", " +
+                data.site.siteMetadata.title
+              }
+            />
+          )}
         </Helmet>
       </>
     )}
