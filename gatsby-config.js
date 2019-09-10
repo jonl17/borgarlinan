@@ -38,5 +38,13 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}\\static\\data\\svg\\`, // See below to configure properly
+        },
+      },
+    },
   ],
 }

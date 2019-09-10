@@ -11,7 +11,7 @@ const Menu = ({ page, dispatch, device }) => {
         page={page}
         to="/"
         activeStyle={{
-          borderBottom: `2px solid ${styles.Blue}`,
+          borderBottom: `4px solid ${styles.Blue}`,
         }}
       >
         <Text>Borgarlínan</Text>
@@ -19,7 +19,7 @@ const Menu = ({ page, dispatch, device }) => {
       <Item
         page={page}
         activeStyle={{
-          borderBottom: `2px solid ${styles.Blue}`,
+          borderBottom: `4px solid ${styles.Blue}`,
         }}
         to="/um-verkefnastofu"
       >
