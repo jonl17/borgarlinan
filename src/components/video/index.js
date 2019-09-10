@@ -12,13 +12,8 @@ class Video extends React.Component {
   render() {
     return (
       <Container>
-        <Blur></Blur>
-        <VideoStyle
-          ref={videoElement => (this.videoElement = videoElement)}
-          autoPlay
-          muted
-          loop
-        >
+        <Blur ref={videoElement => (this.videoElement = videoElement)}></Blur>
+        <VideoStyle autoPlay muted loop>
           <Source src={theVideo}></Source>
         </VideoStyle>
       </Container>
