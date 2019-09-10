@@ -8,6 +8,7 @@ class NewsBody extends React.Component {
     super(props)
     this.state = {
       threshold: undefined,
+      height: undefined,
     }
   }
 
@@ -16,6 +17,7 @@ class NewsBody extends React.Component {
     const precision = -distance.y + window.innerHeight * 0.8
     this.setState({
       threshold: distance.y,
+      height: this.lineref.clientHeight,
     })
     window.addEventListener("scroll", () => {
       this.setState({
@@ -31,7 +33,7 @@ class NewsBody extends React.Component {
   getAction(thresh) {
     if (thresh < 0) {
       return "empty"
-    } else if (thresh >= 0 && thresh < 300) {
+    } else if (thresh >= 0 && thresh < this.state.height) {
       return "fill"
     } else {
       return "full"
@@ -47,6 +49,7 @@ class NewsBody extends React.Component {
           <Paragraph key={index}>{para}</Paragraph>
         ))}
         <Line
+          ref={lineref => (this.lineref = lineref)}
           action={this.getAction(this.state.threshold)}
           height={this.state.threshold > 0 ? this.state.threshold : 0}
           even={this.isEven(no)}

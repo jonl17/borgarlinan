@@ -5,6 +5,7 @@ import NewsSection from "../components/newssection"
 import Footer from "../components/footer"
 import styled from "styled-components"
 import Menu from "../components/menu"
+import SEO from "../components/seo"
 
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
@@ -29,13 +30,16 @@ class index extends React.Component {
   render() {
     const { title, subtitle } = this.props.data.site.siteMetadata
     return (
-      <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
-        <Menu></Menu>
-        <Frontpage title={title} subtitle={subtitle}></Frontpage>
-        <QandASection></QandASection>
-        <NewsSection></NewsSection>
-        <Footer></Footer>
-      </Body>
+      <>
+        <SEO></SEO>
+        <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
+          <Menu></Menu>
+          <Frontpage title={title} subtitle={subtitle}></Frontpage>
+          <QandASection></QandASection>
+          <NewsSection></NewsSection>
+          <Footer></Footer>
+        </Body>
+      </>
     )
   }
 }

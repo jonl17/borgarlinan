@@ -16,6 +16,8 @@ const GetQandA = () => (
                 title
                 subject
                 more
+                englishTitle
+                englishSubject
               }
             }
           }

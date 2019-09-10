@@ -43,6 +43,8 @@ class NewsSection extends React.Component {
     )
   }
   render() {
+    const { language } = this.props
+    console.log(language)
     return (
       <PageContainer>
         <Container>
@@ -59,4 +61,8 @@ class NewsSection extends React.Component {
   }
 }
 
-export default connect()(NewsSection)
+const mapStateToProps = state => ({
+  language: state.reducer.language,
+})
+
+export default connect(mapStateToProps)(NewsSection)

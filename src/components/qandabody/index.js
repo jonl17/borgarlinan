@@ -10,48 +10,40 @@ import {
   LineBlock,
   Line,
 } from "./Styled"
-// import ShowHide from "../buttons/showhide"
+import { connect } from "react-redux"
 
 class QandABody extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      minimize: true,
-    }
-    this.handleClick = this.handleClick.bind(this)
-  }
-  handleClick() {
-    this.setState({
-      minimize: !this.state.minimize,
-    })
-  }
   render() {
-    const { item, index } = this.props
-    const { minimize } = this.state
+    const { item, index, language } = this.props
     return (
       <Body key={index}>
         <Group>
-          <Title className="bold" /*onClick={() => this.handleClick()} */>
+          <Title className="bold">
             {index + 1 + ". "}
-            {item.node.frontmatter.title}
+            {language === "icelandic"
+              ? item.node.frontmatter.title
+              : item.node.frontmatter.englishTitle}
           </Title>
-          {/*
-          <ShowHide
-            onClick={() => this.handleClick}
-            minimize={minimize}
-          ></ShowHide > */}
         </Group>
-        <List /* minimize={minimize} */>
-          {item.node.frontmatter.subject.map((subj, index) => (
-            <div key={index}>
-              <ListItem key={index}>
-                <Text>{subj}</Text>
-              </ListItem>
-            </div>
-          ))}
+        <List>
+          {language === "icelandic"
+            ? item.node.frontmatter.subject.map((subj, index) => (
+                <div key={index}>
+                  <ListItem key={index}>
+                    <Text>{subj}</Text>
+                  </ListItem>
+                </div>
+              ))
+            : item.node.frontmatter.englishSubject.map((subj, index) => (
+                <div key={index}>
+                  <ListItem key={index}>
+                    <Text>{subj}</Text>
+                  </ListItem>
+                </div>
+              ))}
         </List>
         <More></More>
-        <LineBlock minimize={minimize}>
+        <LineBlock>
           <Line></Line>
         </LineBlock>
       </Body>
@@ -59,4 +51,8 @@ class QandABody extends React.Component {
   }
 }
 
-export default QandABody
+const mapStateToProps = state => ({
+  language: state.reducer.language,
+})
+
+export default connect(mapStateToProps)(QandABody)

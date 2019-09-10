@@ -1,6 +1,6 @@
 ---
 type: "news"
-title: "Ferli við val á hönnunarráðgjafa hafið. Ákall eftir upplýsingum (RFI)"
-subject: ["Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.", "Eros et accumsan et iusto odio dignissim qui blandit prant luptatum zzril delenit augue duis dolore te feugait nulla facilisi, cons ectetuer adipiscing elit."]
-dagsetning: "6. september 2019 "
+title: "Kynningarfundur um nýtt leiðanet Strætó"
+subject: ["Kynningarfundur um nýtt leiðakerfi Stætó var haldinn 2. september fyrir félagsmenn í Samtökum um bíllausan lífsstíl. Frekari kynningar fyrir almenning eru fyrirhugaðar á næstu vikum og mánuðum. Með tilkomu Borgarlínu þarf að aðlaga leiðakerfi Strætó að Borgarlínu þar sem hún mun að hluta til aka sömu vegkafla og núverandi leiðakerfi Stætó. Nýja leiðanetið er skipulagt til að tengja vagna Strætó við stofnleiðanet Borgarlínu. Þá kalla skipulagsbreytingar á Hlemmi og á umferðarmiðstöð BSÍ einnig á breytingu á núverandi leiðakerfi Strætó.", "Stefnumótunarvinna vegna breytinga á leiðakerfinu hófst í febrúar en þá var skipaður faghópur um verkefnið sem áætlað er að skili tillögum til stjórnar Strætó í nóvember á þessu ári. Af hálfu Strætó er lögð áherslu á að samráð verði haft við íbúa höfuðborgarsvæðisins í þessari vinnu. Í faghópnum eru fulltrúar frá Strætó, sveitarfélögunum á höfuðborgarsvæðinu, Vegagerðinni, samgöngu- og sveitarstjórnarráðuneytinu og Samtökum um bíllausan lífstíl."]
+dagsetning: "2. september 2019 "
 ---
