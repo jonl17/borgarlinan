@@ -6,6 +6,7 @@ import {
   SET_FIRSTLINE_STOP,
   SET_LANGUAGE,
   SET_WHITELINE_STOP,
+  TRIGGER_BURGER_MENU,
 } from "./actions"
 
 const initialState = {
@@ -16,6 +17,7 @@ const initialState = {
   firstLineStop: 0,
   language: `icelandic`,
   whiteLineStop: undefined,
+  showBurgerMenu: false,
 }
 
 export default (state = initialState, action) => {
@@ -50,6 +52,8 @@ export default (state = initialState, action) => {
       return { ...state, language: language }
     case SET_WHITELINE_STOP:
       return { ...state, whiteLineStop: action.stop }
+    case TRIGGER_BURGER_MENU:
+      return { ...state, showBurgerMenu: action.trig }
     default:
       return state
   }

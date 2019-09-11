@@ -9,20 +9,26 @@ class NewsBody extends React.Component {
     this.state = {
       threshold: undefined,
       height: undefined,
+      precision: undefined,
     }
+    this.setThreshold = this.setThreshold.bind(this)
   }
 
   componentDidMount() {
     const distance = getPosition(this.newsEl)
     const precision = -distance.y + window.innerHeight * 0.8
     this.setState({
-      threshold: distance.y,
       height: this.lineref.clientHeight,
+      precision: precision,
     })
-    window.addEventListener("scroll", () => {
-      this.setState({
-        threshold: precision + this.props.lineHeight,
-      })
+    window.addEventListener("scroll", this.setThreshold)
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.setThreshold)
+  }
+  setThreshold() {
+    this.setState({
+      threshold: this.state.precision + this.props.lineHeight - 150,
     })
   }
 
@@ -68,7 +74,7 @@ class NewsBody extends React.Component {
             ref={lineref => (this.lineref = lineref)}
             action={this.getAction(this.state.threshold)}
             height={0}
-            even={this.isEven(no)}
+            even={this.isEven(false)}
           ></Line>
         )}
       </Body>

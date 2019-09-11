@@ -16,11 +16,11 @@ export const Body = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      margin-left: 0;
+      margin: auto;
       padding-left: 0;
       width: 95%;
-      margin-top: 0;
       background-color: ${styles.BackGroundGray};
+      padding-bottom: 25px;
     `}
 `
 export const Date = styled.p`
@@ -44,10 +44,12 @@ export const NewsTitle = styled.h1`
 export const Paragraph = styled.p`
   color: ${styles.Gray};
   line-height: 160%;
+  font-size: 18px;
   ${props =>
     props.device === `mobile` &&
     css`
       text-align: center;
+      font-size: 15px;
     `}
 `
 export const Line = styled.div`

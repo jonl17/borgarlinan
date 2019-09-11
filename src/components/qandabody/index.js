@@ -16,7 +16,7 @@ class QandABody extends React.Component {
   render() {
     const { item, index, language, device } = this.props
     return (
-      <Body key={index}>
+      <Body device={device} key={index}>
         <Group>
           <Title device={device} className="bold">
             {index + 1 + ". "}

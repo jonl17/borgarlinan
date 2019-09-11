@@ -51,5 +51,6 @@ export const Paragraph = styled.p`
       width: 100%;
       box-sizing: border-box;
       padding: 0 10px 0 10px;
+      font-size: 15px;
     `}
 `

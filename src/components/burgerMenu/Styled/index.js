@@ -3,19 +3,26 @@ import { Link } from "gatsby"
 import { styles } from "../../../constants"
 
 export const Navbar = styled.div`
+  display: none;
+  ${props =>
+    props.show &&
+    css`
+      display: flex;
+    `}
   height: 100px;
   width: 35%;
-  margin: 0 75px 0 75px;
-  display: flex;
-  position: absolute;
-  right: 0;
+  margin: 0 0px 0 75px;
+  position: fixed;
+  background-color: ${styles.LinuLitur};
+  right: 0px;
   top: 0;
-  z-index: 8;
+  z-index: 12;
   ${props =>
     props.device === `tablet` &&
     css`
       width: 100%;
       margin: 0;
+      padding: 0;
     `}
   ${props =>
     props.device === `mobile` &&
@@ -23,6 +30,7 @@ export const Navbar = styled.div`
       height: 75px;
       width: 100%;
       margin: 0;
+      padding: 0;
     `}
 `
 export const Item = styled(Link)`
@@ -42,11 +50,6 @@ export const Item = styled(Link)`
     props.device === `mobile` &&
     css`
       color: white;
-      ${props =>
-        props.page === "um-verkefnastofu" &&
-        css`
-          color: lightgray;
-        `}
     `}
 `
 export const Button = styled.div`
@@ -66,11 +69,6 @@ export const Button = styled.div`
     props.device === `mobile` &&
     css`
       color: white;
-      ${props =>
-        props.page === "um-verkefnastofu" &&
-        css`
-          color: lightgray;
-        `}
     `}
   &&:hover {
     cursor: pointer;

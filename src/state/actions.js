@@ -31,3 +31,8 @@ export const setWhitelineStop = stop => ({
   type: SET_WHITELINE_STOP,
   stop,
 })
+export const TRIGGER_BURGER_MENU = "TRIGGER_BURGER_MENU"
+export const triggerBurgerMenu = trig => ({
+  type: TRIGGER_BURGER_MENU,
+  trig,
+})

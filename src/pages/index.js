@@ -6,10 +6,13 @@ import Footer from "../components/footer"
 import styled from "styled-components"
 import Menu from "../components/menu"
 import SEO from "../components/seo"
+import Burger from "../components/burger"
+import BurgerMenu from "../components/burgerMenu"
 
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setStart, getHeight, setLineHeight } from "../state/actions"
+import { triggerBurgerMenu } from "../state/actions"
 
 const Body = styled.div``
 
@@ -24,7 +27,13 @@ class index extends React.Component {
       if (!this.props.started) {
         this.props.dispatch(setStart())
       }
+      if (this.props.showBurgerMenu) {
+        this.props.dispatch(triggerBurgerMenu(false))
+      }
     })
+    if (this.props.showBurgerMenu) {
+      this.props.dispatch(triggerBurgerMenu(false))
+    }
   }
 
   render() {
@@ -33,6 +42,8 @@ class index extends React.Component {
       <>
         <SEO></SEO>
         <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
+          <Burger></Burger>
+          <BurgerMenu></BurgerMenu>
           <Menu></Menu>
           <Frontpage title={title} subtitle={subtitle}></Frontpage>
           <QandASection></QandASection>
@@ -58,6 +69,7 @@ export const query = graphql`
 const mapStateToProps = state => ({
   started: state.reducer.started,
   lineHeight: state.reducer.lineHeight,
+  showBurgerMenu: state.reducer.showBurgerMenu,
 })
 
 export default connect(mapStateToProps)(index)

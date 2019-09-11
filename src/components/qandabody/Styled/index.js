@@ -4,6 +4,11 @@ import { styles } from "../../../constants"
 /* each news item */
 export const Body = styled.div`
   position: relative;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      padding-bottom: 60px;
+    `}
 `
 export const Title = styled.p`
   color: ${styles.Blue};
@@ -55,6 +60,7 @@ export const Text = styled.p`
     props.device === `mobile` &&
     css`
       width: 100%;
+      font-size: 15px;
     `}
 `
 export const More = styled.div``

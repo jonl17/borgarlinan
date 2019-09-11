@@ -3,10 +3,18 @@ import { Navbar, Item, Text, Button } from "./Styled"
 import { connect } from "react-redux"
 import { setLanguage } from "../../state/actions"
 import { styles } from "../../constants"
+import { triggerBurgerMenu } from "../../state/actions"
 
-const Menu = ({ page, dispatch, device, language, burger }) => {
+const BurgerMenu = ({
+  page,
+  dispatch,
+  device,
+  language,
+  burger,
+  showBurgerMenu,
+}) => {
   return (
-    <Navbar burger={burger} device={device}>
+    <Navbar show={showBurgerMenu} burger={burger} device={device}>
       <Item
         device={device}
         page={page}
@@ -41,6 +49,7 @@ const Menu = ({ page, dispatch, device, language, burger }) => {
 const mapStateToProps = state => ({
   device: state.reducer.device,
   language: state.reducer.language,
+  showBurgerMenu: state.reducer.showBurgerMenu,
 })
 
-export default connect(mapStateToProps)(Menu)
+export default connect(mapStateToProps)(BurgerMenu)
