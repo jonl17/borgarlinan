@@ -1,10 +1,16 @@
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
+import { styles } from "../../../constants"
 
 export const Navbar = styled.div`
   height: 100px;
   width: 35%;
   margin: 0 75px 0 75px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 8;
   ${props =>
     props.device === `tablet` &&
     css`
@@ -14,14 +20,13 @@ export const Navbar = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
+      height: 75px;
       width: 100%;
       margin: 0;
+      position: fixed;
+      background-color: ${styles.Blue};
+      opacity: 0.9;
     `}
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 2;
 `
 export const Item = styled(Link)`
   margin: auto;
@@ -36,6 +41,11 @@ export const Item = styled(Link)`
     css`
       color: lightgray;
     `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      color: white;
+    `}
 `
 export const Button = styled.div`
   margin: auto;
@@ -49,6 +59,11 @@ export const Button = styled.div`
     props.page === "um-verkefnastofu" &&
     css`
       color: lightgray;
+    `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      color: white;
     `}
   &&:hover {
     cursor: pointer;

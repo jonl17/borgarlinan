@@ -2,7 +2,7 @@
 order: 1
 type: "staff"
 title: "Hrafnkell Á. Proppé"
-job: "Svæðisskipulagstjóri hjá SSH"
+job: "Svæðisskipulagstjóri"
 englishJob: "Director of regional plan"
 subjob: "Verkefnastjóri"
 subjobEnglish: "Project manager"

@@ -22,6 +22,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${styles.Blue};
   font-size: 25px;
+  padding-bottom: 25px;
 `
 export const Grid = styled.div`
   display: grid;

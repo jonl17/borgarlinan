@@ -8,6 +8,7 @@ const Menu = ({ page, dispatch, device, language }) => {
   return (
     <Navbar device={device}>
       <Item
+        device={device}
         page={page}
         to="/"
         activeStyle={{
@@ -17,6 +18,7 @@ const Menu = ({ page, dispatch, device, language }) => {
         <Text className="bold">Borgarlínan</Text>
       </Item>
       <Item
+        device={device}
         page={page}
         activeStyle={{
           borderBottom: `4px solid ${styles.LinuLitur}`,
@@ -25,7 +27,11 @@ const Menu = ({ page, dispatch, device, language }) => {
       >
         <Text className="bold">Um verkefnastofu</Text>
       </Item>
-      <Button onClick={() => dispatch(setLanguage())} page={page}>
+      <Button
+        device={device}
+        onClick={() => dispatch(setLanguage())}
+        page={page}
+      >
         <Text className="bold">IS/EN</Text>
       </Button>
     </Navbar>

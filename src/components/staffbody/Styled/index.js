@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import { styles } from "../../../constants"
 
-export const Container = styled.div``
+export const Container = styled.div`
+  position: relative;
+`
 export const Name = styled.p`
   color: ${styles.Blue};
   font-size: 20px;
@@ -19,4 +21,7 @@ export const Mail = styled.a`
 `
 export const SubJob = styled.p`
   color: ${styles.Gray};
+  position: absolute;
+  top: -40px;
+  width: 100%;
 `
