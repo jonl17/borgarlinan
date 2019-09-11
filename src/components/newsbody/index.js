@@ -47,12 +47,14 @@ class NewsBody extends React.Component {
         ref={newsEl => (this.newsEl = newsEl)}
         even={this.isEven(no)}
       >
-        <Date>{item.node.frontmatter.dagsetning}</Date>
+        <Date device={device}>{item.node.frontmatter.dagsetning}</Date>
         <NewsTitle device={device} className="bold">
           {item.node.frontmatter.title}
         </NewsTitle>
         {item.node.frontmatter.subject.map((para, index) => (
-          <Paragraph key={index}>{para}</Paragraph>
+          <Paragraph device={device} key={index}>
+            {para}
+          </Paragraph>
         ))}
         {device !== `mobile` ? (
           <Line

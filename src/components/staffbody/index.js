@@ -12,7 +12,7 @@ const index = ({
     <Container>
       <Name className="bold">{title}</Name>
       <Job>{job}</Job>
-      <Mail>{email}</Mail>
+      <Mail href={"mailto:" + email}>{email}</Mail>
       {subjob !== null ? <SubJob>{subjob}</SubJob> : <></>}
     </Container>
   )

@@ -20,10 +20,16 @@ export const Body = styled.div`
       padding-left: 0;
       width: 95%;
       margin-top: 0;
+      background-color: ${styles.BackGroundGray};
     `}
 `
 export const Date = styled.p`
   color: ${styles.Gray};
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      text-align: center;
+    `}
 `
 export const NewsTitle = styled.h1`
   color: ${styles.Blue};
@@ -32,11 +38,17 @@ export const NewsTitle = styled.h1`
     props.device === `mobile` &&
     css`
       font-size: 30px;
+      text-align: center;
     `}
 `
 export const Paragraph = styled.p`
   color: ${styles.Gray};
   line-height: 160%;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      text-align: center;
+    `}
 `
 export const Line = styled.div`
 ${props =>

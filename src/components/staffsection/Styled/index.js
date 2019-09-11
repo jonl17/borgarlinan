@@ -16,6 +16,7 @@ export const Container = styled.div`
     css`
       width: 90%;
       margin: 25px auto;
+      text-align: center;
     `};
 `
 export const Title = styled.h1`

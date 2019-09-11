@@ -12,9 +12,10 @@ export const Job = styled.p`
   font-size: 20px;
   margin: 0;
 `
-export const Mail = styled.p`
+export const Mail = styled.a`
   color: ${styles.Blue};
   font-size: 20px;
+  text-decoration: none;
 `
 export const SubJob = styled.p`
   color: ${styles.Gray};
