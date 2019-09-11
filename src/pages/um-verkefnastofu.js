@@ -6,6 +6,7 @@ import SVG from "../../static/data/svg/skipurit_skjar.svg"
 import Footer from "../components/footer"
 import { connect } from "react-redux"
 import { setDevice } from "../state/actions"
+import StaffSection from "../components/staffsection"
 
 const Body = styled.div``
 const Container = styled.div`
@@ -167,6 +168,7 @@ class UmVerkefnaStofu extends React.Component {
         <ImageContainer device={device}>
           <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
         </ImageContainer>
+        <StaffSection></StaffSection>
         <Footer page={"infopage"}></Footer>
       </Body>
     )

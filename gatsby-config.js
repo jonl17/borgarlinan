@@ -37,6 +37,13 @@ module.exports = {
         path: `${__dirname}/static/news/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `staff`,
+        path: `${__dirname}/static/staff/`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     {
