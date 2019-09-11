@@ -8,14 +8,21 @@ const GetStaff = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: { frontmatter: { type: { eq: "staff" } } }) {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "staff" } } }
+          sort: { fields: frontmatter___order }
+        ) {
           edges {
             node {
               frontmatter {
                 title
                 job
+                englishJob
                 subjob
+                subjobEnglish
                 email
+                order
+                type
               }
             }
           }

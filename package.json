@@ -32,10 +32,6 @@
     "ftp-deploy": "^2.3.3",
     "prettier": "^1.18.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   }

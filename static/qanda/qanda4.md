@@ -1,8 +1,9 @@
 ---
+order: 4
 type: "qanda"
 title: "Hver er tilgangurinn með Borgarlínu?"
 subject: ["Hugmyndafræðin á bak við Borgarlínu og nýtt skilvirkt almenningssamgöngukerfi er að skapa samhengi fyrir íbúa höfuðborgarsvæðisins þar sem alltaf verði hægt að komast á milli helstu kjarna svæðisins á skilvirkan hátt með vistvænum ferðamáta."]
 more: ""
-englishTitle: "english"
-englishSubject: ["eng1", "eng2"]
+englishTitle: "What is the ideology behind Borgarlínan?"
+englishSubject: ["The ideology behind Borgarlínan and the new, effective public transport system is to ensure that inhabitants of the capital area can always travel between different centres in an efficient and sustainable manner."]
 ---

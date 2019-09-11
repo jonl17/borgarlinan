@@ -1,7 +1,9 @@
 ---
+order: 2
 type: "staff"
 title: "Bryndís Friðriksdóttir"
-job: "Samgönguverkfræðingur hjá Vegagerðinni"
+job: "Samgönguverkfræðingur"
+englishJob: "Transportation engineer"
 subjob: null
 email: "bryndis@borgarlinan.is"
 ---

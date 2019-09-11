@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+import Favicon from "./borg_fav.png"
 
 const SEO = () => (
   <StaticQuery
@@ -44,6 +45,7 @@ const SEO = () => (
               }
             />
           )}
+          <link sizes="20x20" href={Favicon} rel="icon" type="image/png"></link>
         </Helmet>
       </>
     )}

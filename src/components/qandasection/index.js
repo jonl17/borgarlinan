@@ -9,7 +9,10 @@ const GetQandA = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: { frontmatter: { type: { eq: "qanda" } } }) {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "qanda" } } }
+          sort: { fields: frontmatter___order }
+        ) {
           edges {
             node {
               frontmatter {
@@ -18,6 +21,7 @@ const GetQandA = () => (
                 more
                 englishTitle
                 englishSubject
+                order
               }
             }
           }
