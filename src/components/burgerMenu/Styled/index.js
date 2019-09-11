@@ -12,6 +12,7 @@ export const Navbar = styled.div`
   height: 100px;
   width: 35%;
   margin: 0 0px 0 75px;
+  padding-right: 75px;
   position: fixed;
   background-color: ${styles.LinuLitur};
   right: 0px;

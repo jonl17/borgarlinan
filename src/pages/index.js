@@ -11,7 +11,7 @@ import BurgerMenu from "../components/burgerMenu"
 
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
-import { setStart, getHeight, setLineHeight } from "../state/actions"
+import { setStart, getHeight, setLineHeight, setDevice } from "../state/actions"
 import { triggerBurgerMenu } from "../state/actions"
 
 const Body = styled.div``
@@ -70,6 +70,7 @@ const mapStateToProps = state => ({
   started: state.reducer.started,
   lineHeight: state.reducer.lineHeight,
   showBurgerMenu: state.reducer.showBurgerMenu,
+  device: state.reducer.device,
 })
 
 export default connect(mapStateToProps)(index)

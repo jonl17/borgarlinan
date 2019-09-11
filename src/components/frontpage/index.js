@@ -28,10 +28,9 @@ class Frontpage extends React.Component {
     }
   }
   componentDidMount() {
-    this.updateDevice()
-    this.props.dispatch(setDevice(window.innerWidth))
     window.addEventListener("resize", this.updateDevice)
     window.addEventListener("scroll", this.startScroll)
+    this.updateDevice()
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDevice)
