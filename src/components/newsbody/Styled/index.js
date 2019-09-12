@@ -25,11 +25,7 @@ export const Body = styled.div`
 `
 export const Date = styled.p`
   color: ${styles.Gray};
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      text-align: center;
-    `}
+  ${props => props.device === `mobile` && css``}
 `
 export const NewsTitle = styled.h1`
   color: ${styles.Blue};
@@ -38,7 +34,6 @@ export const NewsTitle = styled.h1`
     props.device === `mobile` &&
     css`
       font-size: 30px;
-      text-align: center;
     `}
 `
 export const Paragraph = styled.p`
@@ -48,7 +43,6 @@ export const Paragraph = styled.p`
   ${props =>
     props.device === `mobile` &&
     css`
-      text-align: center;
       font-size: 15px;
     `}
 `

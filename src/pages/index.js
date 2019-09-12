@@ -17,21 +17,31 @@ import { triggerBurgerMenu, setDevice } from "../state/actions"
 const Body = styled.div``
 
 class index extends React.Component {
+  constructor(props) {
+    super(props)
+    this.scrollCallBack = this.scrollCallBack.bind(this)
+  }
   componentDidMount() {
     this.props.dispatch(setDevice(this.bodyelement.clientWidth))
     /* get full height */
     const height = this.bodyelement.clientHeight
     this.props.dispatch(getHeight(height))
     /* start the line  */
-    window.addEventListener("scroll", () => {
-      this.props.dispatch(setLineHeight(document.scrollingElement.scrollTop))
-      if (!this.props.started) {
-        this.props.dispatch(setStart())
-      }
-      if (this.props.showBurgerMenu) {
-        this.props.dispatch(triggerBurgerMenu(false))
-      }
-    })
+    if (this.props.showBurgerMenu) {
+      this.props.dispatch(triggerBurgerMenu(false))
+    }
+
+    window.addEventListener("scroll", () => this.scrollCallBack())
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", () => this.scrollCallBack())
+  }
+
+  scrollCallBack() {
+    this.props.dispatch(setLineHeight(document.scrollingElement.scrollTop))
+    if (!this.props.started) {
+      this.props.dispatch(setStart())
+    }
     if (this.props.showBurgerMenu) {
       this.props.dispatch(triggerBurgerMenu(false))
     }

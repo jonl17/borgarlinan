@@ -13,23 +13,15 @@ export const Container = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      width: 100%;
+      width: 90%;
       margin: 125px auto auto auto;
     `}
 `
 export const Title = styled.h1`
   color: ${styles.Blue};
   font-size: 25px;
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      text-align: center;
-    `}
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      text-align: center;
-    `}
+  ${props => props.device === `tablet` && css``}
+  ${props => props.device === `mobile` && css``}
 `
 export const Paragraph = styled.p`
   color: ${styles.Gray};
@@ -39,18 +31,14 @@ export const Paragraph = styled.p`
   ${props =>
     props.device === `tablet` &&
     css`
-      text-align: center;
       width: 100%;
       box-sizing: border-box;
-      padding: 0 10px 0 10px;
     `}
   ${props =>
     props.device === `mobile` &&
     css`
-      text-align: center;
       width: 100%;
       box-sizing: border-box;
-      padding: 0 10px 0 10px;
       font-size: 15px;
     `}
 `

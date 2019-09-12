@@ -55,10 +55,19 @@ class Frontpage extends React.Component {
               ref={this.titleElement}
               height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
             >
-              <Title className="bold" device={device}>
+              <Title
+                opacity={device === undefined ? 0 : 1}
+                className="bold"
+                device={device}
+              >
                 {title}
               </Title>
-              <Title className="bold" sub device={device}>
+              <Title
+                opacity={device === undefined ? 0 : 1}
+                className="bold"
+                sub
+                device={device}
+              >
                 {subtitle}
               </Title>
             </TitleContainer>

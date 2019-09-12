@@ -6,17 +6,17 @@ export const Container = styled.div`
 `
 export const Name = styled.p`
   color: ${styles.Blue};
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
 `
 export const Job = styled.p`
   color: ${styles.Gray};
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
 `
 export const Mail = styled.a`
   color: ${styles.Blue};
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
 `
 export const SubJob = styled.p`

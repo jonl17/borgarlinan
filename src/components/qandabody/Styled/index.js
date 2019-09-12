@@ -21,7 +21,6 @@ export const Title = styled.p`
     props.device === `mobile` &&
     css`
       margin: 0;
-      text-align: center;
       width: 100%;
     `}
 `
@@ -42,7 +41,6 @@ export const List = styled.ul`
     props.device === `mobile` &&
     css`
       width: 100%;
-      text-align: center;
       padding-left: 0;
       background-color: white;
       z-index: 4;
