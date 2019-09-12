@@ -23,7 +23,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_DEVICE:
-      let device
+      var device
       if (action.width <= 750) {
         device = `mobile`
       }

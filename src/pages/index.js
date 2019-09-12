@@ -11,13 +11,14 @@ import BurgerMenu from "../components/burgerMenu"
 
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
-import { setStart, getHeight, setLineHeight, setDevice } from "../state/actions"
-import { triggerBurgerMenu } from "../state/actions"
+import { setStart, getHeight, setLineHeight } from "../state/actions"
+import { triggerBurgerMenu, setDevice } from "../state/actions"
 
 const Body = styled.div``
 
 class index extends React.Component {
   componentDidMount() {
+    this.props.dispatch(setDevice(this.bodyelement.clientWidth))
     /* get full height */
     const height = this.bodyelement.clientHeight
     this.props.dispatch(getHeight(height))

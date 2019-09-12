@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
-import { styles } from "../../../constants"
 
 export const Navbar = styled.div`
   height: 100px;

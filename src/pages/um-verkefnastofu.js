@@ -56,7 +56,7 @@ class UmVerkefnaStofu extends React.Component {
     }
   }
   updateDevice() {
-    this.props.dispatch(setDevice(window.innerWidth))
+    this.props.dispatch(setDevice(this.bodyRef.clientWidth))
   }
   render() {
     const {
@@ -67,7 +67,7 @@ class UmVerkefnaStofu extends React.Component {
       },
     } = this.props
     return (
-      <Body>
+      <Body ref={bodyRef => (this.bodyRef = bodyRef)}>
         <Burger></Burger>
         <BurgerMenu></BurgerMenu>
         <Menu page={"um-verkefnastofu"}></Menu>

@@ -3,7 +3,6 @@ import { Navbar, Item, Text, Button } from "./Styled"
 import { connect } from "react-redux"
 import { setLanguage } from "../../state/actions"
 import { styles } from "../../constants"
-import { triggerBurgerMenu } from "../../state/actions"
 
 const BurgerMenu = ({
   page,

@@ -30,7 +30,6 @@ class Frontpage extends React.Component {
   componentDidMount() {
     window.addEventListener("resize", this.updateDevice)
     window.addEventListener("scroll", this.startScroll)
-    this.updateDevice()
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDevice)
@@ -46,32 +45,35 @@ class Frontpage extends React.Component {
       whiteLineStop,
     } = this.props
     return (
-      <Container>
-        <Video></Video>
-        <>
-          <TitleContainer
-            device={device}
-            ref={this.titleElement}
-            height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
-          >
-            <Title className="bold" device={device}>
-              {title}
-            </Title>
-            <Title className="bold" sub device={device}>
-              {subtitle}
-            </Title>
-          </TitleContainer>
-          <TitleContainer
-            device={device}
-            white
-            height={
-              lineHeight >= whiteLineStop - this.state.whiteLineOffset
-                ? whiteLineStop - this.state.whiteLineOffset
-                : lineHeight
-            }
-          ></TitleContainer>
-        </>
-      </Container>
+      console.log("Render: " + device),
+      (
+        <Container>
+          <Video></Video>
+          <>
+            <TitleContainer
+              device={device}
+              ref={this.titleElement}
+              height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
+            >
+              <Title className="bold" device={device}>
+                {title}
+              </Title>
+              <Title className="bold" sub device={device}>
+                {subtitle}
+              </Title>
+            </TitleContainer>
+            <TitleContainer
+              device={device}
+              white
+              height={
+                lineHeight >= whiteLineStop - this.state.whiteLineOffset
+                  ? whiteLineStop - this.state.whiteLineOffset
+                  : lineHeight
+              }
+            ></TitleContainer>
+          </>
+        </Container>
+      )
     )
   }
 }
