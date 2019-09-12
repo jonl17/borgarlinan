@@ -19,6 +19,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `schemadata`,
+        path: `${__dirname}/static/schemadata/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `data`,
         path: `${__dirname}/static/data/`,
       },
@@ -51,6 +58,7 @@ module.exports = {
         path: `${__dirname}/static/about/`,
       },
     },
+
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     {

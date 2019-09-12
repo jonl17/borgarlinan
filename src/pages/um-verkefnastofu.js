@@ -12,29 +12,39 @@ import AboutBody from "../components/aboutbody"
 import Burger from "../components/burger"
 import BurgerMenu from "../components/burgerMenu"
 import { triggerBurgerMenu } from "../state/actions"
+import SchemaData from "../components/schemadata"
 
 const Body = styled.div``
 
-const ImageContainer = styled.div`
+const Background = styled.div`
   height: 100%;
   width: 100%;
+  background-color: ${styles.BackGroundGray};
+`
+
+const ImageContainer = styled.div`
+  height: 100%;
+  width: 1000px;
+  margin: auto;
   box-sizing: border-box;
-  padding: 150px;
+  padding: 100px 0 100px 0;
   display: grid;
   background-color: ${styles.BackGroundGray};
   ${props =>
     props.device === `tablet` &&
     css`
-      padding: 10px;
+      padding: 100px 0 100px 0;
+      width: 95%;
     `}
   ${props =>
     props.device === `mobile` &&
     css`
-      padding: 0;
+      padding: 100px 0 100px 0;
+      width: 100%;
     `}
 `
 const SVGImage = styled.img`
-  width: 75%;
+  width: 100%;
   margin: auto;
   ${props =>
     props.device === `mobile` &&
@@ -87,9 +97,12 @@ class UmVerkefnaStofu extends React.Component {
             }
           ></AboutBody>
         ))}
-        <ImageContainer device={device}>
-          <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
-        </ImageContainer>
+        <Background>
+          <ImageContainer device={device}>
+            <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
+          </ImageContainer>
+        </Background>
+        <SchemaData></SchemaData>
         <StaffSection></StaffSection>
         <Footer page={"infopage"}></Footer>
       </Body>
