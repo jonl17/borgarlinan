@@ -22,6 +22,7 @@ const GetQandA = () => (
                 englishTitle
                 englishSubject
                 order
+                list
               }
             }
           }

@@ -25,7 +25,7 @@ class QandABody extends React.Component {
               : item.node.frontmatter.englishTitle}
           </Title>
         </Group>
-        <List device={device}>
+        <List list={item.node.frontmatter.list} device={device}>
           {language === "icelandic"
             ? item.node.frontmatter.subject.map((subj, index) => (
                 <div key={index}>

@@ -27,7 +27,7 @@ export const Title = styled.p`
 export const List = styled.ul`
   position: relative;
   padding-left: 30px;
-  list-style: none;
+  list-style: ${props => props.list};
   height: 100%;
   transition: 0.2s;
   ${props =>
@@ -40,11 +40,16 @@ export const List = styled.ul`
   ${props =>
     props.device === `mobile` &&
     css`
-      width: 100%;
+      width: 95%;
       padding-left: 0;
       background-color: white;
       z-index: 4;
     `}
+    ${props =>
+      props.list === `rectangle` &&
+      css`
+        padding-left: 5%;
+      `}
 `
 export const ListItem = styled.li``
 

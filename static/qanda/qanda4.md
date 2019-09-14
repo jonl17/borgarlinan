@@ -6,4 +6,5 @@ subject: ["Hugmyndafræðin á bakvið Borgarlínu og nýtt skilvirkt almennings
 more: ""
 englishTitle: "What is the ideology behind Borgarlínan?"
 englishSubject: ["The ideology behind Borgarlínan and the new, effective public transport system is to ensure that inhabitants of the capital area can always travel between different centres in an efficient and sustainable manner."]
+list: "none"
 ---

@@ -6,4 +6,5 @@ subject: ["Náin samvinna er á milli Verkefnastofu Borgarlínu og Strætó bs. 
 more: ""
 englishTitle: "What about Strætó?"
 englishSubject: ["The Borgarlínan Project Team works closely with the Capital area bus company, Strætó bs, with the goal of creating a comprehensive, two layered transportation system within the area. On one hand Borgarlínan‘s BRT system and main bus routes and on the other hand local bus routes. A working group for a new, comprehensive route network of Borgarlínan and Strætó began reviewing the public transport network in early 2019. Developments for the Borgarlínan and the new route network are planned to be well on their way by 2021, and in use by 2023."]
+list: "none"
 ---

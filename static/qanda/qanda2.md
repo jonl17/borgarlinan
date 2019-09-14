@@ -6,4 +6,5 @@ subject: ["Borgarlínuverkefnið er hluti af samgöngusamningi sveitarfélaganna
 more: ""
 englishTitle: "Who is leading the Borgarlínan project?"
 englishSubject: ["The Borgarlínan project is a part of the Transport Agreement between the Capital area municipalities and the Icelandic State, which entails a major effort being put into transportation over the next 15 years. Analysis and preparation have begun, and project design will commence in 2020."]
+list: "none"
 ---

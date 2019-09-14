@@ -15,7 +15,7 @@ export const Container = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      width: 95%;
+      width: 90%;
       margin: 25px auto 50px auto;
     `}
 `
