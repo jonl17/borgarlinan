@@ -10,7 +10,10 @@ const GetNews = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: { frontmatter: { type: { eq: "news" } } }) {
+        allMarkdownRemark(
+          filter: { frontmatter: { type: { eq: "news" } } }
+          sort: { fields: frontmatter___order, order: ASC }
+        ) {
           edges {
             node {
               frontmatter {

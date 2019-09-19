@@ -114,15 +114,16 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "about" } } }
-      sort: { fields: frontmatter___order }
+      sort: { fields: frontmatter___order, order: ASC }
     ) {
       edges {
         node {
           frontmatter {
             title
-            subject
             englishTitle
+            subject
             englishSubject
+            type
             order
           }
         }
