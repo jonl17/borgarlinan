@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setDevice } from "../../state/actions"
 
 class Setter extends React.Component {
   render() {
