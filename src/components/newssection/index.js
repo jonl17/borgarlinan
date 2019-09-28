@@ -12,7 +12,7 @@ const GetNews = () => (
       query {
         allMarkdownRemark(
           filter: { frontmatter: { type: { eq: "news" } } }
-          sort: { fields: frontmatter___order, order: ASC }
+          sort: { fields: frontmatter___order, order: DESC }
         ) {
           edges {
             node {
@@ -21,6 +21,10 @@ const GetNews = () => (
                 subject
                 type
                 dagsetning
+                timetable {
+                  dest
+                  time
+                }
               }
             }
           }

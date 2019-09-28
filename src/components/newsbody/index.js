@@ -1,5 +1,13 @@
 import React from "react"
-import { Body, Date, NewsTitle, Paragraph, Line } from "./Styled"
+import {
+  Body,
+  Date,
+  NewsTitle,
+  Paragraph,
+  Line,
+  TimetablePara,
+  Timetable,
+} from "./Styled"
 import { getPosition } from "../../methods"
 import { connect } from "react-redux"
 
@@ -62,6 +70,16 @@ class NewsBody extends React.Component {
             {para}
           </Paragraph>
         ))}
+        {item.node.frontmatter.timetable != null ? (
+          item.node.frontmatter.timetable.map((item, index) => (
+            <Timetable key={index} device={device}>
+              <TimetablePara dest>{item.dest}</TimetablePara>
+              <TimetablePara time>{item.time}</TimetablePara>
+            </Timetable>
+          ))
+        ) : (
+          <></>
+        )}
         {device !== `mobile` ? (
           <Line
             ref={lineref => (this.lineref = lineref)}

@@ -46,6 +46,27 @@ export const Paragraph = styled.p`
       font-size: 15px;
     `}
 `
+export const TimetablePara = styled.p`
+  color: ${styles.Gray};
+  line-height: 160%;
+  font-size: 18px;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      font-size: 15px;
+    `}
+`
+export const Timetable = styled.div`
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 75%;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 100%;
+    `}
+`
 export const Line = styled.div`
 ${props =>
   props.action === `full` &&
