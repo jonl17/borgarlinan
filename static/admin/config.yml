@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  repo: jonl17/borgarlinan
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "frettir"
+    label: "Fréttir"
+    folder: "content/frettir"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titill", name: "titill", widget: "string" }
+      - { label: "Dagsetning", name: "date", widget: "datetime" }
+      - { label: "Texti", name: "texti", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
