@@ -9,7 +9,7 @@ const AboutBody = ({ title, subject, device }) => {
       </Title>
       {subject.map((item, index) => (
         <Paragraph key={index} device={device}>
-          {item}
+          {item.malsgrein}
         </Paragraph>
       ))}
     </Container>

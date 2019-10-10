@@ -19,43 +19,33 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `schemadata`,
-        path: `${__dirname}/static/schemadata/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `data`,
         path: `${__dirname}/static/data/`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-wordpress",
       options: {
-        name: `qanda`,
-        path: `${__dirname}/static/qanda/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `news`,
-        path: `${__dirname}/static/news/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `staff`,
-        path: `${__dirname}/static/staff/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `about`,
-        path: `${__dirname}/static/about/`,
+        baseUrl: "dev.borgarlinan.is",
+        protocol: "http",
+        hostingWPCOM: false,
+        useACF: true,
+        acfOptionPageIds: [],
+        verboseOutput: false,
+        perPage: 100,
+        concurrentRequests: 10,
+        includedRoutes: [
+          "**/media",
+          "**/posts",
+          "**/qanda",
+          "**/news",
+          "**/starfsfolk",
+          "**/pages",
+          "**/hopar",
+        ],
+        normalizer: function({ entities }) {
+          return entities
+        },
       },
     },
 
@@ -69,6 +59,5 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-netlify-cms`,
   ],
 }

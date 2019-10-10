@@ -8,21 +8,15 @@ const GetStaff = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
-          filter: { frontmatter: { type: { eq: "staff" } } }
-          sort: { fields: frontmatter___order }
-        ) {
+        allWordpressWpStarfsfolk(sort: { fields: acf___nafn, order: ASC }) {
           edges {
             node {
-              frontmatter {
-                title
-                job
-                englishJob
-                subjob
-                subjobEnglish
-                email
-                order
-                type
+              acf {
+                nafn
+                starf
+                starf_enska
+                netfang
+                verkefnastjori
               }
             }
           }
@@ -30,7 +24,7 @@ const GetStaff = () => (
       }
     `}
     render={data =>
-      data.allMarkdownRemark.edges.map((staff, index) => (
+      data.allWordpressWpStarfsfolk.edges.map((staff, index) => (
         <StaffBody key={index} staff={staff.node}></StaffBody>
       ))
     }

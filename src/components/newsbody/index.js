@@ -61,20 +61,20 @@ class NewsBody extends React.Component {
         ref={newsEl => (this.newsEl = newsEl)}
         even={this.isEven(no)}
       >
-        <Date device={device}>{item.node.frontmatter.dagsetning}</Date>
+        <Date device={device}>{item.node.date}</Date>
         <NewsTitle device={device} className="bold">
-          {item.node.frontmatter.title}
+          {item.node.acf.fyrirsogn}
         </NewsTitle>
-        {item.node.frontmatter.subject.map((para, index) => (
+        {item.node.acf.samfelldur_texti.map((para, index) => (
           <Paragraph device={device} key={index}>
-            {para}
+            {para.malsgrein}
           </Paragraph>
         ))}
-        {item.node.frontmatter.timetable != null ? (
-          item.node.frontmatter.timetable.map((item, index) => (
+        {item.node.acf.tafla ? (
+          item.node.acf.taflan.map((item, index) => (
             <Timetable key={index} device={device}>
-              <TimetablePara dest>{item.dest}</TimetablePara>
-              <TimetablePara time>{item.time}</TimetablePara>
+              <TimetablePara dest>{item.afangasta_ur}</TimetablePara>
+              <TimetablePara time>{item.timi}</TimetablePara>
             </Timetable>
           ))
         ) : (

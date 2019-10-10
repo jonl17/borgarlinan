@@ -10,20 +10,19 @@ const GetNews = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
-          filter: { frontmatter: { type: { eq: "news" } } }
-          sort: { fields: frontmatter___order, order: DESC }
-        ) {
+        allWordpressWpNews(sort: { fields: date, order: DESC }) {
           edges {
             node {
-              frontmatter {
-                title
-                subject
-                type
-                dagsetning
-                timetable {
-                  dest
-                  time
+              date(formatString: "DD.MM.Y")
+              acf {
+                fyrirsogn
+                samfelldur_texti {
+                  malsgrein
+                }
+                tafla
+                taflan {
+                  afangasta_ur
+                  timi
                 }
               }
             }
@@ -32,7 +31,7 @@ const GetNews = () => (
       }
     `}
     render={data =>
-      data.allMarkdownRemark.edges.map((item, index) => (
+      data.allWordpressWpNews.edges.map((item, index) => (
         <NewsBody no={index} key={index} item={item}></NewsBody>
       ))
     }

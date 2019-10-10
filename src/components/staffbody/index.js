@@ -4,18 +4,19 @@ import { connect } from "react-redux"
 
 const index = ({
   staff: {
-    frontmatter: { title, job, subjob, email, englishJob, subjobEnglish },
+    acf: { nafn, starf, verkefnastjori, netfang, starf_enska },
   },
-  device,
   language,
 }) => {
   return (
     <Container>
-      <Name className="bold">{title}</Name>
-      <Job>{language === `icelandic` ? job : englishJob}</Job>
-      <Mail href={"mailto:" + email}>{email}</Mail>
-      {subjob !== null ? (
-        <SubJob>{language === `icelandic` ? subjob : subjobEnglish}</SubJob>
+      <Name className="bold">{nafn}</Name>
+      <Job>{language === `icelandic` ? starf : starf_enska}</Job>
+      <Mail href={"mailto:" + netfang}>{netfang}</Mail>
+      {verkefnastjori ? (
+        <SubJob>
+          {language === `icelandic` ? "Verkefnastjóri" : "Project Manager"}
+        </SubJob>
       ) : (
         <></>
       )}

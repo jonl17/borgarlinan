@@ -1,12 +1,16 @@
 import React from "react"
 import { Body, Title, Paragraph } from "./Styled"
 
-const SchemaBody = ({ schemas }) => {
+const SchemaBody = ({
+  schemas: {
+    acf: { titill, lysing },
+  },
+}) => {
   return (
     <Body>
       <Paragraph>
-        <Title className="bold">{schemas.frontmatter.title}</Title>
-        {schemas.frontmatter.text}
+        <Title className="bold">{titill} </Title>
+        {lysing}
       </Paragraph>
     </Body>
   )

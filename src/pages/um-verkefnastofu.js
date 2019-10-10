@@ -73,7 +73,14 @@ class UmVerkefnaStofu extends React.Component {
       device,
       language,
       data: {
-        allMarkdownRemark: { edges },
+        wordpressPage: {
+          acf: {
+            fyrirsogn,
+            fyrirsogn_enska,
+            samfelldur_texti,
+            samfelldur_texti_enska,
+          },
+        },
       },
     } = this.props
     return (
@@ -81,22 +88,14 @@ class UmVerkefnaStofu extends React.Component {
         <Burger></Burger>
         <BurgerMenu></BurgerMenu>
         <Menu page={"um-verkefnastofu"}></Menu>
-        {edges.map((item, index) => (
-          <AboutBody
-            device={device}
-            key={index}
-            title={
-              language === `icelandic`
-                ? item.node.frontmatter.title
-                : item.node.frontmatter.englishTitle
-            }
-            subject={
-              language === `icelandic`
-                ? item.node.frontmatter.subject
-                : item.node.frontmatter.englishSubject
-            }
-          ></AboutBody>
-        ))}
+        <AboutBody
+          device={device}
+          title={language === `icelandic` ? fyrirsogn : fyrirsogn_enska}
+          subject={
+            language === `icelandic` ? samfelldur_texti : samfelldur_texti_enska
+          }
+        ></AboutBody>
+
         <Background>
           <ImageContainer device={device}>
             <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
@@ -112,20 +111,15 @@ class UmVerkefnaStofu extends React.Component {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "about" } } }
-      sort: { fields: frontmatter___order, order: ASC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            englishTitle
-            subject
-            englishSubject
-            type
-            order
-          }
+    wordpressPage(title: { eq: "Um Verkefnastofu" }) {
+      acf {
+        fyrirsogn
+        fyrirsogn_enska
+        samfelldur_texti {
+          malsgrein
+        }
+        samfelldur_texti_enska {
+          malsgrein
         }
       }
     }

@@ -9,20 +9,19 @@ const GetQandA = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
-          filter: { frontmatter: { type: { eq: "qanda" } } }
-          sort: { fields: frontmatter___order }
-        ) {
+        allWordpressWpQanda(sort: { fields: date, order: ASC }) {
           edges {
             node {
-              frontmatter {
-                title
-                subject
-                more
-                englishTitle
-                englishSubject
-                order
-                list
+              acf {
+                skraut
+                fyrirsogn
+                fyrirsogn_enska
+                samfelldur_texti {
+                  malsgrein
+                }
+                samfelldur_texti_enska {
+                  malsgrein_enska
+                }
               }
             }
           }
@@ -30,7 +29,7 @@ const GetQandA = () => (
       }
     `}
     render={data =>
-      data.allMarkdownRemark.edges.map((item, index) => (
+      data.allWordpressWpQanda.edges.map((item, index) => (
         <QandABody index={index} key={index} item={item}></QandABody>
       ))
     }

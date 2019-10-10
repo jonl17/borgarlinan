@@ -8,17 +8,12 @@ const GetSchemaData = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
-          filter: { frontmatter: { type: { eq: "schemadata" } } }
-          sort: { fields: frontmatter___order }
-        ) {
+        allWordpressWpHopar(sort: { fields: acf___titill }) {
           edges {
             node {
-              frontmatter {
-                title
-                text
-                order
-                type
+              acf {
+                titill
+                lysing
               }
             }
           }
@@ -26,7 +21,7 @@ const GetSchemaData = () => (
       }
     `}
     render={data =>
-      data.allMarkdownRemark.edges.map((item, index) => (
+      data.allWordpressWpHopar.edges.map((item, index) => (
         <SchemaBody key={index} schemas={item.node}></SchemaBody>
       ))
     }
