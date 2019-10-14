@@ -10,7 +10,7 @@ const Footer = ({ page }) => {
         </Item>
       ) : (
         <Item className="bold" to="/">
-          Borgarlína
+          Borgarlínan
         </Item>
       )}
     </Container>
