@@ -63,7 +63,7 @@ export const Text = styled.p`
     props.device === `mobile` &&
     css`
       width: 100%;
-      font-size: 15px;
+      font-size: 15px !important;
     `}
 `
 export const More = styled.div``
