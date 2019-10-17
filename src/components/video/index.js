@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, VideoStyle, Source, Blur } from "./Styled"
-import theVideo from "./video.webm"
+import browserVideo from "./browser.webm"
 import { connect } from "react-redux"
 import { setWhitelineStop } from "../../state/actions"
 
@@ -18,11 +18,15 @@ class Video extends React.Component {
           muted
           loop
         >
-          <Source src={theVideo}></Source>
+          <Source src={browserVideo}></Source>
         </VideoStyle>
       </Container>
     )
   }
 }
 
-export default connect()(Video)
+const mapStateToProps = state => ({
+  device: state.reducer.device,
+})
+
+export default connect(mapStateToProps)(Video)
