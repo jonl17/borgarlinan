@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, VideoStyle, Source, Blur } from "./Styled"
-import browserVideo from "./browser.webm"
+import videoWEBM from "./browser.webm"
 import videoMP4 from "./video.mp4"
 import { connect } from "react-redux"
 import { setWhitelineStop } from "../../state/actions"
@@ -19,8 +19,8 @@ class Video extends React.Component {
           muted
           loop
         >
-          <Source src={videoMP4}></Source>
-          <Source src={browserVideo}></Source>
+          <Source type="video/webm" src={videoWEBM}></Source>
+          <Source type="video/mp4" src={videoMP4}></Source>
         </VideoStyle>
       </Container>
     )
