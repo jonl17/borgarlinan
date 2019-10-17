@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, VideoStyle, Source, Blur } from "./Styled"
-import theVideo from "./video.mp4"
+import theVideo from "./video.webm"
 import { connect } from "react-redux"
 import { setWhitelineStop } from "../../state/actions"
 
