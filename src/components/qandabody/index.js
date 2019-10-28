@@ -49,7 +49,7 @@ class QandABody extends React.Component {
                   </div>
                 ))}
           </List>
-          {item.node.acf.mynd !== null ? (
+          {item.node.acf.mynd !== undefined ? (
             <ImageContainer device={device}>
               <Image
                 fluid={item.node.acf.mynd.localFile.childImageSharp.fluid}
