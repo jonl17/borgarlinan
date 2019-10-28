@@ -31,6 +31,7 @@ export const List = styled.ul`
   list-style: ${props => props.list};
   height: 100%;
   transition: 0.2s;
+  width: 100%;
   ${props =>
     props.device === `tablet` &&
     css`
@@ -87,7 +88,8 @@ export const LineBlock = styled.div`
   z-index: -1;
 `
 export const ContentContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
   ${props =>
     props.device === `mobile` &&
     css`
@@ -96,6 +98,8 @@ export const ContentContainer = styled.div`
 `
 export const ImageContainer = styled.div`
   width: 100%;
+  display: grid;
+  margin: auto;
   ${props =>
     props.device === `mobile` &&
     css`
