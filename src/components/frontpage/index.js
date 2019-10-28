@@ -45,44 +45,41 @@ class Frontpage extends React.Component {
       whiteLineStop,
     } = this.props
     return (
-      console.log("Render: " + device),
-      (
-        <Container>
-          <Video></Video>
-          <>
-            <TitleContainer
+      <Container>
+        <Video></Video>
+        <>
+          <TitleContainer
+            device={device}
+            ref={this.titleElement}
+            height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
+          >
+            <Title
+              opacity={device === undefined ? 0 : 1}
+              className="bold"
               device={device}
-              ref={this.titleElement}
-              height={lineHeight >= firstLineStop ? firstLineStop : lineHeight}
             >
-              <Title
-                opacity={device === undefined ? 0 : 1}
-                className="bold"
-                device={device}
-              >
-                {title}
-              </Title>
-              <Title
-                opacity={device === undefined ? 0 : 1}
-                className="bold"
-                sub
-                device={device}
-              >
-                {subtitle}
-              </Title>
-            </TitleContainer>
-            <TitleContainer
+              {title}
+            </Title>
+            <Title
+              opacity={device === undefined ? 0 : 1}
+              className="bold"
+              sub
               device={device}
-              white
-              height={
-                lineHeight >= whiteLineStop - this.state.whiteLineOffset
-                  ? whiteLineStop - this.state.whiteLineOffset
-                  : lineHeight
-              }
-            ></TitleContainer>
-          </>
-        </Container>
-      )
+            >
+              {subtitle}
+            </Title>
+          </TitleContainer>
+          <TitleContainer
+            device={device}
+            white
+            height={
+              lineHeight >= whiteLineStop - this.state.whiteLineOffset
+                ? whiteLineStop - this.state.whiteLineOffset
+                : lineHeight
+            }
+          ></TitleContainer>
+        </>
+      </Container>
     )
   }
 }

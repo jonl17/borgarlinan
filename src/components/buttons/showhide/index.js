@@ -7,7 +7,6 @@ const openSesame = minimize => {
 }
 
 const ShowHide = ({ minimize, onClick }) => {
-  console.log(openSesame(minimize))
   return (
     <Container onClick={onClick()}>
       <Line></Line>
