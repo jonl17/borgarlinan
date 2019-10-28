@@ -93,6 +93,7 @@ export const ContentContainer = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
+      display: flex;
       flex-direction: column-reverse;
     `}
 `

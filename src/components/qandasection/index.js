@@ -23,6 +23,15 @@ const GetQandA = () => (
                   malsgrein_enska
                 }
                 baeta_vi__mynd
+                mynd {
+                  localFile {
+                    childImageSharp {
+                      fluid(traceSVG: { color: "white" }) {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                      }
+                    }
+                  }
+                }
               }
             }
           }

@@ -49,8 +49,12 @@ class QandABody extends React.Component {
                   </div>
                 ))}
           </List>
-          {item.node.acf.baeta_vi__mynd !== "ready-go-bobby" ? (
-            <ImageContainer device={device}></ImageContainer>
+          {item.node.acf.baeta_vi__mynd ? (
+            <ImageContainer device={device}>
+              <Image
+                fluid={item.node.acf.mynd.localFile.childImageSharp.fluid}
+              ></Image>
+            </ImageContainer>
           ) : (
             <></>
           )}
