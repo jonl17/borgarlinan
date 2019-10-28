@@ -26,8 +26,8 @@ export const Title = styled.h1`
 `
 export const Grid = styled.div`
   display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
   ${props =>
     props.device === `mobile` &&
     css`

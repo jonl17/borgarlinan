@@ -22,6 +22,7 @@ const GetQandA = () => (
                 samfelldur_texti_enska {
                   malsgrein_enska
                 }
+                baeta_vi__mynd
               }
             }
           }
