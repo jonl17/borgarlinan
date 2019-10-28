@@ -13,6 +13,15 @@ const GetQandA = () => (
           edges {
             node {
               acf {
+                mynd {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
                 skraut
                 fyrirsogn
                 fyrirsogn_enska

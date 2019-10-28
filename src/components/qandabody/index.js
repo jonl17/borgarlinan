@@ -9,6 +9,9 @@ import {
   More,
   LineBlock,
   Line,
+  Image,
+  ContentContainer,
+  ImageContainer,
 } from "./Styled"
 import { connect } from "react-redux"
 
@@ -25,26 +28,37 @@ class QandABody extends React.Component {
               : item.node.acf.fyrirsogn_enska}
           </Title>
         </Group>
-        <List
-          list={item.node.acf.skraut ? "rectangle" : "none"}
-          device={device}
-        >
-          {language === "icelandic"
-            ? item.node.acf.samfelldur_texti.map((subj, index) => (
-                <div key={index}>
-                  <ListItem key={index}>
-                    <Text device={device}>{subj.malsgrein}</Text>
-                  </ListItem>
-                </div>
-              ))
-            : item.node.acf.samfelldur_texti_enska.map((subj, index) => (
-                <div key={index}>
-                  <ListItem key={index}>
-                    <Text device={device}>{subj.malsgrein_enska}</Text>
-                  </ListItem>
-                </div>
-              ))}
-        </List>
+        <ContentContainer device={device}>
+          <List
+            list={item.node.acf.skraut ? "rectangle" : "none"}
+            device={device}
+          >
+            {language === "icelandic"
+              ? item.node.acf.samfelldur_texti.map((subj, index) => (
+                  <div key={index}>
+                    <ListItem key={index}>
+                      <Text device={device}>{subj.malsgrein}</Text>
+                    </ListItem>
+                  </div>
+                ))
+              : item.node.acf.samfelldur_texti_enska.map((subj, index) => (
+                  <div key={index}>
+                    <ListItem key={index}>
+                      <Text device={device}>{subj.malsgrein_enska}</Text>
+                    </ListItem>
+                  </div>
+                ))}
+          </List>
+          {item.node.acf.mynd !== null ? (
+            <ImageContainer device={device}>
+              <Image
+                fluid={item.node.acf.mynd.localFile.childImageSharp.fluid}
+              ></Image>
+            </ImageContainer>
+          ) : (
+            <></>
+          )}
+        </ContentContainer>
         <More></More>
         <LineBlock>
           <Line></Line>

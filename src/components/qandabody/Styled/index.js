@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
+import Img from "gatsby-image"
 
 /* each news item */
 export const Body = styled.div`
@@ -85,3 +86,20 @@ export const LineBlock = styled.div`
   height: 100%;
   z-index: -1;
 `
+export const ContentContainer = styled.div`
+  display: flex;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      flex-direction: column-reverse;
+    `}
+`
+export const ImageContainer = styled.div`
+  width: 100%;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      max-width: 90%;
+    `}
+`
+export const Image = styled(Img)``
