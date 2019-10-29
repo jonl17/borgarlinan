@@ -24,6 +24,7 @@ const GetQandA = () => (
                 }
                 baeta_vi__mynd
                 mynd {
+                  caption
                   localFile {
                     childImageSharp {
                       fluid(traceSVG: { color: "white" }) {

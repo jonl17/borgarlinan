@@ -12,10 +12,14 @@ import {
   Image,
   ContentContainer,
   ImageContainer,
+  Caption,
 } from "./Styled"
 import { connect } from "react-redux"
 
 class QandABody extends React.Component {
+  cleanCaption(caption) {
+    return caption.replace("<p>", "").replace("</p>", "")
+  }
   render() {
     const { item, index, language, device } = this.props
     return (
@@ -54,6 +58,7 @@ class QandABody extends React.Component {
               <Image
                 fluid={item.node.acf.mynd.localFile.childImageSharp.fluid}
               ></Image>
+              <Caption>{this.cleanCaption(item.node.acf.mynd.caption)}</Caption>
             </ImageContainer>
           ) : (
             <></>

@@ -108,3 +108,10 @@ export const ImageContainer = styled.div`
     `}
 `
 export const Image = styled(Img)``
+export const Caption = styled.p`
+  font-size: 14px;
+  color: gray;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+`
