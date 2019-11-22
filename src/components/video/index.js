@@ -12,7 +12,6 @@ import videoMP4 from "./video.mp4"
 import { connect } from "react-redux"
 import { setWhitelineStop } from "../../state/actions"
 import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
 
 class Video extends React.Component {
   componentDidMount() {
