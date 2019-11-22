@@ -24,6 +24,41 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `frettir`,
+        path: `${__dirname}/static/content/frettir`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `spurt_og_svarad`,
+        path: `${__dirname}/static/content/spurt_og_svarad`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `hopar`,
+        path: `${__dirname}/static/content/hopar`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `starfsfolk`,
+        path: `${__dirname}/static/content/starfsfolk`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `verkefnastofa_borgarlinu`,
+        path: `${__dirname}/static/content/verkefnastofa_borgarlinu`,
+      },
+    },
+    {
       resolve: "gatsby-source-wordpress",
       options: {
         baseUrl: "dev.borgarlinan.is",
@@ -60,5 +95,6 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }

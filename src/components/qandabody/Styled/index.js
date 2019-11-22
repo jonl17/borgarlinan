@@ -18,6 +18,7 @@ export const Title = styled.p`
   padding-bottom: 15px;
   padding-top: 15px;
   background-color: white;
+  z-index: 4;
   ${props =>
     props.device === `mobile` &&
     css`

@@ -6,8 +6,10 @@ export const Container = styled.div`
   margin: 0;
   display: grid;
   z-index: 4;
+  position: relative;
 `
 export const TitleContainer = styled.div`
+  z-index: 2;
   height: ${props =>
     props.height === undefined ? "0px" : props.height + "px"};
   position: absolute;
@@ -92,3 +94,5 @@ export const Title = styled.h1`
           `}
       `}
 `
+
+/** Blur */

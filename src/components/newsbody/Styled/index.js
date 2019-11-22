@@ -30,6 +30,7 @@ export const Date = styled.p`
 export const NewsTitle = styled.h1`
   color: ${styles.Blue};
   font-size: 45px;
+  z-index: 4;
   ${props =>
     props.device === `mobile` &&
     css`
@@ -43,7 +44,7 @@ export const Paragraph = styled.p`
   ${props =>
     props.device === `mobile` &&
     css`
-      font-size: 15px;
+      font-size: 15px !important;
     `}
 `
 export const TimetablePara = styled.p`
