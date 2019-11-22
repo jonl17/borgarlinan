@@ -14,7 +14,7 @@ collections:
       - { label: "Titill(enska)", name: "title_enska", widget: "string" }
       - { label: "Mynd", name: "mynd", widget: "image" }
       - { label: "Texti", name: "body", widget: "markdown" }
-      - { label: "Texti(enska)", name: "body", widget: "markdown" }
+      - { label: "Texti(enska)", name: "body_enska", widget: "markdown" }
   - name: "frettir"
     label: "Fréttir"
     folder: "static/content/frettir"
@@ -36,7 +36,7 @@ collections:
       - { label: "Titill", name: "title", widget: "string" }
       - { label: "Texti", name: "body", widget: "markdown" }
       - { label: "Titill(Enska)", name: "title_english", widget: "string" }
-      - { label: "Texti(Enska)", name: "body", widget: "markdown" }
+      - { label: "Texti(Enska)", name: "body_enska", widget: "markdown" }
   - name: "hopar"
     label: "Hópar"
     folder: "static/content/hopar"
