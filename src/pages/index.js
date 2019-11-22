@@ -14,7 +14,10 @@ import { connect } from "react-redux"
 import { setStart, getHeight, setLineHeight } from "../state/actions"
 import { triggerBurgerMenu, setDevice } from "../state/actions"
 
-const Body = styled.div``
+const Body = styled.div`
+  position: relative;
+  overflow: hidden;
+`
 
 class index extends React.Component {
   constructor(props) {

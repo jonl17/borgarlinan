@@ -13,6 +13,7 @@ const GetNews = () => (
         allWordpressWpNews(sort: { fields: date, order: DESC }) {
           edges {
             node {
+              content
               date(formatString: "DD.MM.Y")
               acf {
                 fyrirsogn

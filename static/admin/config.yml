@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+
+media_folder: "static/data"
+public_folder: "data"
+
+collections:
+  - name: "spurt_og_svarad"
+    label: "Spurt & Svarað"
+    folder: "static/content/spurt_og_svarad"
+    create: true
+    fields:
+      - { label: "Titill", name: "title", widget: "string" }
+      - { label: "Titill(enska)", name: "title_enska", widget: "string" }
+      - { label: "Mynd", name: "mynd", widget: "image" }
+      - { label: "Texti", name: "body", widget: "markdown" }
+      - { label: "Texti(enska)", name: "body", widget: "markdown" }
+  - name: "frettir"
+    label: "Fréttir"
+    folder: "static/content/frettir"
+    create: true
+    fields:
+      - { label: "Titill", name: "title", widget: "string" }
+      - {
+          label: "Dagsetning fréttar",
+          name: "dagsetning",
+          widget: "datetime",
+          format: "DD.MM.YYYY",
+        }
+      - { label: "Texti", name: "body", widget: "markdown" }
+  - name: "verkefnastofa_borgarlinu"
+    label: "Verkefnastofa Borgarlínu"
+    folder: "static/content/verkefnastofa_borgarlinu"
+    create: true
+    fields:
+      - { label: "Titill", name: "title", widget: "string" }
+      - { label: "Texti", name: "body", widget: "markdown" }
+      - { label: "Titill(Enska)", name: "title_english", widget: "string" }
+      - { label: "Texti(Enska)", name: "body", widget: "markdown" }
+  - name: "hopar"
+    label: "Hópar"
+    folder: "static/content/hopar"
+    create: true
+    fields:
+      - { label: "Nafn", name: "title", widget: "string" }
+      - { label: "Texti", name: "texti", widget: "text" }
+  - name: "starfsfolk"
+    label: "Starfsfólk"
+    folder: "static/content/starfsfolk"
+    create: true
+    fields:
+      - { label: "Nafn", name: "title", widget: "string" }
+      - { label: "Starfslýsing", name: "starfslysing", widget: "string" }
+      - {
+          label: "Starfslýsing(Enska)",
+          name: "starfslysing_enska",
+          widget: "string",
+        }
+      - { label: "Netfang", name: "netfang", widget: "string" }
