@@ -26,10 +26,9 @@ export const Title = styled.p`
       width: 100%;
     `}
 `
-export const List = styled.ul`
+export const Texti = styled.div`
   position: relative;
   padding-left: 30px;
-  list-style: ${props => props.list};
   height: 100%;
   transition: 0.2s;
   width: 100%;
