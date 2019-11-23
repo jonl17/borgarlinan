@@ -69,6 +69,7 @@ export const Timetable = styled.div`
     `}
 `
 export const Line = styled.div`
+  pointer-events: none;
 ${props =>
   props.action === `full` &&
   css`

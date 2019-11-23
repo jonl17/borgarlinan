@@ -9,6 +9,7 @@ export const Container = styled.div`
   position: relative;
 `
 export const TitleContainer = styled.div`
+  pointer-events: none;
   z-index: 2;
   height: ${props =>
     props.height === undefined ? "0px" : props.height + "px"};
