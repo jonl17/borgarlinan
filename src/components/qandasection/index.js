@@ -8,29 +8,19 @@ import { graphql, StaticQuery } from "gatsby"
 const GetQandA = () => (
   <StaticQuery
     query={graphql`
-      query {
-        allWordpressWpQanda(sort: { fields: date, order: ASC }) {
-          edges {
-            node {
-              acf {
-                skraut
-                fyrirsogn
-                fyrirsogn_enska
-                samfelldur_texti {
-                  malsgrein
-                }
-                samfelldur_texti_enska {
-                  malsgrein_enska
-                }
-                baeta_vi__mynd
-                mynd {
-                  caption
-                  localFile {
-                    childImageSharp {
-                      fluid(traceSVG: { color: "white" }) {
-                        ...GatsbyImageSharpFluid_tracedSVG
-                      }
-                    }
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/spurt_og_svarad/" } }
+        ) {
+          nodes {
+            html
+            frontmatter {
+              title
+              title_enska
+              mynd {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -40,7 +30,7 @@ const GetQandA = () => (
       }
     `}
     render={data =>
-      data.allWordpressWpQanda.edges.map((item, index) => (
+      data.allMarkdownRemark.nodes.map((item, index) => (
         <QandABody index={index} key={index} item={item}></QandABody>
       ))
     }
