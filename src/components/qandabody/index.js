@@ -10,9 +10,9 @@ import {
   Image,
   ContentContainer,
   ImageContainer,
-  Caption,
 } from "./Styled"
 import { connect } from "react-redux"
+import "./index.css"
 
 class QandABody extends React.Component {
   render() {
@@ -22,6 +22,7 @@ class QandABody extends React.Component {
       language,
       device,
     } = this.props
+    console.log(html)
     return (
       <Body device={device} key={index}>
         <Group>
@@ -33,7 +34,11 @@ class QandABody extends React.Component {
           </Title>
         </Group>
         <ContentContainer device={device}>
-          <Texti dangerouslySetInnerHTML={{ __html: html }}></Texti>
+          <Texti
+            device={device}
+            className="spurt-og-svarad-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></Texti>
           <ImageContainer device={device}>
             <Image fluid={frontmatter.mynd.childImageSharp.fluid}></Image>
           </ImageContainer>

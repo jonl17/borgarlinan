@@ -101,11 +101,6 @@ export const ImageContainer = styled.div`
   width: 100%;
   display: grid;
   margin: auto;
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      max-width: 90%;
-    `}
 `
 export const Image = styled(Img)``
 export const Caption = styled.p`
