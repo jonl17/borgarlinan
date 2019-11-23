@@ -1,6 +1,6 @@
 ---
 title: Prufa
-mynd: /data/temp.png
+mynd: /data/borgarlina_infographic_2b.jpg
 ---
 **Svona** mun þetta vera: [Vísir](www.visir.is).
 
