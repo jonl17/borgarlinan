@@ -37,6 +37,7 @@ export const NewsTitle = styled.h1`
       font-size: 30px;
     `}
 `
+export const Content = styled.div``
 export const Paragraph = styled.p`
   color: ${styles.Gray};
   line-height: 160%;
