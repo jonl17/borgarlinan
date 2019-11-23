@@ -19,7 +19,6 @@ class QandABody extends React.Component {
     const {
       item: { frontmatter, html },
       index,
-      language,
       device,
     } = this.props
     console.log(html)
@@ -28,9 +27,7 @@ class QandABody extends React.Component {
         <Group>
           <Title device={device} className="bold">
             {index + 1 + ". "}
-            {language === "icelandic"
-              ? frontmatter.title
-              : frontmatter.title_enska}
+            {frontmatter.title}
           </Title>
         </Group>
         <ContentContainer device={device}>
