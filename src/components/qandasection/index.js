@@ -10,13 +10,13 @@ const GetQandA = () => (
     query={graphql`
       {
         allMarkdownRemark(
+          sort: { fields: frontmatter___dagsetning, order: DESC }
           filter: { fileAbsolutePath: { regex: "/spurt_og_svarad/" } }
         ) {
           nodes {
             html
             frontmatter {
               title
-              title_enska
               mynd {
                 childImageSharp {
                   fluid {

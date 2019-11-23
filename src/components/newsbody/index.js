@@ -1,15 +1,8 @@
 import React from "react"
-import {
-  Body,
-  Date,
-  NewsTitle,
-  Paragraph,
-  Line,
-  TimetablePara,
-  Timetable,
-} from "./Styled"
+import { Body, Date, NewsTitle, Line, Content } from "./Styled"
 import { getPosition } from "../../methods"
 import { connect } from "react-redux"
+import "./index.css"
 
 class NewsBody extends React.Component {
   constructor(props) {
@@ -54,32 +47,25 @@ class NewsBody extends React.Component {
     }
   }
   render() {
-    const { item, no, device } = this.props
+    const {
+      item: { frontmatter, html },
+      no,
+      device,
+    } = this.props
     return (
       <Body
         device={device}
         ref={newsEl => (this.newsEl = newsEl)}
         even={this.isEven(no)}
       >
-        <Date device={device}>{item.node.date}</Date>
+        <Date device={device}>{frontmatter.dagsetning}</Date>
         <NewsTitle device={device} className="bold">
-          {item.node.acf.fyrirsogn}
+          {frontmatter.title}
         </NewsTitle>
-        {item.node.acf.samfelldur_texti.map((para, index) => (
-          <Paragraph device={device} key={index}>
-            {para.malsgrein}
-          </Paragraph>
-        ))}
-        {item.node.acf.tafla ? (
-          item.node.acf.taflan.map((item, index) => (
-            <Timetable key={index} device={device}>
-              <TimetablePara dest>{item.afangasta_ur}</TimetablePara>
-              <TimetablePara time>{item.timi}</TimetablePara>
-            </Timetable>
-          ))
-        ) : (
-          <></>
-        )}
+        <Content
+          className="frettir-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></Content>
         {device !== `mobile` ? (
           <Line
             ref={lineref => (this.lineref = lineref)}

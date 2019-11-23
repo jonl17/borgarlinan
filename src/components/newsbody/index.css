@@ -1,0 +1,19 @@
+.frettir-content > * {
+  color: gray;
+  line-height: 160%;
+  font-size: 18px;
+}
+
+.frettir-content > * > a {
+  color: gray !important;
+  z-index: 8;
+}
+.frettir-content > ul {
+  list-style: square;
+}
+@media only screen and (max-width: 750px) {
+  /* device === mobile */
+  .frettir-content > * {
+    font-size: 15px !important;
+  }
+}

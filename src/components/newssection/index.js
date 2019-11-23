@@ -9,30 +9,23 @@ import { getPosition } from "../../methods"
 const GetNews = () => (
   <StaticQuery
     query={graphql`
-      query {
-        allWordpressWpNews(sort: { fields: date, order: DESC }) {
-          edges {
-            node {
-              content
-              date(formatString: "DD.MM.Y")
-              acf {
-                fyrirsogn
-                samfelldur_texti {
-                  malsgrein
-                }
-                tafla
-                taflan {
-                  afangasta_ur
-                  timi
-                }
-              }
+      {
+        allMarkdownRemark(
+          sort: { fields: frontmatter___dagsetning, order: DESC }
+          filter: { fileAbsolutePath: { regex: "/frettir/" } }
+        ) {
+          nodes {
+            html
+            frontmatter {
+              title
+              dagsetning
             }
           }
         }
       }
     `}
     render={data =>
-      data.allWordpressWpNews.edges.map((item, index) => (
+      data.allMarkdownRemark.nodes.map((item, index) => (
         <NewsBody no={index} key={index} item={item}></NewsBody>
       ))
     }
