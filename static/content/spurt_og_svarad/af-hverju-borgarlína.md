@@ -1,6 +1,7 @@
 ---
 title: 'Af hverju Borgarlína? '
 mynd: /data/borgarlina_infographic_4.jpg
+dagsetning: 22.11.2019
 ---
 Íbúum höfuðborgarsvæðisins mun fjölga um 70.000 til ársins 2040.
 
