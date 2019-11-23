@@ -10,6 +10,10 @@
 }
 .frettir-content > ul {
   list-style: square;
+  padding-left: 15px;
+}
+.frettir-content > ul > li {
+  padding-bottom: 15px;
 }
 @media only screen and (max-width: 750px) {
   /* device === mobile */

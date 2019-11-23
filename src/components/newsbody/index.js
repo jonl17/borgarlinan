@@ -58,7 +58,7 @@ class NewsBody extends React.Component {
         ref={newsEl => (this.newsEl = newsEl)}
         even={this.isEven(no)}
       >
-        <Date device={device}>{frontmatter.dagsetning}</Date>
+        <Date device={device}>{frontmatter.dagsetning.slice(0, 10)}</Date>
         <NewsTitle device={device} className="bold">
           {frontmatter.title}
         </NewsTitle>
