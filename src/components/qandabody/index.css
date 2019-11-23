@@ -4,12 +4,15 @@
     Might need to rethink this someday.
 
 */
+.spurt-og-svarad-content > * {
+  color: gray !important;
+}
 .spurt-og-svarad-content > p {
-  color: gray;
   font-size: 18px;
   line-height: 160%;
   width: 85%;
 }
+
 @media only screen and (max-width: 750px) {
   /* device === mobile */
   .spurt-og-svarad-content > p {

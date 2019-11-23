@@ -50,6 +50,7 @@ export const TitleContainer = styled.div`
 `
 export const Title = styled.h1`
   opacity: ${props => props.opacity};
+  transition: .3s;
   margin: 0 auto;
   font-size: 90px;
   color: white;
