@@ -1,7 +1,8 @@
 ---
 title: Samið við Mannvit og COWI um nýtt samgöngulíkan fyrir höfuðborgarsvæðið
-dagsetning: 15.08.2019
+dagsetning: 2019-08-15
 ---
+
 Í dag var gengið frá samningi við Mannvit og dönsku ráðgjafastofuna COWI um gerð nýs samgöngulíkans fyrir höfuðborgarsvæðið.
 
 Með nýju samgöngulíkani er stefnt að nákvæmari greiningum en hægt hefur verið að fá hingað til á samspili ólíkra ferðamáta. Líkanið er forsenda þess að hægt sé t.d. að meta samspil Borgarlínu og breytts leiðanets Strætó og verður jafnframt grunnur að greiningum á borð við leiðarskipulag, vagnastærðir, vagnafjölda, loftslagsáhrif, samfélagsleg áhrif og kostnaðarmat.

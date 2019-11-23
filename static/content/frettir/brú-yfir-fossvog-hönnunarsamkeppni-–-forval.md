@@ -1,7 +1,8 @@
 ---
-title: 'Brú yfir Fossvog, hönnunarsamkeppni – forval'
-dagsetning: 19.11.2019
+title: "Brú yfir Fossvog, hönnunarsamkeppni – forval"
+dagsetning: 2019-11-19
 ---
+
 Mikilvægur áfangi í leiðarkerfi Borgarlínu.
 
 Vegagerðin, Kópavogsbær og Reykjavíkurborg óska eftir ráðgjöfum til að taka þátt í samkeppni um hönnun brúar yfir Fossvog. Brúin mun tengja saman Kópavog við Reykjavík þar sem Borgarlína, gangandi og hjólandi vegfarendur munu ferðast yfir hana.
