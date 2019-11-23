@@ -1,6 +1,7 @@
 ---
 title: 'Borgarlína og Strætó '
 mynd: /data/borgarlina_infographic_8.jpg
+dagsetning: 19.11.2019
 ---
 Nýtt stofnleiðanet Strætó verður grunnur að framtíðarskipan Borgarlínu. Stofnleiðir ná yfir ólík hverfi og sveitarfélög með það markmið að almenningssamgöngur verði tíðari og skilvirkari.
 
