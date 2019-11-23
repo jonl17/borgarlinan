@@ -1,0 +1,7 @@
+---
+title: 'Borgarlína og Strætó '
+mynd: /data/borgarlina_infographic_8.jpg
+---
+Nýtt stofnleiðanet Strætó verður grunnur að framtíðarskipan Borgarlínu. Stofnleiðir ná yfir ólík hverfi og sveitarfélög með það markmið að almenningssamgöngur verði tíðari og skilvirkari.
+
+Meginhlutverk Borgarlínu verður að flytja fólk hratt og örugglega milli helstu kjarna og þróunarsvæða.  Mikilvægt er að tryggja gott aðgengi að stöðvum og móta aðlaðandi umhverfi.
