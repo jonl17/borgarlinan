@@ -21,7 +21,6 @@ class QandABody extends React.Component {
       index,
       device,
     } = this.props
-    console.log(html)
     return (
       <Body device={device} key={index}>
         <Group>

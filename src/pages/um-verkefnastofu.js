@@ -16,7 +16,7 @@ import {
   Background,
   ImageContainer,
   SVGImage,
-} from "./UmVerkefnastofuStyled"
+} from "../components/UmVerkefnastofuStyled"
 
 class UmVerkefnaStofu extends React.Component {
   constructor(props) {
