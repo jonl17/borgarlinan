@@ -1,5 +1,6 @@
 import React from "react"
-import { Container, Title, Paragraph } from "./Styled"
+import { Container, Title, Content } from "./Styled"
+import "./index.css"
 
 const AboutBody = ({ title, subject, device }) => {
   return (
@@ -7,11 +8,10 @@ const AboutBody = ({ title, subject, device }) => {
       <Title device={device} className="bold">
         {title}
       </Title>
-      {subject.map((item, index) => (
-        <Paragraph key={index} device={device}>
-          {item.malsgrein}
-        </Paragraph>
-      ))}
+      <Content
+        className="verkefnastofa-borgarlinu-content"
+        dangerouslySetInnerHTML={{ __html: subject }}
+      ></Content>
     </Container>
   )
 }

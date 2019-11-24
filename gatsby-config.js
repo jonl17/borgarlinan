@@ -72,29 +72,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-source-wordpress",
-      options: {
-        baseUrl: "dev.borgarlinan.is",
-        protocol: "http",
-        hostingWPCOM: false,
-        useACF: true,
-        acfOptionPageIds: [],
-        verboseOutput: false,
-        perPage: 100,
-        concurrentRequests: 10,
-        includedRoutes: [
-          "**/media",
-          "**/posts",
-          "**/starfsfolk",
-          "**/pages",
-          "**/hopar",
-        ],
-        normalizer: function({ entities }) {
-          return entities
-        },
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,

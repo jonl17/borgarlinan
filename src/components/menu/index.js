@@ -1,7 +1,6 @@
 import React from "react"
-import { Navbar, Item, Text, Button } from "./Styled"
+import { Navbar, Item, Text /*Button*/ } from "./Styled"
 import { connect } from "react-redux"
-import { setLanguage } from "../../state/actions"
 import { styles } from "../../constants"
 
 const Menu = ({ page, dispatch, device, language, burger }) => {
@@ -27,13 +26,13 @@ const Menu = ({ page, dispatch, device, language, burger }) => {
       >
         <Text className="bold">Um verkefnastofu</Text>
       </Item>
-      <Button
+      {/*<Button
         device={device}
         onClick={() => dispatch(setLanguage())}
         page={page}
       >
         <Text className="bold">IS/EN</Text>
-      </Button>
+      </Button> */}
     </Navbar>
   )
 }

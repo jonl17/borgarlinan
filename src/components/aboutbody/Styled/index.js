@@ -42,3 +42,4 @@ export const Paragraph = styled.p`
       font-size: 15px;
     `}
 `
+export const Content = styled.div``

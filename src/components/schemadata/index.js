@@ -7,22 +7,23 @@ import { connect } from "react-redux"
 const GetSchemaData = () => (
   <StaticQuery
     query={graphql`
-      query {
-        allWordpressWpHopar(sort: { fields: acf___titill }) {
-          edges {
-            node {
-              acf {
-                titill
-                lysing
-              }
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/hopar/" } }
+          sort: { fields: frontmatter___title }
+        ) {
+          nodes {
+            frontmatter {
+              title
+              texti
             }
           }
         }
       }
     `}
     render={data =>
-      data.allWordpressWpHopar.edges.map((item, index) => (
-        <SchemaBody key={index} schemas={item.node}></SchemaBody>
+      data.allMarkdownRemark.nodes.map((item, index) => (
+        <SchemaBody key={index} schemas={item.frontmatter}></SchemaBody>
       ))
     }
   ></StaticQuery>

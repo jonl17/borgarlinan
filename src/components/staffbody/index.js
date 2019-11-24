@@ -3,23 +3,14 @@ import { Container, Name, Job, SubJob, Mail } from "./Styled"
 import { connect } from "react-redux"
 
 const index = ({
-  staff: {
-    acf: { nafn, starf, verkefnastjori, netfang, starf_enska },
-  },
-  language,
+  staff: { title: nafn, starfslysing, netfang, verkefnastjori },
 }) => {
   return (
     <Container>
       <Name className="bold">{nafn}</Name>
-      <Job>{language === `icelandic` ? starf : starf_enska}</Job>
+      <Job>{starfslysing}</Job>
       <Mail href={"mailto:" + netfang}>{netfang}</Mail>
-      {verkefnastjori ? (
-        <SubJob>
-          {language === `icelandic` ? "Verkefnastjóri" : "Project Manager"}
-        </SubJob>
-      ) : (
-        <></>
-      )}
+      {verkefnastjori ? <SubJob>{"Verkefnastjóri"}</SubJob> : <></>}
     </Container>
   )
 }

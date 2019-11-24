@@ -1,17 +1,9 @@
 import React from "react"
-import { Navbar, Item, Text, Button } from "./Styled"
+import { Navbar, Item, Text /*Button*/ } from "./Styled"
 import { connect } from "react-redux"
-import { setLanguage } from "../../state/actions"
 import { styles } from "../../constants"
 
-const BurgerMenu = ({
-  page,
-  dispatch,
-  device,
-  language,
-  burger,
-  showBurgerMenu,
-}) => {
+const BurgerMenu = ({ page, device, burger, showBurgerMenu }) => {
   return (
     <Navbar show={showBurgerMenu} burger={burger} device={device}>
       <Item
@@ -34,13 +26,13 @@ const BurgerMenu = ({
       >
         <Text className="bold">Um verkefnastofu</Text>
       </Item>
-      <Button
+      {/*<Button
         device={device}
         onClick={() => dispatch(setLanguage())}
         page={page}
       >
         <Text className="bold">IS/EN</Text>
-      </Button>
+      </Button> */}
     </Navbar>
   )
 }

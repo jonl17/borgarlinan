@@ -1,0 +1,13 @@
+.verkefnastofa-borgarlinu-content > * {
+  color: gray;
+  line-height: 160%;
+  width: 75%;
+  font-size: 19px;
+}
+@media only screen and (max-width: 750px) {
+  .verkefnastofa-borgarlinu-content > * {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+}

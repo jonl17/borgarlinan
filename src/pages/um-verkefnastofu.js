@@ -1,7 +1,5 @@
 import React from "react"
 import Menu from "../components/menu"
-import { styles } from "../constants"
-import styled, { css } from "styled-components"
 import SVG from "../../static/data/svg/skipurit_skjar.svg"
 import Footer from "../components/footer"
 import { connect } from "react-redux"
@@ -13,45 +11,12 @@ import Burger from "../components/burger"
 import BurgerMenu from "../components/burgerMenu"
 import { triggerBurgerMenu } from "../state/actions"
 import SchemaData from "../components/schemadata"
-
-const Body = styled.div``
-
-const Background = styled.div`
-  height: 100%;
-  width: 100%;
-  background-color: ${styles.BackGroundGray};
-`
-
-const ImageContainer = styled.div`
-  height: 100%;
-  width: 1000px;
-  margin: auto;
-  box-sizing: border-box;
-  padding: 100px 0 100px 0;
-  display: grid;
-  background-color: ${styles.BackGroundGray};
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      padding: 100px 0 100px 0;
-      width: 95%;
-    `}
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      padding: 100px 0 100px 0;
-      width: 100%;
-    `}
-`
-const SVGImage = styled.img`
-  width: 100%;
-  margin: auto;
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      width: 100%;
-    `}
-`
+import {
+  Body,
+  Background,
+  ImageContainer,
+  SVGImage,
+} from "./UmVerkefnastofuStyled"
 
 class UmVerkefnaStofu extends React.Component {
   constructor(props) {
@@ -71,16 +36,8 @@ class UmVerkefnaStofu extends React.Component {
   render() {
     const {
       device,
-      language,
       data: {
-        wordpressPage: {
-          acf: {
-            fyrirsogn,
-            fyrirsogn_enska,
-            samfelldur_texti,
-            samfelldur_texti_enska,
-          },
-        },
+        markdownRemark: { frontmatter, html },
       },
     } = this.props
     return (
@@ -90,12 +47,9 @@ class UmVerkefnaStofu extends React.Component {
         <Menu page={"um-verkefnastofu"}></Menu>
         <AboutBody
           device={device}
-          title={language === `icelandic` ? fyrirsogn : fyrirsogn_enska}
-          subject={
-            language === `icelandic` ? samfelldur_texti : samfelldur_texti_enska
-          }
+          title={frontmatter.title}
+          subject={html}
         ></AboutBody>
-
         <Background>
           <ImageContainer device={device}>
             <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
@@ -110,17 +64,11 @@ class UmVerkefnaStofu extends React.Component {
 }
 
 export const query = graphql`
-  query {
-    wordpressPage(title: { eq: "Um Verkefnastofu" }) {
-      acf {
-        fyrirsogn
-        fyrirsogn_enska
-        samfelldur_texti {
-          malsgrein
-        }
-        samfelldur_texti_enska {
-          malsgrein
-        }
+  {
+    markdownRemark(fileAbsolutePath: { regex: "/verkefnastofa_borgarlinu/" }) {
+      html
+      frontmatter {
+        title
       }
     }
   }

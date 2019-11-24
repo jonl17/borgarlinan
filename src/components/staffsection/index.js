@@ -7,25 +7,25 @@ import { connect } from "react-redux"
 const GetStaff = () => (
   <StaticQuery
     query={graphql`
-      query {
-        allWordpressWpStarfsfolk(sort: { fields: acf___nafn, order: ASC }) {
-          edges {
-            node {
-              acf {
-                nafn
-                starf
-                starf_enska
-                netfang
-                verkefnastjori
-              }
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/starfsfolk/" } }
+          sort: { fields: frontmatter___title }
+        ) {
+          nodes {
+            frontmatter {
+              title
+              starfslysing
+              netfang
+              verkefnastjori
             }
           }
         }
       }
     `}
     render={data =>
-      data.allWordpressWpStarfsfolk.edges.map((staff, index) => (
-        <StaffBody key={index} staff={staff.node}></StaffBody>
+      data.allMarkdownRemark.nodes.map((staff, index) => (
+        <StaffBody key={index} staff={staff.frontmatter}></StaffBody>
       ))
     }
   ></StaticQuery>

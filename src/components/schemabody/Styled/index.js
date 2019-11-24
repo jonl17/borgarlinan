@@ -9,3 +9,4 @@ export const Paragraph = styled.p`
   color: ${styles.Gray};
   line-height: 160%;
 `
+export const Content = styled.span``
