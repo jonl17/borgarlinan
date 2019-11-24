@@ -67,6 +67,7 @@ class NewsSection extends React.Component {
       <PageContainer>
         <Container device={device}>
           <Title
+            device={device}
             className="bold"
             ref={titleElement => (this.titleElement = titleElement)}
           >

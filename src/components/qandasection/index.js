@@ -19,8 +19,8 @@ const GetQandA = () => (
               title
               mynd {
                 childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
+                  fluid(traceSVG: { color: "#BEDCC8" }) {
+                    ...GatsbyImageSharpFluid_tracedSVG
                   }
                 }
               }

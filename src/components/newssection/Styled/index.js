@@ -34,6 +34,11 @@ export const Title = styled.p`
   background-color: ${styles.BackGroundGray};
   z-index: 8;
   margin: 25px 0 25px 0px;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      margin-left: 10px;
+    `}
 `
 /* tablet */
 export const ContainerTablet = styled(Container)`

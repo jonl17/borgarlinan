@@ -3,6 +3,7 @@ import { Body, Date, NewsTitle, Line, Content } from "./Styled"
 import { getPosition } from "../../methods"
 import { connect } from "react-redux"
 import "./index.css"
+import { formatDate } from "../../methods"
 
 class NewsBody extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class NewsBody extends React.Component {
       return "full"
     }
   }
+
   render() {
     const {
       item: { frontmatter, html },
@@ -58,7 +60,9 @@ class NewsBody extends React.Component {
         ref={newsEl => (this.newsEl = newsEl)}
         even={this.isEven(no)}
       >
-        <Date device={device}>{frontmatter.dagsetning.slice(0, 10)}</Date>
+        <Date device={device}>
+          {formatDate(frontmatter.dagsetning.slice(0, 10))}
+        </Date>
         <NewsTitle device={device} className="bold">
           {frontmatter.title}
         </NewsTitle>

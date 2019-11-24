@@ -8,3 +8,7 @@ export const getPosition = elem => {
 
   return { y: yPosition }
 }
+
+export const formatDate = date => {
+  return date.replace("-", "/").replace("-", "/")
+}
