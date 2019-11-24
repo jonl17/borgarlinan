@@ -52,17 +52,24 @@ class index extends React.Component {
 
   render() {
     const { title, subtitle } = this.props.data.site.siteMetadata
+    const { device } = this.props
     return (
       <>
         <SEO></SEO>
         <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
-          <Burger></Burger>
-          <BurgerMenu></BurgerMenu>
-          <Menu></Menu>
-          <Frontpage title={title} subtitle={subtitle}></Frontpage>
-          <QandASection></QandASection>
-          <NewsSection></NewsSection>
-          <Footer page={"frontpage"}></Footer>
+          {device !== undefined ? (
+            <>
+              <Burger></Burger>
+              <BurgerMenu></BurgerMenu>
+              <Menu></Menu>
+              <Frontpage title={title} subtitle={subtitle}></Frontpage>
+              <QandASection></QandASection>
+              <NewsSection></NewsSection>
+              <Footer page={"frontpage"}></Footer>{" "}
+            </>
+          ) : (
+            <></>
+          )}
         </Body>
       </>
     )
