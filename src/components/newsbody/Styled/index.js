@@ -38,37 +38,6 @@ export const NewsTitle = styled.h1`
     `}
 `
 export const Content = styled.div``
-export const Paragraph = styled.p`
-  color: ${styles.Gray};
-  line-height: 160%;
-  font-size: 18px;
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      font-size: 15px !important;
-    `}
-`
-export const TimetablePara = styled.p`
-  color: ${styles.Gray};
-  line-height: 160%;
-  font-size: 18px;
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      font-size: 15px;
-    `}
-`
-export const Timetable = styled.div`
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  width: 75%;
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      width: 100%;
-    `}
-`
 export const Line = styled.div`
   pointer-events: none;
 ${props =>
@@ -95,10 +64,4 @@ ${props =>
       border-left: 4px solid ${styles.LinuLitur};
       left: -10px;
     `}
-`
-/* tablet */
-
-export const BodyTablet = styled(Body)`
-  margin-left: 0;
-  padding-left: 0;
 `

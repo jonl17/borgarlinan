@@ -1,9 +1,3 @@
-.frettir-content > * {
-  color: gray;
-  line-height: 160%;
-  font-size: 18px;
-}
-
 .frettir-content > * > a {
   color: gray !important;
   z-index: 8;
@@ -20,4 +14,9 @@
   .frettir-content > * {
     font-size: 15px !important;
   }
+}
+.frettir-content > * {
+  color: gray;
+  line-height: 160%;
+  font-size: 18px;
 }
