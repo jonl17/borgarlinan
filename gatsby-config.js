@@ -86,7 +86,6 @@ module.exports = {
         includedRoutes: [
           "**/media",
           "**/posts",
-          "**/news",
           "**/starfsfolk",
           "**/pages",
           "**/hopar",

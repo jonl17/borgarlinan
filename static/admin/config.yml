@@ -65,3 +65,9 @@ collections:
       - { label: "Nafn", name: "title", widget: "string" }
       - { label: "Starfslýsing", name: "starfslysing", widget: "string" }
       - { label: "Netfang", name: "netfang", widget: "string" }
+      - {
+          label: "Verkefnastjóri",
+          name: "verkefnastjori",
+          widget: "boolean",
+          hint: "Hakaðu við þetta ef einstaklingur er verkefnastjóri",
+        }
