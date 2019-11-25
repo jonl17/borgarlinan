@@ -29,6 +29,11 @@ export const Grid = styled.div`
   grid-gap: 50px;
   grid-template-columns: repeat(4, 1fr);
   ${props =>
+    props.device === `tablet` &&
+    css`
+      grid-template-columns: repeat(3, 1fr);
+    `}
+  ${props =>
     props.device === `mobile` &&
     css`
       grid-template-columns: repeat(1, 1fr);
