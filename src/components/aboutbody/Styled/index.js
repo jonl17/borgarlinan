@@ -2,9 +2,9 @@ import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
 
 export const Container = styled.div`
-  margin: 125px auto 125px auto;
+  margin: 125px auto;
   display: grid;
-  width: 900px;
+  width: 1000px;
   ${props =>
     props.device === `tablet` &&
     css`
@@ -26,7 +26,6 @@ export const Title = styled.h1`
 export const Paragraph = styled.p`
   color: ${styles.Gray};
   line-height: 160%;
-  width: 75%;
   font-size: 19px;
   ${props =>
     props.device === `tablet` &&

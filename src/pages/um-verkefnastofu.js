@@ -50,13 +50,13 @@ class UmVerkefnaStofu extends React.Component {
           title={frontmatter.title}
           subject={html}
         ></AboutBody>
+        <StaffSection></StaffSection>
         <Background>
           <ImageContainer device={device}>
             <SVGImage device={device} src={SVG} alt="SVG"></SVGImage>
           </ImageContainer>
         </Background>
         <SchemaData></SchemaData>
-        <StaffSection></StaffSection>
         <Footer page={"infopage"}></Footer>
       </Body>
     )
