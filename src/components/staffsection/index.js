@@ -18,6 +18,13 @@ const GetStaff = () => (
               starfslysing
               netfang
               verkefnastjori
+              portrait_mynd {
+                childImageSharp {
+                  fixed(height: 200, width: 200) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
             }
           }
         }

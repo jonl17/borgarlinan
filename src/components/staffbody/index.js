@@ -1,16 +1,42 @@
 import React from "react"
-import { Container, Name, Job, SubJob, Mail } from "./Styled"
+import {
+  Container,
+  Name,
+  Job,
+  SubJob,
+  Mail,
+  ImageContainer,
+  Image,
+} from "./Styled"
 import { connect } from "react-redux"
 
 const index = ({
-  staff: { title: nafn, starfslysing, netfang, verkefnastjori },
+  staff: {
+    title: nafn,
+    starfslysing,
+    netfang,
+    verkefnastjori,
+    portrait_mynd: {
+      childImageSharp: { fixed },
+    },
+  },
+  device,
 }) => {
   return (
     <Container>
-      <Name className="bold">{nafn}</Name>
+      <ImageContainer>
+        <Image fixed={fixed}></Image>
+      </ImageContainer>
+      <Name device={device} className="bold">
+        {nafn}
+      </Name>
       <Job>{starfslysing}</Job>
       <Mail href={"mailto:" + netfang}>{netfang}</Mail>
-      {verkefnastjori ? <SubJob>{"Verkefnastjóri"}</SubJob> : <></>}
+      {verkefnastjori ? (
+        <SubJob className="bold">{"Verkefnastjóri"}</SubJob>
+      ) : (
+        <></>
+      )}
     </Container>
   )
 }
