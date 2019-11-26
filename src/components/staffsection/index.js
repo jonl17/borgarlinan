@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Title, Grid } from "./Styled"
+import { Container, Grid } from "./Styled"
 import StaffBody from "../staffbody"
 import { graphql, StaticQuery } from "gatsby"
 import { connect } from "react-redux"
@@ -41,7 +41,6 @@ const GetStaff = () => (
 const StaffSection = ({ device }) => {
   return (
     <Container device={device}>
-      <Title className="bold">Verkefnateymi</Title>
       <Grid device={device}>{GetStaff()}</Grid>
     </Container>
   )

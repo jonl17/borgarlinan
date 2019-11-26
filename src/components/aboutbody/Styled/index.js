@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-import { styles } from "../../../constants"
 
 export const Container = styled.div`
   margin: 125px auto;
@@ -18,27 +17,18 @@ export const Container = styled.div`
     `}
 `
 export const Title = styled.h1`
-  color: ${styles.Blue};
+  color: black;
   font-size: 25px;
   ${props => props.device === `tablet` && css``}
   ${props => props.device === `mobile` && css``}
 `
-export const Paragraph = styled.p`
-  color: ${styles.Gray};
-  line-height: 160%;
-  font-size: 19px;
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      width: 100%;
-      box-sizing: border-box;
-    `}
+export const Content = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
   ${props =>
     props.device === `mobile` &&
     css`
-      width: 100%;
-      box-sizing: border-box;
-      font-size: 15px;
+      grid-template-columns: 1fr;
     `}
 `
-export const Content = styled.div``
