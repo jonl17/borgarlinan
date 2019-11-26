@@ -5,6 +5,7 @@ import {
   Job,
   SubJob,
   Mail,
+  MailText,
   ImageContainer,
   Image,
 } from "./Styled"
@@ -31,7 +32,10 @@ const index = ({
         {nafn}
       </Name>
       <Job>{starfslysing}</Job>
-      <Mail href={"mailto:" + netfang}>{netfang}</Mail>
+      <Mail device={device} target="_blank" href={"mailto:" + netfang}>
+        <MailText className="bold">{netfang}</MailText>
+      </Mail>
+
       {verkefnastjori ? (
         <SubJob className="bold">{"Verkefnastjóri"}</SubJob>
       ) : (

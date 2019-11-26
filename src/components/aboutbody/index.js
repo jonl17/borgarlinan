@@ -9,6 +9,7 @@ const AboutBody = ({ title, subject, device }) => {
         {title}
       </Title>
       <Content
+        device={device}
         className="verkefnastofa-borgarlinu-content"
         dangerouslySetInnerHTML={{ __html: subject }}
       ></Content>
