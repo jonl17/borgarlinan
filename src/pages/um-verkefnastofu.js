@@ -1,5 +1,4 @@
 import React from "react"
-import Menu from "../components/menu"
 import SVG from "../../static/data/svg/skipurit_skjar.svg"
 import Footer from "../components/footer"
 import { connect } from "react-redux"
@@ -7,9 +6,6 @@ import { setDevice } from "../state/actions"
 import StaffSection from "../components/staffsection"
 import { graphql } from "gatsby"
 import AboutBody from "../components/aboutbody"
-import Burger from "../components/burger"
-import BurgerMenu from "../components/burgerMenu"
-import { triggerBurgerMenu } from "../state/actions"
 import SchemaData from "../components/schemadata"
 import {
   Body,
@@ -26,12 +22,11 @@ class UmVerkefnaStofu extends React.Component {
   componentDidMount() {
     this.updateDevice()
     window.addEventListener("resize", this.updateDevice)
-    if (this.props.showBurgerMenu) {
-      this.props.dispatch(triggerBurgerMenu())
-    }
   }
   updateDevice() {
-    this.props.dispatch(setDevice(this.bodyRef.clientWidth))
+    if (this.bodyRef !== null) {
+      this.props.dispatch(setDevice(this.bodyRef.clientWidth))
+    }
   }
   render() {
     const {
@@ -42,9 +37,6 @@ class UmVerkefnaStofu extends React.Component {
     } = this.props
     return (
       <Body ref={bodyRef => (this.bodyRef = bodyRef)}>
-        <Burger></Burger>
-        <BurgerMenu></BurgerMenu>
-        <Menu page={"um-verkefnastofu"}></Menu>
         <AboutBody
           device={device}
           title={frontmatter.title}
@@ -76,7 +68,6 @@ export const query = graphql`
 const mapStateToProps = state => ({
   device: state.reducer.device,
   language: state.reducer.language,
-  showBurgerMenu: state.reducer.showBurgerMenu,
 })
 
 export default connect(mapStateToProps)(UmVerkefnaStofu)

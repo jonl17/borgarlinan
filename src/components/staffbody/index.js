@@ -18,7 +18,7 @@ const index = ({
     netfang,
     verkefnastjori,
     portrait_mynd: {
-      childImageSharp: { fixed },
+      childImageSharp: { fluid },
     },
   },
   device,
@@ -26,7 +26,7 @@ const index = ({
   return (
     <Container>
       <ImageContainer>
-        <Image fixed={fixed}></Image>
+        <Image fluid={fluid}></Image>
       </ImageContainer>
       <Name device={device} className="bold">
         {nafn}

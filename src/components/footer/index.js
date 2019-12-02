@@ -5,7 +5,7 @@ const Footer = ({ page }) => {
   return (
     <Container>
       {page === "frontpage" ? (
-        <Item className="bold" to="/um-verkefnastofu">
+        <Item className="bold" to="/um-verkefnastofu/">
           Um verkefnastofu
         </Item>
       ) : (
@@ -16,5 +16,5 @@ const Footer = ({ page }) => {
     </Container>
   )
 }
-
+//clientWidth
 export default Footer

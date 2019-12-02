@@ -4,11 +4,6 @@ import { styles } from "../../../constants"
 
 export const Navbar = styled.div`
   display: none;
-  ${props =>
-    props.show &&
-    css`
-      display: flex;
-    `}
   height: 100px;
   width: 35%;
   margin: 0 0px 0 75px;

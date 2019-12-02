@@ -1,45 +1,74 @@
 import React from "react"
-import { Navbar, Item, Text /*Button*/ } from "./Styled"
+import { Navbar, Item, Text, Dropdown, Sensor } from "./Styled"
 import { connect } from "react-redux"
-import { styles } from "../../constants"
+import { graphql, StaticQuery } from "gatsby"
+import { triggerNav } from "../../state/actions"
 
-const Menu = ({ page, dispatch, device, language, burger }) => {
+const getMenuItems = (device, navStatus) => (
+  <StaticQuery
+    query={graphql`
+      {
+        site {
+          siteMetadata {
+            navbaritems {
+              name
+              url
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <Item device={device} to={data.site.siteMetadata.navbaritems[0].url}>
+          <Text className="bold" titill>
+            {data.site.siteMetadata.navbaritems[0].name}
+          </Text>
+        </Item>
+        <Dropdown
+          height={
+            navStatus === "open"
+              ? (data.site.siteMetadata.navbaritems.length - 1) * 75 + "px"
+              : "0"
+          }
+        >
+          {data.site.siteMetadata.navbaritems.map((item, index) =>
+            index !== 0 ? (
+              <Item dropdown key={index} device={device} to={item.url}>
+                <Text className="bold">{item.name}</Text>
+              </Item>
+            ) : (
+              ""
+            )
+          )}{" "}
+        </Dropdown>
+      </>
+    )}
+  ></StaticQuery>
+)
+
+const Menu = ({ device, burger, dispatch, navStatus }) => {
   return (
-    <Navbar burger={burger} device={device}>
-      <Item
+    <>
+      <Sensor
+        display={navStatus === `open` ? `block` : `none`}
+        onMouseOver={() => dispatch(triggerNav("closed"))}
+      ></Sensor>
+      <Navbar
+        onMouseOver={() => dispatch(triggerNav("open"))}
+        burger={burger}
         device={device}
-        page={page}
-        to="/"
-        activeStyle={{
-          borderBottom: `4px solid ${styles.LinuLitur}`,
-        }}
       >
-        <Text className="bold">Borgarlínan</Text>
-      </Item>
-      <Item
-        device={device}
-        page={page}
-        activeStyle={{
-          borderBottom: `4px solid ${styles.LinuLitur}`,
-        }}
-        to="/um-verkefnastofu"
-      >
-        <Text className="bold">Um verkefnastofu</Text>
-      </Item>
-      {/*<Button
-        device={device}
-        onClick={() => dispatch(setLanguage())}
-        page={page}
-      >
-        <Text className="bold">IS/EN</Text>
-      </Button> */}
-    </Navbar>
+        {getMenuItems(device, navStatus)}
+      </Navbar>
+    </>
   )
 }
 
 const mapStateToProps = state => ({
   device: state.reducer.device,
   language: state.reducer.language,
+  navStatus: state.reducer.navStatus,
 })
 
 export default connect(mapStateToProps)(Menu)

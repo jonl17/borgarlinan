@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
 
+const ExStyle = css`
+  position: absolute;
+  width: 38px;
+`
+
 export const Container = styled.div`
   position: fixed;
   height: 35px;
@@ -10,10 +15,10 @@ export const Container = styled.div`
   flex-direction: column;
   top: 0;
   right: 0;
-  padding: 35px;
+  padding: 21px;
   transition: 0.2s;
-  opacity: 0;
-  z-index: -1;
+  opacity: 1;
+  z-index: 10;
   &&:hover {
     cursor: pointer;
   }
@@ -28,4 +33,5 @@ export const Line = styled.span`
   width: 100%;
   height: 5px;
   background-color: ${styles.LinuLitur};
+  transition: 0.3s;
 `
