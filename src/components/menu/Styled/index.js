@@ -24,7 +24,7 @@ export const Navbar = styled.div`
     css`
       width: 100%;
       padding: 0;
-      background: rgba(244, 244, 244, 1);
+      background: rgb(244, 244, 244);
     `}
 `
 export const Item = styled(Link)`
@@ -80,7 +80,7 @@ export const Dropdown = styled.div`
     css`
       width: 100%;
       padding: 0;
-      background: rgba(244, 244, 244, 1);
+      background: rgb(244, 244, 244);
     `}
 `
 export const Sensor = styled.div`
