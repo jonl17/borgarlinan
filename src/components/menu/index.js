@@ -57,17 +57,19 @@ const Menu = ({ device, burger, dispatch, navStatus }) => {
         onMouseOver={() => dispatch(triggerNav("closed"))}
       ></Sensor>
       {device === `mobile` ? <Burger></Burger> : ""}
-      <Navbar
-        onMouseOver={
-          device !== `mobile`
-            ? () => dispatch(triggerNav("open"))
-            : console.log("")
-        }
-        burger={burger}
-        device={device}
-      >
-        {getMenuItems(device, navStatus)}
-      </Navbar>
+      {device !== `mobile` ? (
+        <Navbar
+          onMouseOver={() => dispatch(triggerNav("open"))}
+          burger={burger}
+          device={device}
+        >
+          {getMenuItems(device, navStatus)}
+        </Navbar>
+      ) : (
+        <Navbar burger={burger} device={device}>
+          {getMenuItems(device, navStatus)}
+        </Navbar>
+      )}
     </>
   )
 }
