@@ -13,7 +13,7 @@ export const Container = styled.div`
   padding: 21px;
   transition: 0.2s;
   opacity: 1;
-  z-index: 10;
+  z-index: 12;
   &&:hover {
     cursor: pointer;
   }

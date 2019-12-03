@@ -25,6 +25,7 @@ export const Navbar = styled.div`
       width: 100%;
       padding: 0;
       background: rgba(244, 244, 244, 1);
+      pointer-events: none;
     `}
 `
 export const Item = styled(Link)`
