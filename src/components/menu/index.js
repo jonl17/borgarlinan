@@ -53,8 +53,9 @@ const Menu = ({ device, burger, dispatch, navStatus }) => {
   return (
     <>
       <Sensor
-        display={navStatus === `open` && device !== `mobile` ? `block` : `none`}
+        display={navStatus === `open` ? `block` : `none`}
         onMouseOver={() => dispatch(triggerNav("closed"))}
+        onTouchStart={() => dispatch(triggerNav("closed"))}
       ></Sensor>
       {device === `mobile` ? <Burger></Burger> : ""}
       {device !== `mobile` ? (
