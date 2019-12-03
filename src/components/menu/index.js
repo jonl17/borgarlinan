@@ -3,6 +3,7 @@ import { Navbar, Item, Text, Dropdown, Sensor } from "./Styled"
 import { connect } from "react-redux"
 import { graphql, StaticQuery } from "gatsby"
 import { triggerNav } from "../../state/actions"
+import Burger from "../burger"
 
 const getMenuItems = (device, navStatus) => (
   <StaticQuery
@@ -26,6 +27,7 @@ const getMenuItems = (device, navStatus) => (
           </Text>
         </Item>
         <Dropdown
+          device={device}
           height={
             navStatus === "open"
               ? (data.site.siteMetadata.navbaritems.length - 1) * 75 + "px"
@@ -34,7 +36,7 @@ const getMenuItems = (device, navStatus) => (
         >
           {data.site.siteMetadata.navbaritems.map((item, index) =>
             index !== 0 ? (
-              <Item dropdown key={index} device={device} to={item.url}>
+              <Item dropdown={"true"} key={index} device={device} to={item.url}>
                 <Text className="bold">{item.name}</Text>
               </Item>
             ) : (
@@ -51,15 +53,20 @@ const Menu = ({ device, burger, dispatch, navStatus }) => {
   return (
     <>
       <Sensor
-        display={navStatus === `open` ? `block` : `none`}
+        display={navStatus === `open` && device !== `mobile` ? `block` : `none`}
         onMouseOver={() => dispatch(triggerNav("closed"))}
       ></Sensor>
       <Navbar
-        onMouseOver={() => dispatch(triggerNav("open"))}
+        onMouseOver={
+          device !== `mobile`
+            ? () => dispatch(triggerNav("open"))
+            : console.log("")
+        }
         burger={burger}
         device={device}
       >
         {getMenuItems(device, navStatus)}
+        {device === `mobile` ? <Burger></Burger> : ""}
       </Navbar>
     </>
   )

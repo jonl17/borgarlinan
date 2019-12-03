@@ -1,11 +1,6 @@
 import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
 
-const ExStyle = css`
-  position: absolute;
-  width: 38px;
-`
-
 export const Container = styled.div`
   position: fixed;
   height: 35px;
@@ -34,4 +29,18 @@ export const Line = styled.span`
   height: 5px;
   background-color: ${styles.LinuLitur};
   transition: 0.3s;
+  ${props =>
+    props.ex &&
+    css`
+      ${props =>
+        props.one &&
+        css`
+          transform: translateY(8px) rotate(45deg);
+        `}
+      ${props =>
+        props.two &&
+        css`
+          transform: translateY(-10px) rotate(-45deg);
+        `}
+    `}
 `

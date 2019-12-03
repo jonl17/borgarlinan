@@ -14,12 +14,18 @@ export const Navbar = styled.div`
   flex-direction: column;
   ${Background};
   transition: 0.3s;
-
   position: fixed;
   right: 0;
   top: 0;
   z-index: 10;
   overflow: hidden;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 100%;
+      padding: 0;
+      background: rgba(244, 244, 244, 1);
+    `}
 `
 export const Item = styled(Link)`
   text-decoration: none;
@@ -33,6 +39,12 @@ export const Item = styled(Link)`
     props.dropdown &&
     css`
       border-top: 4px solid ${styles.Blue};
+    `}
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      padding: 0;
+      margin: 0 25px 0 25px;
     `}
 `
 export const Text = styled.p`
@@ -63,6 +75,13 @@ export const Dropdown = styled.div`
   padding-right: 75px;
   padding-left: 75px;
   transition: 0.3s ease-in-out;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 100%;
+      padding: 0;
+      background: rgba(244, 244, 244, 1);
+    `}
 `
 export const Sensor = styled.div`
   height: 100%;
