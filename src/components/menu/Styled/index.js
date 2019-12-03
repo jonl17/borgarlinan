@@ -18,7 +18,6 @@ export const Navbar = styled.div`
   right: 0;
   top: 0;
   z-index: 10;
-  overflow: hidden;
   ${props =>
     props.device === `mobile` &&
     css`
@@ -75,6 +74,7 @@ export const Dropdown = styled.div`
   padding-right: 75px;
   padding-left: 75px;
   transition: 0.3s ease-in-out;
+  z-index: 10;
   ${props =>
     props.device === `mobile` &&
     css`
