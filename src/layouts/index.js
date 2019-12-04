@@ -3,7 +3,6 @@ import { LayoutContainer, Body } from "./Styled"
 import { GlobCSS } from "../components/globalstyles"
 import Menu from "../components/menu"
 import SEO from "../components/seo"
-import Footer from "../components/footer"
 import { connect } from "react-redux"
 import { setDevice, getHeight, setLineHeight, setStart } from "../state/actions"
 
@@ -38,10 +37,7 @@ class Layout extends React.Component {
     }
   }
   render() {
-    const {
-      children,
-      location: { pathname },
-    } = this.props
+    const { children } = this.props
     return (
       <LayoutContainer id="layout-container">
         <GlobCSS></GlobCSS>
@@ -50,7 +46,6 @@ class Layout extends React.Component {
         <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
           {children}
         </Body>
-        <Footer page={pathname}></Footer>
       </LayoutContainer>
     )
   }

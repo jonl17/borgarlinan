@@ -5,6 +5,7 @@ import StaffSection from "../components/staffsection"
 import { graphql } from "gatsby"
 import AboutBody from "../components/aboutbody"
 import SchemaData from "../components/schemadata"
+import Footer from "../components/footer"
 import {
   Background,
   ImageContainer,
@@ -13,6 +14,7 @@ import {
 
 const UmVerkefnaStofu = ({
   device,
+  location: { pathname },
   data: {
     markdownRemark: { frontmatter, html },
   },
@@ -31,6 +33,7 @@ const UmVerkefnaStofu = ({
         </ImageContainer>
       </Background>
       <SchemaData></SchemaData>
+      <Footer page={pathname}></Footer>
     </>
   )
 }

@@ -36,3 +36,7 @@ export const triggerNav = trigger => ({
   type: TRIGGER_NAV,
   trigger,
 })
+export const LOADED_FRONTPAGE = "LOADED_FRONTPAGE"
+export const loadedFrontpage = () => ({
+  type: LOADED_FRONTPAGE,
+})
