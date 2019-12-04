@@ -10,10 +10,10 @@ export const Container = styled.div`
   flex-direction: column;
   top: 0;
   right: 0;
-  padding: 35px;
+  padding: 21px;
   transition: 0.2s;
-  opacity: 0;
-  z-index: -1;
+  opacity: 1;
+  z-index: 12;
   &&:hover {
     cursor: pointer;
   }
@@ -28,4 +28,19 @@ export const Line = styled.span`
   width: 100%;
   height: 5px;
   background-color: ${styles.LinuLitur};
+  transition: 0.3s;
+  ${props =>
+    props.ex &&
+    css`
+      ${props =>
+        props.one &&
+        css`
+          transform: translateY(8px) rotate(-135deg);
+        `}
+      ${props =>
+        props.two &&
+        css`
+          transform: translateY(-10px) rotate(-45deg);
+        `}
+    `}
 `

@@ -1,83 +1,100 @@
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
+import { styles } from "../../../constants"
+
+const Background = css`
+  background: rgba(244, 244, 244, 0.7);
+`
 
 export const Navbar = styled.div`
-  height: 100px;
-  width: 35%;
-  margin: 0 75px 0 75px;
+  height: 75px;
+  width: 25%;
+  padding: 0 75px 0 75px;
   display: flex;
-  position: absolute;
+  flex-direction: column;
+  ${Background};
+  transition: 0.3s;
+  position: fixed;
   right: 0;
   top: 0;
-  z-index: 8;
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      width: 100%;
-      margin: 0;
-    `}
+  z-index: 10;
   ${props =>
     props.device === `mobile` &&
     css`
-      height: 75px;
       width: 100%;
-      margin: 0;
+      padding: 0;
+      background: rgb(244, 244, 244);
     `}
 `
 export const Item = styled(Link)`
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
+  transition: 0.3s;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
   ${props =>
-    props.page === "um-verkefnastofu" &&
+    props.dropdown &&
     css`
-      color: lightgray;
+      border-top: 4px solid ${styles.Blue};
     `}
   ${props =>
     props.device === `mobile` &&
     css`
-      color: white;
-      ${props =>
-        props.page === "um-verkefnastofu" &&
-        css`
-          color: lightgray;
-        `}
+      padding: 0;
+      margin: 0 25px 0 25px;
     `}
-`
-export const Button = styled.div`
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
-  ${props =>
-    props.page === "um-verkefnastofu" &&
-    css`
-      color: lightgray;
-    `}
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      color: white;
-      ${props =>
-        props.page === "um-verkefnastofu" &&
-        css`
-          color: lightgray;
-        `}
-    `}
-  &&:hover {
-    cursor: pointer;
-  }
 `
 export const Text = styled.p`
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 0px;
-  font-size: 15px;
+  margin: 0;
+  display: inline-block;
+  ${props =>
+    props.titill &&
+    css`
+      font-size: 18px;
+    `}
+  color: ${styles.Blue};
+  transition: .2s;
+  ${props =>
+    props.device !== `mobile` &&
+    css`
+      &&:hover {
+        color: ${styles.LinuLitur};
+      }
+    `}
+
+
+`
+export const Dropdown = styled.div`
+  position: fixed;
+  top: 75px;
+  right: 0;
+  width: 25%;
+  overflow: hidden;
+  height: ${props => props.height};
+  ${Background};
+  padding-right: 75px;
+  padding-left: 75px;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 100%;
+      padding: 0;
+      background: rgb(244, 244, 244);
+    `}
+`
+export const Sensor = styled.div`
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 9;
+  display: ${props => props.display};
 `

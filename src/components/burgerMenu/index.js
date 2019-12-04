@@ -3,9 +3,9 @@ import { Navbar, Item, Text /*Button*/ } from "./Styled"
 import { connect } from "react-redux"
 import { styles } from "../../constants"
 
-const BurgerMenu = ({ page, device, burger, showBurgerMenu }) => {
+const BurgerMenu = ({ page, device, burger }) => {
   return (
-    <Navbar show={showBurgerMenu} burger={burger} device={device}>
+    <Navbar burger={burger} device={device}>
       <Item
         device={device}
         page={page}
@@ -22,7 +22,7 @@ const BurgerMenu = ({ page, device, burger, showBurgerMenu }) => {
         activeStyle={{
           borderBottom: `4px solid ${styles.LinuLitur}`,
         }}
-        to="/um-verkefnastofu"
+        to="/um-verkefnastofu/"
       >
         <Text className="bold">Um verkefnastofu</Text>
       </Item>
@@ -40,7 +40,6 @@ const BurgerMenu = ({ page, device, burger, showBurgerMenu }) => {
 const mapStateToProps = state => ({
   device: state.reducer.device,
   language: state.reducer.language,
-  showBurgerMenu: state.reducer.showBurgerMenu,
 })
 
 export default connect(mapStateToProps)(BurgerMenu)

@@ -20,8 +20,8 @@ const GetStaff = () => (
               verkefnastjori
               portrait_mynd {
                 childImageSharp {
-                  fixed(height: 200, width: 200) {
-                    ...GatsbyImageSharpFixed
+                  fluid {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }

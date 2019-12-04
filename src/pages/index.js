@@ -4,15 +4,11 @@ import QandASection from "../components/qandasection"
 import NewsSection from "../components/newssection"
 import Footer from "../components/footer"
 import styled from "styled-components"
-import Menu from "../components/menu"
-import SEO from "../components/seo"
-import Burger from "../components/burger"
-import BurgerMenu from "../components/burgerMenu"
 
 import { graphql } from "gatsby"
 import { connect } from "react-redux"
 import { setStart, getHeight, setLineHeight } from "../state/actions"
-import { triggerBurgerMenu, setDevice } from "../state/actions"
+import { setDevice } from "../state/actions"
 
 const Body = styled.div`
   position: relative;
@@ -30,10 +26,6 @@ class index extends React.Component {
     const height = this.bodyelement.clientHeight
     this.props.dispatch(getHeight(height))
     /* start the line  */
-    if (this.props.showBurgerMenu) {
-      this.props.dispatch(triggerBurgerMenu(false))
-    }
-
     window.addEventListener("scroll", () => this.scrollCallBack())
   }
   componentWillUnmount() {
@@ -45,9 +37,6 @@ class index extends React.Component {
     if (!this.props.started) {
       this.props.dispatch(setStart())
     }
-    if (this.props.showBurgerMenu) {
-      this.props.dispatch(triggerBurgerMenu(false))
-    }
   }
 
   render() {
@@ -55,13 +44,9 @@ class index extends React.Component {
     const { device } = this.props
     return (
       <>
-        <SEO></SEO>
         <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
           {device !== undefined ? (
             <>
-              <Burger></Burger>
-              <BurgerMenu></BurgerMenu>
-              <Menu></Menu>
               <Frontpage title={title} subtitle={subtitle}></Frontpage>
               <QandASection></QandASection>
               <NewsSection></NewsSection>
@@ -90,7 +75,6 @@ export const query = graphql`
 const mapStateToProps = state => ({
   started: state.reducer.started,
   lineHeight: state.reducer.lineHeight,
-  showBurgerMenu: state.reducer.showBurgerMenu,
   device: state.reducer.device,
 })
 

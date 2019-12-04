@@ -13,7 +13,11 @@ module.exports = {
         sveitarfélögin á höfuðborgarsvæðinu undirbúa nú í sameiningu. Borgarlína 
         mun aka á sérakreinum að mestu aðskilin frá almennri umferð og tengja saman 
         sveitarfélögin á höfuðborgarsvæðinu.`,
-    navbaritems: [`Borgarlínan`, `Um Verkefnastofu`, `English`],
+    navbaritems: [
+      { name: `Borgarlínan`, url: `/` },
+      { name: `Um Verkefnastofu`, url: "/um-verkefnastofu/" },
+      // { name: `Fréttasafn`, url: "/frettasafn/" },
+    ],
   },
   plugins: [
     {
@@ -85,5 +89,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-layout`,
   ],
 }
