@@ -22,7 +22,7 @@ const getMenuItems = (device, navStatus) => (
     render={data => (
       <>
         <Item device={device} to={data.site.siteMetadata.navbaritems[0].url}>
-          <Text className="bold" titill>
+          <Text device={device} className="bold" titill>
             {data.site.siteMetadata.navbaritems[0].name}
           </Text>
         </Item>
@@ -37,7 +37,9 @@ const getMenuItems = (device, navStatus) => (
           {data.site.siteMetadata.navbaritems.map((item, index) =>
             index !== 0 ? (
               <Item dropdown={"true"} key={index} device={device} to={item.url}>
-                <Text className="bold">{item.name}</Text>
+                <Text device={device} className="bold">
+                  {item.name}
+                </Text>
               </Item>
             ) : (
               ""
@@ -56,7 +58,6 @@ const Menu = ({ device, burger, dispatch, navStatus }) => {
         display={navStatus === `open` ? `block` : `none`}
         onMouseOver={() => dispatch(triggerNav("closed"))}
         onTouchStart={() => dispatch(triggerNav("closed"))}
-        onTouchMove={() => dispatch(triggerNav("closed"))}
       ></Sensor>
       {device === `mobile` ? <Burger></Burger> : ""}
       {device !== `mobile` ? (

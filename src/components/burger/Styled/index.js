@@ -35,7 +35,7 @@ export const Line = styled.span`
       ${props =>
         props.one &&
         css`
-          transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(-135deg);
         `}
       ${props =>
         props.two &&

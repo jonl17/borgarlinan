@@ -58,9 +58,14 @@ export const Text = styled.p`
     `}
   color: ${styles.Blue};
   transition: .2s;
-  &&:hover {
-    color: ${styles.LinuLitur};
-  }
+  ${props =>
+    props.device !== `mobile` &&
+    css`
+      &&:hover {
+        color: ${styles.LinuLitur};
+      }
+    `}
+
 
 `
 export const Dropdown = styled.div`
