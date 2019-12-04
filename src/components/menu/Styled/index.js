@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
-import { styles } from "../../../constants"
+import { styles, sizes } from "../../../constants"
 
 const Background = css`
   background: rgba(244, 244, 244, 0.7);
 `
 
 export const Navbar = styled.div`
-  height: 75px;
+  height: ${sizes.burgerHeight}px;
   width: 25%;
   padding: 0 75px 0 75px;
   display: flex;
@@ -21,6 +21,7 @@ export const Navbar = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
+      height: 75px;
       width: 100%;
       padding: 0;
       background: rgb(244, 244, 244);
@@ -30,7 +31,7 @@ export const Item = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.3s;
-  height: 75px;
+  height: ${sizes.burgerHeight}px;
   display: flex;
   align-items: center;
   transition: 0.3s;
@@ -42,6 +43,7 @@ export const Item = styled(Link)`
   ${props =>
     props.device === `mobile` &&
     css`
+      height: 75px;
       padding: 0;
       margin: 0 25px 0 25px;
     `}
@@ -70,7 +72,7 @@ export const Text = styled.p`
 `
 export const Dropdown = styled.div`
   position: fixed;
-  top: 75px;
+  top: ${sizes.burgerHeight}px;
   right: 0;
   width: 25%;
   overflow: hidden;
@@ -83,6 +85,7 @@ export const Dropdown = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
+      top: 75px;
       width: 100%;
       padding: 0;
       background: rgb(244, 244, 244);
