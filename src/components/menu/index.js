@@ -5,7 +5,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { triggerNav } from "../../state/actions"
 import Burger from "../burger"
 
-const getMenuItems = (device, navStatus) => (
+const getMenuItems = (device, navStatus, burgerHeight) => (
   <StaticQuery
     query={graphql`
       {
@@ -30,7 +30,8 @@ const getMenuItems = (device, navStatus) => (
           device={device}
           height={
             navStatus === "open"
-              ? (data.site.siteMetadata.navbaritems.length - 1) * 75 + "px"
+              ? (data.site.siteMetadata.navbaritems.length - 1) * burgerHeight +
+                "px"
               : "0"
           }
         >
@@ -52,6 +53,12 @@ const getMenuItems = (device, navStatus) => (
 )
 
 const Menu = ({ device, burger, dispatch, navStatus }) => {
+  let burgerHeight
+  if (device === `mobile`) {
+    burgerHeight = 75
+  } else {
+    burgerHeight = 100
+  }
   return (
     <>
       <Sensor
@@ -66,11 +73,11 @@ const Menu = ({ device, burger, dispatch, navStatus }) => {
           burger={burger}
           device={device}
         >
-          {getMenuItems(device, navStatus)}
+          {getMenuItems(device, navStatus, burgerHeight)}
         </Navbar>
       ) : (
         <Navbar burger={burger} device={device}>
-          {getMenuItems(device, navStatus)}
+          {getMenuItems(device, navStatus, burgerHeight)}
         </Navbar>
       )}
     </>

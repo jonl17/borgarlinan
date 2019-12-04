@@ -8,4 +8,5 @@ export const styles = {
 export const sizes = {
   tabletwidth: 600,
   tabletmarginleft: -300,
+  burgerHeight: 100,
 }
