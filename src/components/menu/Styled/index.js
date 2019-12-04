@@ -29,7 +29,6 @@ export const Navbar = styled.div`
 `
 export const Item = styled(Link)`
   text-decoration: none;
-  text-transform: uppercase;
   transition: 0.3s;
   height: ${sizes.burgerHeight}px;
   display: flex;
@@ -49,7 +48,6 @@ export const Item = styled(Link)`
     `}
 `
 export const Text = styled.p`
-  text-transform: uppercase;
   font-weight: bold;
   margin: 0;
   display: inline-block;
