@@ -6,7 +6,6 @@ import { triggerNav } from "../../state/actions"
 class Burger extends React.Component {
   render() {
     const { navStatus, dispatch } = this.props
-    console.log(navStatus)
     return navStatus === `closed` ? (
       <Container onClick={() => dispatch(triggerNav("open"))} id="burger">
         <Line one></Line>

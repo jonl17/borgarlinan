@@ -62,7 +62,6 @@ class NewsSection extends React.Component {
   }
   render() {
     const { device } = this.props
-    console.log(device)
     return (
       <PageContainer>
         <Container device={device}>

@@ -72,3 +72,19 @@ collections:
           widget: "boolean",
           hint: "Hakaðu við þetta ef einstaklingur er verkefnastjóri",
         }
+  - name: "skyrslur"
+    editor:
+      preview: false
+    label: "Skýrslur"
+    folder: "static/content/skyrslur"
+    create: true
+    fields:
+      - { label: "Titill", name: "title", widget: "string" }
+      - { label: "Texti", name: "body", widget: "markdown", required: false }
+      - {
+          label: "Viðhengi(pdf)",
+          name: "vidhengi-pdf",
+          widget: "file",
+          required: false,
+          hint: "Settu inn *.pdf skrá",
+        }

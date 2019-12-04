@@ -37,7 +37,7 @@ export const Item = styled(Link)`
   ${props =>
     props.dropdown &&
     css`
-      border-top: 4px solid ${styles.Blue};
+      border-top: 3px solid ${styles.Blue};
     `}
   ${props =>
     props.device === `mobile` &&
