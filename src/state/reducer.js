@@ -7,6 +7,7 @@ import {
   SET_LANGUAGE,
   SET_WHITELINE_STOP,
   TRIGGER_NAV,
+  LOADED_FRONTPAGE,
 } from "./actions"
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
   language: `icelandic`,
   whiteLineStop: undefined,
   navStatus: "closed",
+  frontpageLoaded: false,
 }
 
 export default (state = initialState, action) => {
@@ -54,6 +56,8 @@ export default (state = initialState, action) => {
       return { ...state, whiteLineStop: action.stop }
     case TRIGGER_NAV:
       return { ...state, navStatus: action.trigger }
+    case LOADED_FRONTPAGE:
+      return { ...state, frontpageLoaded: true }
     default:
       return state
   }

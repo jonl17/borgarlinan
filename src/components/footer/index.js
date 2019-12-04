@@ -4,7 +4,7 @@ import { Container, Item } from "./Styled"
 const Footer = ({ page }) => {
   return (
     <Container>
-      {page === "frontpage" ? (
+      {page === "/" ? (
         <Item className="bold" to="/um-verkefnastofu/">
           Um verkefnastofu
         </Item>
