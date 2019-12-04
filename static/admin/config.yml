@@ -80,6 +80,12 @@ collections:
     create: true
     fields:
       - { label: "Titill", name: "title", widget: "string" }
+      - {
+          label: "Dagsetning",
+          name: "dagsetning",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
       - { label: "Texti", name: "body", widget: "markdown", required: false }
       - {
           label: "Viðhengi(pdf)",
