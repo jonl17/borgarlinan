@@ -1,0 +1,22 @@
+.skyrsla-content > * > a {
+  color: gray !important;
+  z-index: 8;
+}
+.skyrsla-content > ul {
+  list-style: square;
+  padding-left: 15px;
+}
+.skyrsla-content > ul > li {
+  padding-bottom: 15px;
+}
+@media only screen and (max-width: 750px) {
+  /* device === mobile */
+  .skyrsla-content > * {
+    font-size: 15px !important;
+  }
+}
+.skyrsla-content > * {
+  color: gray;
+  line-height: 160%;
+  font-size: 18px;
+}

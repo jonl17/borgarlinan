@@ -26,8 +26,10 @@ class Layout extends React.Component {
     window.removeEventListener("resize", () => this.deviceDispatches(dispatch))
   }
   deviceDispatches(dispatch) {
-    dispatch(setDevice(this.bodyelement.clientWidth))
-    dispatch(getHeight(this.bodyelement.clientHeight))
+    if (this.bodyelement != null) {
+      dispatch(setDevice(this.bodyelement.clientWidth))
+      dispatch(getHeight(this.bodyelement.clientHeight))
+    }
   }
   scrollCallBack() {
     const { dispatch, started } = this.props
