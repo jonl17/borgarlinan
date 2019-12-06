@@ -1,11 +1,13 @@
 import React from "react"
-import { Button, Text } from "./Styled"
+import { Button, Container } from "./Styled"
 
 const Takki = ({ texti, click, box }) => {
   return (
-    <Text onClick={click} className="bold">
-      {texti}
-    </Text>
+    <Container>
+      <Button onClick={click} className="bold">
+        {texti}
+      </Button>
+    </Container>
   )
 }
 

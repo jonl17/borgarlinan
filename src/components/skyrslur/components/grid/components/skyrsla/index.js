@@ -32,27 +32,45 @@ const getpdfImage = () => (
   ></StaticQuery>
 )
 
-const Skyrsla = ({ skyrsla: { frontmatter, html } }) => {
-  return (
-    <Box>
-      <Banner>
-        <Date>{frontmatter.dagsetning}</Date>
-        <Title className="bold">{frontmatter.title}</Title>
-      </Banner>
-      <Content
-        className="skyrsla-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></Content>
-      {frontmatter.vidhengi_pdf !== null ? (
-        <ImageContainer target="_blank" href={frontmatter.vidhengi_pdf}>
-          {getpdfImage()}
-        </ImageContainer>
-      ) : (
-        <></>
-      )}
-      <Takki click={() => console.log("get off!")} texti={"Lesa meira"}></Takki>
-    </Box>
-  )
+class Skyrsla extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      fullsize: false,
+    }
+  }
+  render() {
+    const {
+      skyrsla: { frontmatter, html },
+    } = this.props
+    return (
+      <Box boxHeight={this.state.fullsize ? "auto" : "300px"}>
+        <Banner>
+          <Date>{frontmatter.dagsetning}</Date>
+          <Title className="bold">{frontmatter.title}</Title>
+        </Banner>
+        <Content
+          className="skyrsla-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></Content>
+        {frontmatter.vidhengi_pdf !== null ? (
+          <ImageContainer target="_blank" href={frontmatter.vidhengi_pdf}>
+            {getpdfImage()}
+          </ImageContainer>
+        ) : (
+          <></>
+        )}
+        <Takki
+          click={() =>
+            this.setState({
+              fullsize: !this.state.fullsize,
+            })
+          }
+          texti={"Lesa meira"}
+        ></Takki>
+      </Box>
+    )
+  }
 }
 
 export default Skyrsla

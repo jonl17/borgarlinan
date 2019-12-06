@@ -3,7 +3,8 @@ import { styles } from "../../../../../../../constants"
 import Img from "gatsby-image"
 
 export const Box = styled.div`
-  height: 350px;
+  height: ${props => props.boxHeight};
+  min-height: 300px;
   width: 500px;
   background: ${styles.BackGroundGray};
   overflow: hidden;
@@ -11,9 +12,8 @@ export const Box = styled.div`
   padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
   position: relative;
+  justify-content: space-between;
 `
 export const Banner = styled.div``
 export const Title = styled.p`
@@ -30,6 +30,7 @@ export const Content = styled.div`
   -webkit-box-orient: vertical;
   box-sizing: border-box;
   overflow: hidden;
+  padding-top: 25px;
 `
 export const ImageContainer = styled.a`
   position: absolute;
