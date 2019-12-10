@@ -5,19 +5,12 @@ import { StaticQuery, graphql } from "gatsby"
 const SEO = ({
   data: {
     site: {
-      siteMetadata: {
-        title,
-        seoTitle,
-        about: description,
-        image,
-        favicon,
-        url,
-      },
+      siteMetadata: { title, about: description, image, favicon, url },
     },
   },
 }) => (
   <>
-    <Helmet title={seoTitle}>
+    <Helmet title={title}>
       <meta name="title" content={title}></meta>
       <meta name="description" content={description} />
       <meta name="image" content={image} />

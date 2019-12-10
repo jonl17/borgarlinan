@@ -41,14 +41,14 @@ class Layout extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <LayoutContainer id="layout-container">
-        <GlobCSS></GlobCSS>
+      <>
         <SEO></SEO>
+        <GlobCSS></GlobCSS>
         <Menu></Menu>
         <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
           {children}
         </Body>
-      </LayoutContainer>
+      </>
     )
   }
 }
