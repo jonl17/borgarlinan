@@ -15,6 +15,7 @@ module.exports = {
         sveitarfélögin á höfuðborgarsvæðinu.`,
     image: "/data/borgarlina_infographic_2b.jpg",
     favicon: "/data/borg_fav.png",
+    url: `https://www.borgarlinan.is/`,
     navbaritems: [
       { name: `Borgarlínan`, url: `/` },
       { name: `Um Verkefnastofu`, url: "/um-verkefnastofu/" },
