@@ -13,6 +13,8 @@ module.exports = {
         sveitarfélögin á höfuðborgarsvæðinu undirbúa nú í sameiningu. Borgarlína 
         mun aka á sérakreinum að mestu aðskilin frá almennri umferð og tengja saman 
         sveitarfélögin á höfuðborgarsvæðinu.`,
+    image: "/data/borgarlina_infographic_2b.jpg",
+    favicon: "/data/borg_fav.png",
     navbaritems: [
       { name: `Borgarlínan`, url: `/` },
       { name: `Um Verkefnastofu`, url: "/um-verkefnastofu/" },
