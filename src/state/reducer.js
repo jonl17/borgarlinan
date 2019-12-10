@@ -8,6 +8,7 @@ import {
   SET_WHITELINE_STOP,
   TRIGGER_NAV,
   LOADED_FRONTPAGE,
+  SET_SKYRSLUR_FILTER,
 } from "./actions"
 
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
   whiteLineStop: undefined,
   navStatus: "closed",
   frontpageLoaded: false,
+  skyrslurFilterBy: `date` /** default filtered by date from graphql query */,
 }
 
 export default (state = initialState, action) => {
@@ -58,6 +60,8 @@ export default (state = initialState, action) => {
       return { ...state, navStatus: action.trigger }
     case LOADED_FRONTPAGE:
       return { ...state, frontpageLoaded: true }
+    case SET_SKYRSLUR_FILTER:
+      return { ...state, skyrslurFilterBy: action.filter }
     default:
       return state
   }

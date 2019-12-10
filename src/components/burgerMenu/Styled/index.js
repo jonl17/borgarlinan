@@ -4,7 +4,7 @@ import { styles } from "../../../constants"
 
 export const Navbar = styled.div`
   display: none;
-  height: 100px;
+  height: 85px;
   width: 35%;
   margin: 0 0px 0 75px;
   padding-right: 75px;

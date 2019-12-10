@@ -3,9 +3,8 @@ import { styles } from "../../../../../../../constants"
 import Img from "gatsby-image"
 
 export const Box = styled.div`
-  height: ${props => props.boxHeight};
-  min-height: 300px;
-  width: 500px;
+  height: 330px;
+  width: auto;
   background: ${styles.BackGroundGray};
   overflow: hidden;
   display: -webkit-box;
@@ -15,16 +14,7 @@ export const Box = styled.div`
   position: relative;
   justify-content: space-between;
 `
-export const Banner = styled.div``
-export const Title = styled.p`
-  color: ${styles.Blue};
-  font-size: 25px;
-  margin: 0;
-`
-export const Date = styled.p`
-  color: ${styles.Gray};
-  margin-bottom: 10px;
-`
+
 export const Content = styled.div`
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

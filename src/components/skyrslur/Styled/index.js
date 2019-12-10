@@ -20,3 +20,7 @@ export const Title = styled.h1`
   color: black;
   font-size: 25px;
 `
+export const TopBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`

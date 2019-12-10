@@ -40,3 +40,8 @@ export const LOADED_FRONTPAGE = "LOADED_FRONTPAGE"
 export const loadedFrontpage = () => ({
   type: LOADED_FRONTPAGE,
 })
+export const SET_SKYRSLUR_FILTER = "SET_SKYRSLUR_FILTER"
+export const setSkyrslurFilter = filter => ({
+  type: SET_SKYRSLUR_FILTER,
+  filter,
+})

@@ -1,16 +1,11 @@
 import React from "react"
-import {
-  Box,
-  Title,
-  Date,
-  PDF,
-  Content,
-  Banner,
-  ImageContainer,
-} from "./Styled"
+import { Box, PDF, Content, ImageContainer } from "./Styled"
 import { graphql, StaticQuery } from "gatsby"
 import "./index.css"
+
+/** components */
 import Takki from "../../../../../takki"
+import Banner from "./components/Banner"
 
 const getpdfImage = () => (
   <StaticQuery
@@ -21,14 +16,15 @@ const getpdfImage = () => (
         ) {
           childImageSharp {
             fluid {
-              src
-              originalName
+              ...GatsbyImageSharpFluid
             }
           }
         }
       }
     `}
-    render={data => <PDF fluid={data.file.childImageSharp.fluid}></PDF>}
+    render={(data, index) => (
+      <PDF key={index} fluid={data.file.childImageSharp.fluid}></PDF>
+    )}
   ></StaticQuery>
 )
 
@@ -44,11 +40,11 @@ class Skyrsla extends React.Component {
       skyrsla: { frontmatter, html },
     } = this.props
     return (
-      <Box boxHeight={this.state.fullsize ? "auto" : "300px"}>
-        <Banner>
-          <Date>{frontmatter.dagsetning}</Date>
-          <Title className="bold">{frontmatter.title}</Title>
-        </Banner>
+      <Box>
+        <Banner
+          title={frontmatter.title}
+          date={frontmatter.dagsetning}
+        ></Banner>
         <Content
           className="skyrsla-content"
           dangerouslySetInnerHTML={{ __html: html }}

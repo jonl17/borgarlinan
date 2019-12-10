@@ -57,7 +57,7 @@ const Menu = ({ device, burger, dispatch, navStatus }) => {
   if (device === `mobile`) {
     burgerHeight = 75
   } else {
-    burgerHeight = 100
+    burgerHeight = 85
   }
   return (
     <>
