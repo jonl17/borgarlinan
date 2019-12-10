@@ -1,10 +1,13 @@
 import React from "react"
-import { BTN, Box, Name, BTNContainer, Text } from "./Styled"
+import { Box, Name, BTNContainer } from "./Styled"
 import { useSelector, useDispatch } from "react-redux"
 import {
   setSkyrslurFilter,
   triggerSkyrsluFade,
 } from "../../../../state/actions"
+
+/** components */
+import Takki from "../../../takki"
 
 const dispatches = (dispatch, type) => {
   dispatch(setSkyrslurFilter(type))
@@ -19,29 +22,17 @@ const Filter = () => {
       <Name>Raða eftir: </Name>
       <BTNContainer>
         {/* by date */}
-        <BTN
-          onClick={() => dispatches(dispatch, "date")}
+        <Takki
           selected={skyrslurFilterBy === `date` ? true : false}
-        >
-          <Text
-            className="bold"
-            selected={skyrslurFilterBy === `date` ? true : false}
-          >
-            Dagsetningu
-          </Text>
-        </BTN>
+          texti={"Dagsetninu"}
+          click={() => dispatches(dispatch, "date")}
+        ></Takki>
         {/* by title */}
-        <BTN
-          onClick={() => dispatches(dispatch, "title")}
+        <Takki
           selected={skyrslurFilterBy === `title` ? true : false}
-        >
-          <Text
-            className="bold"
-            selected={skyrslurFilterBy === `title` ? true : false}
-          >
-            Nafni
-          </Text>
-        </BTN>
+          texti={"Nafni"}
+          click={() => dispatches(dispatch, "title")}
+        ></Takki>
       </BTNContainer>
     </Box>
   )

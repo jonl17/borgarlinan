@@ -15,11 +15,6 @@ const BoxStyle = css`
   justify-content: space-between;
   transition: 0.2s ease-in-out;
   box-sizing: border-box;
-  &&:hover {
-    background: ${styles.LinuLitur};
-    cursor: pointer;
-    transform: scale(0.99);
-  }
 `
 /** scaling */
 export const Box = styled.div`
@@ -37,6 +32,7 @@ export const Content = styled.div`
   box-sizing: border-box;
   overflow: hidden;
   padding-top: 25px;
+  margin-bottom: 25px;
 `
 export const ImageContainer = styled.a`
   position: absolute;

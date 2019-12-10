@@ -49,3 +49,12 @@ export const TRIGGER_SKYRSLU_FADE = "TRIGGER_SKYRSLU_FADE"
 export const triggerSkyrsluFade = () => ({
   type: TRIGGER_SKYRSLU_FADE,
 })
+export const INCREMENT_SKYRSLUR = "INCREMENT_SKYRSLUR"
+export const incrementSkyrslur = () => ({
+  type: INCREMENT_SKYRSLUR,
+})
+export const SET_SKYRSLUR_COUNT = "SET_SKYRSLUR_COUNT"
+export const setSkyrslurCount = number => ({
+  type: SET_SKYRSLUR_COUNT,
+  number,
+})
