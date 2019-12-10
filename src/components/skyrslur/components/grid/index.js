@@ -2,10 +2,21 @@ import React from "react"
 import { Container } from "./Styled"
 import { graphql, StaticQuery } from "gatsby"
 import { filterSkyrslur } from "../../../../methods"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { triggerSkyrsluFade } from "../../../../state/actions"
 
 /** components */
 import Skyrsla from "./components/skyrsla"
+
+/** filtering */
+const filter = (files, filterType) => {
+  if (filterType === `title`) {
+    return filterSkyrslur(files, filterType)
+  } else {
+    return filterSkyrslur(files, filterType)
+  }
+}
+/*** */
 
 const Grid = ({
   data: {
@@ -13,16 +24,17 @@ const Grid = ({
   },
 }) => {
   const skyrslurFilterBy = useSelector(state => state.reducer.skyrslurFilterBy)
-  var filtered = nodes
-  if (skyrslurFilterBy === `title`) {
-    filtered = filterSkyrslur(nodes, "bytitle")
-  } else {
-    filtered = filterSkyrslur(nodes, "bydate")
-  }
-  console.log(filtered)
+  const device = useSelector(state => state.reducer.device)
+  const skyrslurFade = useSelector(state => state.reducer.skyrslurFade)
+  const dispatch = useDispatch()
+  const files = filter(nodes, skyrslurFilterBy)
   return (
-    <Container>
-      {filtered.map((skyrsla, index) => (
+    <Container
+      fade={skyrslurFade ? "fade" : ""}
+      onAnimationEnd={() => dispatch(triggerSkyrsluFade())}
+      device={device}
+    >
+      {files.map((skyrsla, index) => (
         <Skyrsla key={index} skyrsla={skyrsla}></Skyrsla>
       ))}
     </Container>

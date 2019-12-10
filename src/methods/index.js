@@ -35,12 +35,10 @@ const compareDate = (a, b) => {
 }
 
 export const filterSkyrslur = (skyrslur, filter) => {
-  if (filter === "bytitle") {
-    console.log(skyrslur.sort(compareTitle))
+  if (filter === "title") {
     return skyrslur.sort(compareTitle)
   }
-  if (filter === "bydate") {
-    console.log(skyrslur.sort(compareDate))
+  if (filter === "date") {
     return skyrslur.sort(compareDate)
   }
 }

@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { styles } from "../../../../../../../constants"
 import Img from "gatsby-image"
 
-export const Box = styled.div`
+const BoxStyle = css`
   height: 330px;
   width: auto;
   background: ${styles.BackGroundGray};
@@ -13,6 +13,22 @@ export const Box = styled.div`
   flex-direction: column;
   position: relative;
   justify-content: space-between;
+  transition: 0.2s ease-in-out;
+  box-sizing: border-box;
+  &&:hover {
+    background: ${styles.LinuLitur};
+    cursor: pointer;
+    transform: scale(0.99);
+  }
+`
+/** scaling */
+export const Box = styled.div`
+  ${BoxStyle};
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      height: 250px;
+    `}
 `
 
 export const Content = styled.div`

@@ -9,6 +9,7 @@ import {
   TRIGGER_NAV,
   LOADED_FRONTPAGE,
   SET_SKYRSLUR_FILTER,
+  TRIGGER_SKYRSLU_FADE,
 } from "./actions"
 
 const initialState = {
@@ -22,6 +23,7 @@ const initialState = {
   navStatus: "closed",
   frontpageLoaded: false,
   skyrslurFilterBy: `date` /** default filtered by date from graphql query */,
+  skyrslurFade: false /** skýrslu fade */,
 }
 
 export default (state = initialState, action) => {
@@ -62,6 +64,8 @@ export default (state = initialState, action) => {
       return { ...state, frontpageLoaded: true }
     case SET_SKYRSLUR_FILTER:
       return { ...state, skyrslurFilterBy: action.filter }
+    case TRIGGER_SKYRSLU_FADE:
+      return { ...state, skyrslurFade: !state.skyrslurFade }
     default:
       return state
   }

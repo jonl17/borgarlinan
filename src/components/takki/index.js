@@ -1,7 +1,7 @@
 import React from "react"
 import { Button, Container } from "./Styled"
 
-const Takki = ({ texti, click, box }) => {
+const Takki = ({ texti, click }) => {
   return (
     <Container>
       <Button onClick={click} className="bold">

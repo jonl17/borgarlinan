@@ -45,3 +45,7 @@ export const setSkyrslurFilter = filter => ({
   type: SET_SKYRSLUR_FILTER,
   filter,
 })
+export const TRIGGER_SKYRSLU_FADE = "TRIGGER_SKYRSLU_FADE"
+export const triggerSkyrsluFade = () => ({
+  type: TRIGGER_SKYRSLU_FADE,
+})

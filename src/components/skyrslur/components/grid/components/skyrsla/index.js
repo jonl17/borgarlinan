@@ -2,12 +2,45 @@ import React from "react"
 import { Box, PDF, Content, ImageContainer } from "./Styled"
 import { graphql, StaticQuery } from "gatsby"
 import "./index.css"
+import { useSelector } from "react-redux"
+import { formatDate } from "../../../../../../methods"
 
 /** components */
 import Takki from "../../../../../takki"
 import Banner from "./components/Banner"
 
-const getpdfImage = () => (
+const Skyrsla = ({
+  skyrsla: { frontmatter, html },
+  data: {
+    file: {
+      childImageSharp: { fluid },
+    },
+  },
+}) => {
+  const device = useSelector(state => state.reducer.device)
+  return (
+    <Box device={device}>
+      <Banner
+        title={frontmatter.title}
+        date={formatDate(frontmatter.dagsetning.slice(0, 10))}
+      ></Banner>
+      <Content
+        className="skyrsla-content"
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></Content>
+      {frontmatter.vidhengi_pdf !== null ? (
+        <ImageContainer target="_blank" href={frontmatter.vidhengi_pdf}>
+          <PDF fluid={fluid}></PDF>
+        </ImageContainer>
+      ) : (
+        <></>
+      )}
+      <Takki texti={"Lesa meira"}></Takki>
+    </Box>
+  )
+}
+
+export default props => (
   <StaticQuery
     query={graphql`
       {
@@ -22,51 +55,6 @@ const getpdfImage = () => (
         }
       }
     `}
-    render={(data, index) => (
-      <PDF key={index} fluid={data.file.childImageSharp.fluid}></PDF>
-    )}
+    render={data => <Skyrsla data={data} {...props}></Skyrsla>}
   ></StaticQuery>
 )
-
-class Skyrsla extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      fullsize: false,
-    }
-  }
-  render() {
-    const {
-      skyrsla: { frontmatter, html },
-    } = this.props
-    return (
-      <Box>
-        <Banner
-          title={frontmatter.title}
-          date={frontmatter.dagsetning}
-        ></Banner>
-        <Content
-          className="skyrsla-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></Content>
-        {frontmatter.vidhengi_pdf !== null ? (
-          <ImageContainer target="_blank" href={frontmatter.vidhengi_pdf}>
-            {getpdfImage()}
-          </ImageContainer>
-        ) : (
-          <></>
-        )}
-        <Takki
-          click={() =>
-            this.setState({
-              fullsize: !this.state.fullsize,
-            })
-          }
-          texti={"Lesa meira"}
-        ></Takki>
-      </Box>
-    )
-  }
-}
-
-export default Skyrsla
