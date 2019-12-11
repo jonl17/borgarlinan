@@ -27,6 +27,7 @@ const Skyrslur = () => {
         </TopBox>
         <Grid></Grid>
         <Takki
+          mobileMove
           display={skyrslurShowCount >= skyrslurCount ? "none" : "block"}
           centering
           margins

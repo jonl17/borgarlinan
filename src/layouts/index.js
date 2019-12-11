@@ -1,5 +1,5 @@
 import React from "react"
-import { LayoutContainer, Body } from "./Styled"
+import { Body } from "./Styled"
 import { GlobCSS } from "../components/globalstyles"
 import Menu from "../components/menu"
 import SEO from "../components/seo"

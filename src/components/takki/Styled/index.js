@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components"
 import { styles } from "../../../constants"
+import { Link } from "gatsby"
 
-export const Container = styled.div`
+const ContainerStyle = css`
   display: ${props => props.display};
   padding: 10px;
   border: 2px solid ${styles.LinuLitur};
@@ -30,6 +31,24 @@ export const Container = styled.div`
       margin: 50px auto 0 auto;
     `}
 `
+/** línkur */
+export const LinkContainer = styled(Link)`
+  ${ContainerStyle};
+  text-decoration: none;
+`
+/** venjulegur takki */
+export const Container = styled.div`
+  ${ContainerStyle};
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      ${props =>
+        props.mobileMove === `move` &&
+        css`
+          margin: 0 auto 50px auto;
+        `}
+    `}
+`
 export const Button = styled.p`
   margin: 0;
   color: ${styles.Blue};
@@ -40,7 +59,14 @@ export const Button = styled.p`
       color: white;
     `}
   transition: 0.2s ease-in-out;
-  ${Container}:hover & {
-    color: white;
-  }
+  ${props =>
+    props.device !== `mobile` &&
+    css`
+      ${Container}:hover & {
+        color: white;
+      }
+      ${LinkContainer}:hover & {
+        color: white;
+      }
+    `}
 `

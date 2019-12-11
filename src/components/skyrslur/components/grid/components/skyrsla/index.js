@@ -4,6 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import "./index.css"
 import { useSelector } from "react-redux"
 import { formatDate } from "../../../../../../methods"
+import slugify from "slugify"
 
 /** components */
 import Takki from "../../../../../takki"
@@ -35,7 +36,11 @@ const Skyrsla = ({
       ) : (
         <></>
       )}
-      <Takki texti={"Lesa meira"}></Takki>
+      <Takki
+        link
+        slug={`/skyrslur/` + slugify(frontmatter.title)}
+        texti={"Lesa meira"}
+      ></Takki>
     </Box>
   )
 }
