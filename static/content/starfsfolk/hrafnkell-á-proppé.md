@@ -1,6 +1,6 @@
 ---
 title: Hrafnkell Á. Proppé
-portrait_mynd: /data/Hrafnkell_sm.jpg
+portrait_mynd: /data/Hrafnkell.jpg
 starfslysing: Svæðisskipulagstjóri
 netfang: hrafnkell@borgarlinan.is
 verkefnastjori: true
