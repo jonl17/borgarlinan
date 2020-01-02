@@ -1,6 +1,6 @@
 ---
 title: Bryndís Friðriksdóttir
-portrait_mynd: /data/Bryndis_sm.jpg
+portrait_mynd: /data/Bryndis.jpg
 starfslysing: Samgönguverkfræðingur
 netfang: bryndis@borgarlinan.is
 verkefnastjori: false
