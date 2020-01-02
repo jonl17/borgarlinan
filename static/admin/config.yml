@@ -72,6 +72,14 @@ collections:
           widget: "boolean",
           hint: "Hakaðu við þetta ef einstaklingur er verkefnastjóri",
         }
+      - {
+          label: "Röð",
+          name: "rod",
+          widget: "number",
+          min: 1,
+          max: 4,
+          valueType: "int",
+        }
   - name: "skyrslur"
     editor:
       preview: false
