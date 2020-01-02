@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 export const Container = styled.div`
   position: relative;
-  margin: auto;
+  margin: 0 auto;
 `
 export const Name = styled.p`
   color: black;
@@ -29,10 +29,7 @@ export const ImageContainer = styled.div`
   height: 200px;
   width: 200px;
 `
-export const Image = styled(Img)`
-  height: 100%;
-  object-fit: cover;
-`
+export const Image = styled(Img)``
 export const Mail = styled.a`
   display: flex;
   align-items: center;
