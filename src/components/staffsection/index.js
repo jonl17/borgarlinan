@@ -27,7 +27,7 @@ export default props => (
       {
         allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/starfsfolk/" } }
-          sort: { fields: frontmatter___verkefnastjori, order: DESC }
+          sort: { fields: frontmatter___rod }
         ) {
           nodes {
             frontmatter {

@@ -12,6 +12,7 @@ const Takki = ({
   link,
   slug,
   mobileMove,
+  basic,
 }) => {
   const device = useSelector(state => state.reducer.device)
   return link ? (
@@ -22,8 +23,14 @@ const Takki = ({
       margins={margins ? "margins" : ""}
       onClick={click}
       selected={selected}
+      basic={basic ? "basic" : ""}
     >
-      <Button device={device} selected={selected} className="bold">
+      <Button
+        basic={basic ? "basic" : ""}
+        device={device}
+        selected={selected}
+        className="bold"
+      >
         {texti}
       </Button>
     </LinkContainer>

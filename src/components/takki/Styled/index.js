@@ -16,8 +16,12 @@ const ContainerStyle = css`
       border: 2px solid white;
     `}
   &&:hover {
-    background: ${styles.Blue};
-    border: 2px solid white;
+    ${props =>
+      props.basic !== `basic` &&
+      css`
+        background: ${styles.Blue};
+        border: 2px solid white;
+      `}
     cursor: pointer;
   }
   ${props =>
@@ -29,6 +33,12 @@ const ContainerStyle = css`
     props.margins === "margins" &&
     css`
       margin: 50px auto 0 auto;
+    `}
+  ${props =>
+    props.basic === `basic` &&
+    css`
+      border: none;
+      width: 80px;
     `}
 `
 /** línkur */
@@ -66,7 +76,16 @@ export const Button = styled.p`
         color: white;
       }
       ${LinkContainer}:hover & {
-        color: white;
+        ${props =>
+          props.basic !== `basic` &&
+          css`
+            color: white;
+          `}
       }
+    `}
+  ${props =>
+    props.basic === `basic` &&
+    css`
+      border-bottom: 2.5px solid ${styles.LinuLitur};
     `}
 `
