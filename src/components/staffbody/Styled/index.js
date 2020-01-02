@@ -8,7 +8,7 @@ export const Container = styled.div`
 `
 export const Name = styled.p`
   color: black;
-  font-size: 18px;
+  font-size: 17px;
   margin: 0;
   ${props =>
     props.device === `mobile` &&
