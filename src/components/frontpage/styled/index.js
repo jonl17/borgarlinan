@@ -24,7 +24,7 @@ export const TitleContainer = styled.div`
     css`
       border-left: 4px solid white;
     `}
-  transition: 0.1s;
+  transition: .1s ease-in-out;
   width: 1000px;
   margin-left: -445px;
   ${props =>

@@ -15,10 +15,6 @@ class Frontpage extends React.Component {
       whiteLineOffset: undefined,
     }
   }
-  // updateDevice() {
-  //   this.props.dispatch(setDevice(window.innerWidth))
-  //   this.props.dispatch(getHeight(window.innerHeight))
-  // }
   startScroll() {
     if (this.state.whiteLineOffset !== this.titleElement.current.offsetTop) {
       this.setState({
