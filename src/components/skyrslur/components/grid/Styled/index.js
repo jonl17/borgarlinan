@@ -15,7 +15,7 @@ const ContainerStyle = css`
   display: grid;
 
   grid-gap: 30px;
-  margin: auto;
+  margin: 0;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   ${props =>
     props.fade === "fade" &&
