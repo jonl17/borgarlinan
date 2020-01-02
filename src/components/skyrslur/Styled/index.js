@@ -12,6 +12,7 @@ export const Container = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
+      display: block;
       width: 90%;
       margin: 125px auto auto auto;
     `}
@@ -23,4 +24,9 @@ export const Title = styled.h1`
 export const TopBox = styled.div`
   display: flex;
   justify-content: space-between;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      flex-direction: column;
+    `}
 `

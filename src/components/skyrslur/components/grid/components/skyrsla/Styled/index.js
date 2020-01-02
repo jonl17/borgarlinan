@@ -37,7 +37,7 @@ export const Content = styled.div`
 export const ImageContainer = styled.a`
   position: absolute;
   right: 25px;
-  top: 25px;
+  top: 35px;
   height: 55px;
   width: 55px;
 `

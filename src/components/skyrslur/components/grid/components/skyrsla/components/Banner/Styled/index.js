@@ -10,4 +10,5 @@ export const Title = styled.p`
 export const Date = styled.p`
   color: ${styles.Gray};
   margin-bottom: 10px;
+  font-size: 12px;
 `

@@ -24,7 +24,7 @@ const Filter = () => {
         {/* by date */}
         <Takki
           selected={skyrslurFilterBy === `date` ? true : false}
-          texti={"Dagsetninu"}
+          texti={"Dagsetningu"}
           click={() => dispatches(dispatch, "date")}
         ></Takki>
         {/* by title */}

@@ -1,5 +1,5 @@
 export const styles = {
-  Blue: "#64A078",
+  Blue: "#28A078",
   Gray: "#7f7f7f",
   BackGroundGray: "#f4f4f4",
   Speed: 1,
@@ -8,5 +8,5 @@ export const styles = {
 export const sizes = {
   tabletwidth: 600,
   tabletmarginleft: -300,
-  burgerHeight: 85,
+  burgerHeight: 75,
 }

@@ -7,7 +7,7 @@ const ContainerStyle = css`
   padding: 10px;
   border: 2px solid ${styles.LinuLitur};
   transition: 0.2s ease-in-out;
-  width: 80px;
+  width: 90px;
   height: 20px;
   ${props =>
     props.selected &&

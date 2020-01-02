@@ -8,7 +8,7 @@ export const Container = styled.div`
 `
 export const Name = styled.p`
   color: black;
-  font-size: 17px;
+  font-size: 18px;
   margin: 0;
   ${props =>
     props.device === `mobile` &&
@@ -28,6 +28,10 @@ export const ImageContainer = styled.div`
   padding-bottom: 45px;
   height: 200px;
   width: 200px;
+`
+export const Image = styled(Img)`
+  height: 100%;
+  object-fit: cover;
 `
 export const Mail = styled.a`
   display: flex;
@@ -66,5 +70,3 @@ export const SubJob = styled.p`
   top: 200px;
   width: 100%;
 `
-
-export const Image = styled(Img)``

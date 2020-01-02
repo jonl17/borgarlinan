@@ -19,7 +19,7 @@ const Skyrslur = () => {
   return (
     <>
       <Container device={device}>
-        <TopBox>
+        <TopBox device={device}>
           <Title device={device} className="bold">
             Skýrslur
           </Title>
