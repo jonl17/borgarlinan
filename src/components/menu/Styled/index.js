@@ -61,7 +61,7 @@ export const Text = styled.p`
   ${props =>
     props.device !== `mobile` &&
     css`
-      &&:hover {
+      ${Item}:hover & {
         color: ${styles.LinuLitur};
       }
     `}
