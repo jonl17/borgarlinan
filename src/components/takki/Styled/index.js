@@ -39,6 +39,7 @@ const ContainerStyle = css`
     css`
       border: none;
       width: 80px;
+      padding-left: 0;
     `}
 `
 /** línkur */
