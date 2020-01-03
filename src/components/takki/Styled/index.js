@@ -13,14 +13,14 @@ const ContainerStyle = css`
     props.selected &&
     css`
       background: ${styles.Blue};
-      border: 2px solid white;
+      border: 2px solid ${styles.LinuLitur};
     `}
   &&:hover {
     ${props =>
       props.basic !== `basic` &&
       css`
         background: ${styles.Blue};
-        border: 2px solid white;
+        border: 2px solid ${styles.LinuLitur};
       `}
     cursor: pointer;
   }

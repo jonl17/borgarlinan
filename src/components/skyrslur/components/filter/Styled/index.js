@@ -7,7 +7,7 @@ export const Box = styled.div`
 
 export const Name = styled.p`
   margin: auto;
-  width: 115px;
+  width: 100px;
   display: grid;
   height: 20px;
 `
@@ -15,8 +15,8 @@ export const Name = styled.p`
 /** filter BTNS */
 export const BTNContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin: 10px 10px 10px 0;
+  justify-content: space-between;
+  width: 250px;
+  margin: 10px 0 10px 0;
   transition: 0.2s ease-in-out;
 `
