@@ -11,11 +11,25 @@ exports.onCreateNode = ({ node }) => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const skyrslaTemplate = path.resolve(`src/templates/skyrsla/index.js`)
+  const frettTemplate = path.resolve(`src/templates/frett/index.js`)
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      skyrslur: allMarkdownRemark(
         sort: { fields: frontmatter___dagsetning, order: DESC }
         filter: { fileAbsolutePath: { regex: "/content/skyrslur/" } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+      frettir: allMarkdownRemark(
+        sort: { fields: frontmatter___dagsetning, order: DESC }
+        filter: { fileAbsolutePath: { regex: "/content/frettir/" } }
       ) {
         edges {
           node {
@@ -32,10 +46,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query!`)
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  // Skýrslur
+  result.data.skyrslur.edges.forEach(({ node }) => {
     createPage({
       path: "/skyrslur/" + slugify(node.frontmatter.title),
       component: skyrslaTemplate,
+      context: {
+        id: node.id,
+      },
+    })
+  })
+  // Fréttir
+  result.data.frettir.edges.forEach(({ node }) => {
+    createPage({
+      path: "/frettir/" + slugify(node.frontmatter.title),
+      component: frettTemplate,
       context: {
         id: node.id,
       },
