@@ -6,6 +6,7 @@ const ContainerStyle = css`
   display: ${props => props.display};
   padding: 10px;
   border: 2px solid ${styles.LinuLitur};
+  border-radius: 3px;
   transition: 0.2s ease-in-out;
   width: 90px;
   height: 20px;
