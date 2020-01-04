@@ -3,7 +3,7 @@ import { Container } from "./Styled"
 import { graphql, StaticQuery } from "gatsby"
 import { filterSkyrslur } from "../../../../methods"
 import { useSelector, useDispatch } from "react-redux"
-import { triggerSkyrsluFade, setFrettirCount } from "../../../../state/actions"
+import { triggerFrettirFade, setFrettirCount } from "../../../../state/actions"
 
 /** components */
 import Skyrsla from "./components/frett"
@@ -30,11 +30,11 @@ const Grid = ({
   const dispatch = useDispatch()
   const files = filter(nodes, frettirFilterBy)
   dispatch(setFrettirCount(files.length))
-  console.log(frettirFilterBy)
+  console.log(frettirFade)
   return (
     <Container
       fade={frettirFade ? "fade" : ""}
-      onAnimationEnd={() => dispatch(triggerSkyrsluFade())}
+      onAnimationEnd={() => dispatch(triggerFrettirFade())}
       device={device}
     >
       {files.map((frett, index) =>

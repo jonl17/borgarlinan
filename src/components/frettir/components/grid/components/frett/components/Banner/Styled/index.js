@@ -6,6 +6,7 @@ export const Title = styled.p`
   color: ${styles.Blue};
   font-size: 25px;
   margin: 0;
+  overflow: hidden;
 `
 export const Date = styled.p`
   color: ${styles.Gray};
