@@ -14,9 +14,6 @@
   .frett-content > * {
     font-size: 15px !important;
   }
-  .frett-content {
-    display: none;
-  }
 }
 .frett-content > * {
   color: gray;
