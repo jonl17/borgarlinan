@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { triggerFrettirFade, setFrettirCount } from "../../../../state/actions"
 
 /** components */
-import Skyrsla from "./components/frett"
+import Frett from "./components/frett"
 
 /** filtering */
 const filter = (files, filterType) => {
@@ -30,7 +30,6 @@ const Grid = ({
   const dispatch = useDispatch()
   const files = filter(nodes, frettirFilterBy)
   dispatch(setFrettirCount(files.length))
-  console.log(frettirFade)
   return (
     <Container
       fade={frettirFade ? "fade" : ""}
@@ -39,7 +38,7 @@ const Grid = ({
     >
       {files.map((frett, index) =>
         index < frettirShowCount ? (
-          <Skyrsla key={index} frett={frett}></Skyrsla>
+          <Frett key={index} frett={frett}></Frett>
         ) : (
           ""
         )

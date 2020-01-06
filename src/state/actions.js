@@ -78,3 +78,8 @@ export const setFrettirCount = number => ({
   type: SET_FRETTIR_COUNT,
   number,
 })
+export const PUSH_HISTORY = "PUSH_HISTORY"
+export const pushHistory = location => ({
+  type: PUSH_HISTORY,
+  location,
+})

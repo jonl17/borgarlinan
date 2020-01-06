@@ -16,6 +16,7 @@ import {
   INCREMENT_FRETTIR,
   SET_FRETTIR_COUNT,
   TRIGGER_FRETTIR_FADE,
+  PUSH_HISTORY,
 } from "./actions"
 
 const initialState = {
@@ -38,6 +39,8 @@ const initialState = {
   frettirFade: false /** fréttir fade */,
   frettirShowCount: 4,
   frettirCount: undefined,
+  /** register page history  */
+  history: [],
 }
 
 export default (state = initialState, action) => {
@@ -94,6 +97,8 @@ export default (state = initialState, action) => {
       return { ...state, frettirShowCount: state.frettirShowCount + 2 }
     case SET_FRETTIR_COUNT:
       return { ...state, frettirCount: action.number }
+    case PUSH_HISTORY:
+      return { ...state, history: [...state.history, action.location] }
     default:
       return state
   }
