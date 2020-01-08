@@ -1,22 +1,23 @@
-.frettir-content > * > a {
+.skyrsla-content > * > a {
   color: gray !important;
   z-index: 8;
 }
-.frettir-content > ul {
+.skyrsla-content > ul {
   list-style: square;
   padding-left: 15px;
 }
-.frettir-content > ul > li {
+.skyrsla-content > ul > li {
   padding-bottom: 15px;
 }
 @media only screen and (max-width: 750px) {
   /* device === mobile */
-  .frettir-content > * {
+  .skyrsla-content > * {
     font-size: 15px !important;
   }
 }
-.frettir-content > * {
+.skyrsla-content > * {
   color: gray;
   line-height: 160%;
-  font-size: 18px;
+  font-size: 15px;
+  margin: 0;
 }

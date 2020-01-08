@@ -1,0 +1,23 @@
+.frett-content > * > a {
+  color: gray !important;
+  z-index: 8;
+}
+.frett-content > ul {
+  list-style: square;
+  padding-left: 15px;
+}
+.frett-content > ul > li {
+  padding-bottom: 15px;
+}
+@media only screen and (max-width: 750px) {
+  /* device === mobile */
+  .frett-content > * {
+    font-size: 15px !important;
+  }
+}
+.frett-content > * {
+  color: gray;
+  line-height: 160%;
+  font-size: 15px;
+  margin: 0;
+}

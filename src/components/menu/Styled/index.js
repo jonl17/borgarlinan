@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { styles, sizes } from "../../../constants"
 
 const Background = css`
-  background: rgba(244, 244, 244, 0.7);
+  background: rgba(244, 244, 244, 0.9);
 `
 
 export const Navbar = styled.div`
@@ -37,7 +37,7 @@ export const Item = styled(Link)`
   ${props =>
     props.dropdown &&
     css`
-      border-top: 3px solid ${styles.Blue};
+      border-top: 2px solid rgba(40, 160, 120, 0.6);
     `}
   ${props =>
     props.device === `mobile` &&
@@ -54,14 +54,14 @@ export const Text = styled.p`
   ${props =>
     props.titill &&
     css`
-      font-size: 18px;
+      font-size: 20px;
     `}
   color: ${styles.Blue};
   transition: .2s;
   ${props =>
     props.device !== `mobile` &&
     css`
-      &&:hover {
+      ${Item}:hover & {
         color: ${styles.LinuLitur};
       }
     `}

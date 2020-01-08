@@ -1,55 +1,44 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
-import Favicon from "./borg_fav.png"
 
-const SEO = () => (
+const SEO = ({
+  data: {
+    site: {
+      siteMetadata: { title, about: description, image, favicon, url },
+    },
+  },
+}) => (
+  <>
+    <Helmet title={title}>
+      <meta name="title" content={title}></meta>
+      <meta name="description" content={description} />
+      <meta name="image" content={image} />
+      {url && <meta property="og:url" content={url} />}
+      {title && <meta property="og:title" content={title} />}
+      {description && <meta property="og:description" content={description} />}
+      {image && <meta property="og:image" content={image} />}
+      <link sizes="20x20" href={favicon} rel="icon" type="image/png"></link>
+    </Helmet>
+  </>
+)
+
+export default props => (
   <StaticQuery
     query={graphql`
-      query SEO {
+      {
         site {
           siteMetadata {
             title
             seoTitle
             about
+            image
+            favicon
+            url
           }
         }
       }
     `}
-    render={data => (
-      <>
-        <Helmet title={data.site.siteMetadata.title}>
-          <meta
-            name="description"
-            content={data.site.siteMetadata.about}
-          ></meta>
-          {data.site.siteMetadata.title && (
-            <meta
-              property="og:title"
-              content={data.site.siteMetadata.seoTitle}
-            />
-          )}
-          {data.site.siteMetadata.about && (
-            <meta
-              property="og:description"
-              content={data.site.siteMetadata.about}
-            />
-          )}
-          {data.site.siteMetadata.seoTitle && (
-            <meta
-              name="keywords"
-              content={
-                data.site.siteMetadata.seoTitle +
-                ", " +
-                data.site.siteMetadata.title
-              }
-            />
-          )}
-          <link sizes="20x20" href={Favicon} rel="icon" type="image/png"></link>
-        </Helmet>
-      </>
-    )}
+    render={data => <SEO data={data} {...props}></SEO>}
   ></StaticQuery>
 )
-
-export default SEO

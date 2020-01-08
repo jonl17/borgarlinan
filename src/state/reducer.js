@@ -8,6 +8,15 @@ import {
   SET_WHITELINE_STOP,
   TRIGGER_NAV,
   LOADED_FRONTPAGE,
+  SET_SKYRSLUR_FILTER,
+  TRIGGER_SKYRSLU_FADE,
+  INCREMENT_SKYRSLUR,
+  SET_SKYRSLUR_COUNT,
+  SET_FRETTIR_FILTER,
+  INCREMENT_FRETTIR,
+  SET_FRETTIR_COUNT,
+  TRIGGER_FRETTIR_FADE,
+  PUSH_HISTORY,
 } from "./actions"
 
 const initialState = {
@@ -20,6 +29,18 @@ const initialState = {
   whiteLineStop: undefined,
   navStatus: "closed",
   frontpageLoaded: false,
+  /** skyrslur */
+  skyrslurFilterBy: `date` /** default filtered by date from graphql query */,
+  skyrslurFade: false /** skýrslu fade */,
+  skyrslurShowCount: 4,
+  skyrslurCount: undefined,
+  /** fréttir */
+  frettirFilterBy: `date` /** default filtered by date from graphql query */,
+  frettirFade: false /** fréttir fade */,
+  frettirShowCount: 4,
+  frettirCount: undefined,
+  /** register page history  */
+  history: [],
 }
 
 export default (state = initialState, action) => {
@@ -58,6 +79,26 @@ export default (state = initialState, action) => {
       return { ...state, navStatus: action.trigger }
     case LOADED_FRONTPAGE:
       return { ...state, frontpageLoaded: true }
+    /** skýrslur */
+    case SET_SKYRSLUR_FILTER:
+      return { ...state, skyrslurFilterBy: action.filter }
+    case TRIGGER_SKYRSLU_FADE:
+      return { ...state, skyrslurFade: !state.skyrslurFade }
+    case INCREMENT_SKYRSLUR:
+      return { ...state, skyrslurShowCount: state.skyrslurShowCount + 2 }
+    case SET_SKYRSLUR_COUNT:
+      return { ...state, skyrslurCount: action.number }
+    /** fréttir */
+    case SET_FRETTIR_FILTER:
+      return { ...state, frettirFilterBy: action.filter }
+    case TRIGGER_FRETTIR_FADE:
+      return { ...state, frettirFade: !state.frettirFade }
+    case INCREMENT_FRETTIR:
+      return { ...state, frettirShowCount: state.frettirShowCount + 2 }
+    case SET_FRETTIR_COUNT:
+      return { ...state, frettirCount: action.number }
+    case PUSH_HISTORY:
+      return { ...state, history: [...state.history, action.location] }
     default:
       return state
   }

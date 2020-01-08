@@ -40,3 +40,46 @@ export const LOADED_FRONTPAGE = "LOADED_FRONTPAGE"
 export const loadedFrontpage = () => ({
   type: LOADED_FRONTPAGE,
 })
+/** skýrslur */
+export const SET_SKYRSLUR_FILTER = "SET_SKYRSLUR_FILTER"
+export const setSkyrslurFilter = filter => ({
+  type: SET_SKYRSLUR_FILTER,
+  filter,
+})
+export const TRIGGER_SKYRSLU_FADE = "TRIGGER_SKYRSLU_FADE"
+export const triggerSkyrsluFade = () => ({
+  type: TRIGGER_SKYRSLU_FADE,
+})
+export const INCREMENT_SKYRSLUR = "INCREMENT_SKYRSLUR"
+export const incrementSkyrslur = () => ({
+  type: INCREMENT_SKYRSLUR,
+})
+export const SET_SKYRSLUR_COUNT = "SET_SKYRSLUR_COUNT"
+export const setSkyrslurCount = number => ({
+  type: SET_SKYRSLUR_COUNT,
+  number,
+})
+/** fréttir */
+export const SET_FRETTIR_FILTER = "SET_FRETTIR_FILTER"
+export const setFrettirFilter = filter => ({
+  type: SET_FRETTIR_FILTER,
+  filter,
+})
+export const TRIGGER_FRETTIR_FADE = "TRIGGER_FRETTIR_FADE"
+export const triggerFrettirFade = () => ({
+  type: TRIGGER_FRETTIR_FADE,
+})
+export const INCREMENT_FRETTIR = "INCREMENT_FRETTIR"
+export const incrementFrettir = () => ({
+  type: INCREMENT_FRETTIR,
+})
+export const SET_FRETTIR_COUNT = "SET_FRETTIR_COUNT"
+export const setFrettirCount = number => ({
+  type: SET_FRETTIR_COUNT,
+  number,
+})
+export const PUSH_HISTORY = "PUSH_HISTORY"
+export const pushHistory = location => ({
+  type: PUSH_HISTORY,
+  location,
+})

@@ -1,36 +1,11 @@
 import React from "react"
-import { PageContainer, Container, Title } from "./Styled"
-import { graphql, StaticQuery } from "gatsby"
-import NewsBody from "../newsbody"
 import { connect } from "react-redux"
 import { setFirstlineStop } from "../../state/actions"
 import { getPosition } from "../../methods"
 
-const GetNews = () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allMarkdownRemark(
-          sort: { fields: frontmatter___dagsetning, order: DESC }
-          filter: { fileAbsolutePath: { regex: "/frettir/" } }
-        ) {
-          nodes {
-            html
-            frontmatter {
-              title
-              dagsetning
-            }
-          }
-        }
-      }
-    `}
-    render={data =>
-      data.allMarkdownRemark.nodes.map((item, index) => (
-        <NewsBody no={index} key={index} item={item}></NewsBody>
-      ))
-    }
-  ></StaticQuery>
-)
+/** components */
+import { PageContainer, Container, Title } from "./Styled"
+import LatestNews from "./components/LatestNews"
 
 class NewsSection extends React.Component {
   constructor(props) {
@@ -72,7 +47,7 @@ class NewsSection extends React.Component {
           >
             Fréttir
           </Title>
-          {GetNews()}
+          <LatestNews></LatestNews>
         </Container>
       </PageContainer>
     )

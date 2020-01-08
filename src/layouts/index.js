@@ -1,5 +1,5 @@
 import React from "react"
-import { LayoutContainer, Body } from "./Styled"
+import { Body } from "./Styled"
 import { GlobCSS } from "../components/globalstyles"
 import Menu from "../components/menu"
 import SEO from "../components/seo"
@@ -26,8 +26,10 @@ class Layout extends React.Component {
     window.removeEventListener("resize", () => this.deviceDispatches(dispatch))
   }
   deviceDispatches(dispatch) {
-    dispatch(setDevice(this.bodyelement.clientWidth))
-    dispatch(getHeight(this.bodyelement.clientHeight))
+    if (this.bodyelement != null) {
+      dispatch(setDevice(this.bodyelement.clientWidth))
+      dispatch(getHeight(this.bodyelement.clientHeight))
+    }
   }
   scrollCallBack() {
     const { dispatch, started } = this.props
@@ -39,14 +41,14 @@ class Layout extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <LayoutContainer id="layout-container">
-        <GlobCSS></GlobCSS>
+      <>
         <SEO></SEO>
+        <GlobCSS></GlobCSS>
         <Menu></Menu>
         <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
           {children}
         </Body>
-      </LayoutContainer>
+      </>
     )
   }
 }

@@ -1,13 +1,17 @@
 import React from "react"
+import { connect } from "react-redux"
+import { pushHistory } from "../state/actions"
 
-const skyrslur = () => {
-  return (
-    <>
-      <div>
-        <p>YO</p>
-      </div>
-    </>
-  )
+/** components */
+import Skyrslur from "../components/skyrslur"
+
+class skyrslur extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(pushHistory(this.props.location.pathname))
+  }
+  render() {
+    return <Skyrslur></Skyrslur>
+  }
 }
 
-export default skyrslur
+export default connect()(skyrslur)
