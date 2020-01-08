@@ -101,5 +101,11 @@ module.exports = {
     },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-layout`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_CODE || "none",
+      },
+    },
   ],
 }
