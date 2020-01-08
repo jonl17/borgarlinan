@@ -7,7 +7,6 @@ export const Container = styled.div`
   height: 100%;
   width: 900px;
   margin: 125px auto auto auto;
-  padding-top: 150px;
   padding-bottom: 55px;
   ${props =>
     props.device === `tablet` &&
