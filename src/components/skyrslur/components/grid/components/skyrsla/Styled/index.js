@@ -22,7 +22,7 @@ export const Box = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      height: 250px;
+      height: 400px;
     `}
 `
 
