@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-import { styles } from "../../../constants"
 
 export const PageContainer = styled.div`
   width: 100%;
@@ -26,7 +25,6 @@ export const Container = styled.div`
     `}
 `
 export const Title = styled.p`
-  border-top: 4px solid ${styles.Blue};
   padding-top: 35px;
   padding-bottom: 15px;
   color: black;
