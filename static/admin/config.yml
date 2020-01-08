@@ -36,6 +36,7 @@ collections:
           widget: "datetime",
           format: "YYYY-MM-DD",
         }
+      - { label: "Mynd", name: mynd, widget: "image", required: false }
       - { label: "Texti", name: "body", widget: "markdown" }
   - name: "verkefnastofa_borgarlinu"
     editor:
