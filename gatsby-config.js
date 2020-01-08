@@ -19,7 +19,7 @@ module.exports = {
     navbaritems: [
       { name: `Borgarlínan`, url: `/` },
       { name: `Um Verkefnastofu`, url: "/um-verkefnastofu/" },
-      // { name: `Skýrslur`, url: "/skyrslur/" },
+      { name: `Skýrslur`, url: "/skyrslur/" },
       { name: `Fréttasafn`, url: "/frettir/" },
     ],
   },
