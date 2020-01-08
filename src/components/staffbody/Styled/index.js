@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 export const Container = styled.div`
   position: relative;
-  margin: auto;
+  margin: 0 auto;
 `
 export const Name = styled.p`
   color: black;
@@ -26,15 +26,18 @@ export const Job = styled.p`
 `
 export const ImageContainer = styled.div`
   padding-bottom: 45px;
-  height: 200px;
+  height: 260px;
   width: 200px;
+`
+export const Image = styled(Img)`
+  height: 100%;
 `
 export const Mail = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 200px;
+  height: 260px;
   text-decoration: none;
   top: 0;
   width: 200px;
@@ -63,8 +66,6 @@ export const MailText = styled.p`
 export const SubJob = styled.p`
   color: ${styles.Blue};
   position: absolute;
-  top: 200px;
+  top: 260px;
   width: 100%;
 `
-
-export const Image = styled(Img)``
