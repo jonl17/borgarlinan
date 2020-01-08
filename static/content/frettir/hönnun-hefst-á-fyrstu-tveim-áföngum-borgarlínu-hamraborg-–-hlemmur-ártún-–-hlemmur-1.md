@@ -4,6 +4,8 @@ title: >-
   Hlemmur
 dagsetning: '2019-12-12'
 ---
+![](/data/fyrstu-tveir-áfangar-borgarl.png)
+
 Verkefnastofa Borgarlínu hefur skipað hönnunarteymi fyrir fyrstu tvo áfanga Borgarlínu.&nbsp; Hönnunasrteymið mun vinna frumdrög að fyrstu framkvæmdum Borgarlínu. Um er að ræða tvær framkvæmdalotur sem alls munu verða um 13 km. Hamraborg – Hlemmur og Ártún – Hlemmur.&nbsp; Vinna við hönnun er þegar hafin og er gert ráð fyrir að fyrstu tillögur verði tilbúnar í vor. 
 
 **Hrafnkell Ásólfur Proppé, verkefnastjóri Borgarlínu:** 
