@@ -1,11 +1,18 @@
 import React from "react"
-import { Container, Title, Content, Date } from "./Styled"
 import { graphql } from "gatsby"
 import { formatDate } from "../../methods"
 import { useSelector } from "react-redux"
 import "./index.css"
 
 /** components */
+import {
+  Container,
+  Title,
+  Content,
+  Date,
+  ImageContainer,
+  Image,
+} from "./Styled"
 import Back from "../../components/Back"
 import Footer from "../../components/footer"
 
@@ -13,7 +20,7 @@ const FrettTemplate = ({
   data: {
     markdownRemark: {
       html,
-      frontmatter: { title, dagsetning },
+      frontmatter: { title, dagsetning, frettamynd },
     },
   },
 }) => {
@@ -24,6 +31,13 @@ const FrettTemplate = ({
         <Back slug={`/frettir/`}></Back>
         <Date> {formatDate(dagsetning.slice(0, 10))}</Date>
         <Title className="bold">{title}</Title>
+        {frettamynd ? (
+          <ImageContainer device={device}>
+            <Image fluid={frettamynd.childImageSharp.fluid}></Image>
+          </ImageContainer>
+        ) : (
+          <></>
+        )}
         <Content
           device={device}
           className="single-frett-content"
@@ -42,6 +56,13 @@ export const query = graphql`
       frontmatter {
         title
         dagsetning
+        frettamynd {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

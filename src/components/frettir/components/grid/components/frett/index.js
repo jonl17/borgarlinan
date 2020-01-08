@@ -1,17 +1,16 @@
 import React from "react"
-import { Box, Content } from "./Styled"
 import "./index.css"
 import { useSelector } from "react-redux"
 import { formatDate } from "../../../../../../methods"
 import slugify from "slugify"
 
 /** components */
+import { Box, Content } from "./Styled"
 import Takki from "../../../../../takki"
 import Banner from "./components/Banner"
 
 const Frett = ({ frett: { frontmatter, html } }) => {
   const device = useSelector(state => state.reducer.device)
-  console.log(frontmatter.title.length + html.length)
   return (
     <Box device={device}>
       <Banner

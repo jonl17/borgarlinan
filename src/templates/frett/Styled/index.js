@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import Img from "gatsby-image"
 
 /* full section container */
 export const Container = styled.div`
@@ -40,3 +41,14 @@ export const Content = styled.div`
       width: 100%;
     `}
 `
+
+export const ImageContainer = styled.div`
+  box-sizing: border-box;
+  padding: 25px 100px 25px 0px;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      padding: 25px 0px 25px 0px;
+    `}
+`
+export const Image = styled(Img)``
