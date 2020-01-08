@@ -1,6 +1,7 @@
 ---
 title: Opnun tilboða í brú yfir Fossvog.
 dagsetning: '2020-01-06'
+frettamynd: /data/270m-bru_mynd_12_01032018_utg.1ab-1024x681.png
 ---
 Föstudaginn 20. desember 2019 var liðinn umsóknarfrestur um þátttöku í hönnunarsamkeppni um brú á Fossvog.
 
