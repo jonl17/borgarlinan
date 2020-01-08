@@ -11,6 +11,7 @@ import Banner from "./components/Banner"
 
 const Frett = ({ frett: { frontmatter, html } }) => {
   const device = useSelector(state => state.reducer.device)
+  console.log(frontmatter.title.length + html.length)
   return (
     <Box device={device}>
       <Banner
