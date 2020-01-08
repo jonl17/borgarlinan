@@ -30,7 +30,10 @@ const Skyrsla = ({
         dangerouslySetInnerHTML={{ __html: html }}
       ></Content>
       {frontmatter.vidhengi_pdf !== null ? (
-        <ImageContainer target="_blank" href={frontmatter.vidhengi_pdf}>
+        <ImageContainer
+          target="_blank"
+          href={frontmatter.vidhengi_pdf.publicURL}
+        >
           <PDF fluid={fluid}></PDF>
         </ImageContainer>
       ) : (

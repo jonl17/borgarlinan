@@ -32,7 +32,7 @@ const SkyrslaTemplate = ({
           className="single-skyrsla-content"
           dangerouslySetInnerHTML={{ __html: html }}
         ></Content>
-        <ImageContainer href={vidhengi_pdf} target="_blank">
+        <ImageContainer href={vidhengi_pdf.publicURL} target="_blank">
           <PDF fluid={fluid}></PDF>
         </ImageContainer>
       </Container>
@@ -48,7 +48,9 @@ export const query = graphql`
       frontmatter {
         title
         dagsetning
-        vidhengi_pdf
+        vidhengi_pdf {
+          publicURL
+        }
       }
     }
     file(childImageSharp: { fluid: { originalName: { eq: "pdf-icon.png" } } }) {

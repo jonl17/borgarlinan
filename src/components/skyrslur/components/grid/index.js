@@ -62,7 +62,9 @@ export default props => (
             frontmatter {
               title
               dagsetning
-              vidhengi_pdf
+              vidhengi_pdf {
+                publicURL
+              }
             }
           }
         }
