@@ -32,9 +32,13 @@ const SkyrslaTemplate = ({
           className="single-skyrsla-content"
           dangerouslySetInnerHTML={{ __html: html }}
         ></Content>
-        <ImageContainer href={vidhengi_pdf.publicURL} target="_blank">
-          <PDF fluid={fluid}></PDF>
-        </ImageContainer>
+        {vidhengi_pdf !== null ? (
+          <ImageContainer href={vidhengi_pdf.publicURL} target="_blank">
+            <PDF fluid={fluid}></PDF>
+          </ImageContainer>
+        ) : (
+          <></>
+        )}
       </Container>
       <Footer></Footer>
     </>
