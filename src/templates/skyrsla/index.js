@@ -15,11 +15,13 @@ const SkyrslaTemplate = ({
       html,
       frontmatter: { title, dagsetning, vidhengi_pdf },
     },
-    file: {
+    pdfIcon: {
       childImageSharp: { fluid },
     },
+    pdfBackup,
   },
 }) => {
+  console.log(pdfBackup)
   const device = useSelector(state => state.reducer.device)
   return (
     <>
@@ -46,7 +48,7 @@ const SkyrslaTemplate = ({
 }
 
 export const query = graphql`
-  query($id: String!) {
+  query SkyrslaQuery($id: String!, $pdfbackupname: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -57,12 +59,17 @@ export const query = graphql`
         }
       }
     }
-    file(childImageSharp: { fluid: { originalName: { eq: "pdf-icon.png" } } }) {
+    pdfIcon: file(
+      childImageSharp: { fluid: { originalName: { eq: "pdf-icon.png" } } }
+    ) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
+    }
+    pdfBackup: file(name: { eq: $pdfbackupname }) {
+      name
     }
   }
 `

@@ -53,6 +53,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: skyrslaTemplate,
       context: {
         id: node.id,
+        pdfbackupname: slugify(node.frontmatter.title),
       },
     })
   })
