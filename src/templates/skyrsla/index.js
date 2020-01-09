@@ -34,8 +34,14 @@ const SkyrslaTemplate = ({
           className="single-skyrsla-content"
           dangerouslySetInnerHTML={{ __html: html }}
         ></Content>
-        {vidhengi_pdf !== null ? (
+        {vidhengi_pdf !==
+        null /** this is a dirty fix but works! if somehow pdf is null in markdown, then I must manually change it's name to the markdown slug name */ ? (
           <ImageContainer href={vidhengi_pdf.publicURL} target="_blank">
+            <PDF fluid={fluid}></PDF>
+          </ImageContainer>
+        ) : /** then it will search for that pdf FILE, somehow that works */
+        pdfBackup !== null ? (
+          <ImageContainer href={pdfBackup.publicURL} target="_blank">
             <PDF fluid={fluid}></PDF>
           </ImageContainer>
         ) : (
@@ -69,7 +75,7 @@ export const query = graphql`
       }
     }
     pdfBackup: file(name: { eq: $pdfbackupname }) {
-      name
+      publicURL
     }
   }
 `
