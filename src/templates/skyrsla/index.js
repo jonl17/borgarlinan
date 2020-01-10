@@ -21,7 +21,6 @@ const SkyrslaTemplate = ({
     pdfBackup,
   },
 }) => {
-  console.log(pdfBackup)
   const device = useSelector(state => state.reducer.device)
   return (
     <>

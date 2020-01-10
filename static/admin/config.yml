@@ -84,7 +84,7 @@ collections:
   - name: "skyrslur"
     editor:
       preview: false
-    label: "Skýrslur"
+    label: "Útgefið efni"
     folder: "static/content/skyrslur"
     create: true
     fields:

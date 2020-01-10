@@ -21,7 +21,7 @@ const Skyrslur = () => {
       <Container device={device}>
         <TopBox device={device}>
           <Title device={device} className="bold">
-            Skýrslur
+            Útgefið efni
           </Title>
           <Filter></Filter>
         </TopBox>

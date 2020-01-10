@@ -20,7 +20,7 @@ module.exports = {
       { name: `Borgarlínan`, url: `/` },
       { name: `Um Verkefnastofu`, url: "/um-verkefnastofu/" },
       { name: `Fréttasafn`, url: "/frettir/" },
-      { name: `Skýrslur`, url: "/skyrslur/" },
+      { name: `Útgefið efni`, url: "/utgefid-efni/" },
     ],
   },
   plugins: [

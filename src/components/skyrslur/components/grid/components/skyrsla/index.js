@@ -41,7 +41,7 @@ const Skyrsla = ({
       )}
       <Takki
         link
-        slug={`/skyrslur/` + slugify(frontmatter.title)}
+        slug={`/utgefid-efni/` + slugify(frontmatter.title)}
         texti={"Lesa meira"}
         basic
       ></Takki>
