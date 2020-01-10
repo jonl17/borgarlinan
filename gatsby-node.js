@@ -49,7 +49,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Skýrslur
   result.data.skyrslur.edges.forEach(({ node }) => {
     createPage({
-      path: "/skyrslur/" + slugify(node.frontmatter.title),
+      path: "/utgefid-efni/" + slugify(node.frontmatter.title),
       component: skyrslaTemplate,
       context: {
         id: node.id,
