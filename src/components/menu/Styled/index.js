@@ -99,3 +99,7 @@ export const Sensor = styled.div`
   z-index: 9;
   display: ${props => props.display};
 `
+
+export const HomeLangContainer = styled.div`
+  display: flex;
+`

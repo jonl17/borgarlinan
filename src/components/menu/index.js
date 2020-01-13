@@ -1,9 +1,19 @@
 import React from "react"
-import { Navbar, Item, Text, Dropdown, Sensor } from "./Styled"
 import { connect } from "react-redux"
 import { graphql, StaticQuery } from "gatsby"
 import { triggerNav } from "../../state/actions"
+
+/** components */
+import {
+  Navbar,
+  Item,
+  Text,
+  Dropdown,
+  Sensor,
+  HomeLangContainer,
+} from "./Styled"
 import Burger from "../burger"
+import LanguageButton from "../buttons/language"
 
 const getMenuItems = (device, navStatus, burgerHeight) => (
   <StaticQuery
@@ -21,11 +31,16 @@ const getMenuItems = (device, navStatus, burgerHeight) => (
     `}
     render={data => (
       <>
-        <Item device={device} to={data.site.siteMetadata.navbaritems[0].url}>
-          <Text device={device} className="bold" titill>
-            {data.site.siteMetadata.navbaritems[0].name}
-          </Text>
-        </Item>
+        <HomeLangContainer>
+          <Item device={device} to={data.site.siteMetadata.navbaritems[0].url}>
+            <Text device={device} className="bold" titill>
+              {data.site.siteMetadata.navbaritems[0].name} {/*  Borgarlínan */}
+            </Text>
+          </Item>
+          <LanguageButton>
+            <Text device={device}>IS | EN</Text>
+          </LanguageButton>
+        </HomeLangContainer>
         <Dropdown
           device={device}
           height={
@@ -52,13 +67,14 @@ const getMenuItems = (device, navStatus, burgerHeight) => (
   ></StaticQuery>
 )
 
-const Menu = ({ device, burger, dispatch, navStatus }) => {
+const Menu = ({ device, burger, dispatch, navStatus, language }) => {
   let burgerHeight
   if (device === `mobile`) {
     burgerHeight = 75
   } else {
     burgerHeight = 75
   }
+  console.log(language)
   return (
     <>
       <Sensor
