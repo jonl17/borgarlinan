@@ -74,7 +74,6 @@ const Menu = ({ device, burger, dispatch, navStatus, language }) => {
   } else {
     burgerHeight = 75
   }
-  console.log(language)
   return (
     <>
       <Sensor
