@@ -19,7 +19,7 @@ const temp =
 
 const renderHTML = html => {
   let split = html.split("<p>-ENSKA-</p>")
-  console.log(split)
+  return split
 }
 
 class QandABody extends React.Component {
@@ -28,8 +28,9 @@ class QandABody extends React.Component {
       item: { frontmatter, html },
       index,
       device,
+      language,
     } = this.props
-    renderHTML(temp)
+    const content = renderHTML(html)
     return (
       <Body device={device} key={index}>
         <Group>
@@ -42,7 +43,11 @@ class QandABody extends React.Component {
           <Texti
             device={device}
             className="spurt-og-svarad-content"
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={
+              language === `english` && content.length > 1
+                ? { __html: content[1] }
+                : { __html: content[0] }
+            }
           ></Texti>
           <ImageContainer device={device}>
             <Image fluid={frontmatter.mynd.childImageSharp.fluid}></Image>
