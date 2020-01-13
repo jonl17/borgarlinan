@@ -36,7 +36,7 @@ class QandABody extends React.Component {
         <Group>
           <Title device={device} className="bold">
             {index + 1 + ". "}
-            {frontmatter.title}
+            {language === `icelandic` ? frontmatter.title : frontmatter.entitle}
           </Title>
         </Group>
         <ContentContainer device={device}>

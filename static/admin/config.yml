@@ -13,6 +13,7 @@ collections:
     create: true
     fields:
       - { label: "Titill", name: "title", widget: "string" }
+      - { label: "Titill Enska", name: "entitle", widget: "string" }
       - { label: "Mynd", name: "mynd", widget: "image" }
       - {
           label: "Texti",
@@ -20,8 +21,6 @@ collections:
           widget: "markdown",
           hint: "Skrifaðu nákvæmlega -ENSKA- í nýrri línu og síðan enska þýðingu í nýrri línu fyrir neðan það. Sjá hvernig er gert í öðrum færslum.",
         }
-      # ENSKA
-      - { label: "Titill Enska", name: "entitle", widget: "string" }
       - {
           label: "Dagsetning",
           name: "dagsetning",
