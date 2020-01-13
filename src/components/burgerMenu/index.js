@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Item, Text /*Button*/ } from "./Styled"
+import { Navbar, Item, Text /* Button */ } from "./Styled"
 import { connect } from "react-redux"
 import { styles } from "../../constants"
 
