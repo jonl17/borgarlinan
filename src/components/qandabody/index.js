@@ -14,9 +14,6 @@ import {
 import { connect } from "react-redux"
 import "./index.css"
 
-const temp =
-  "<p>Borgarlína er hraðvagnakerfi á hjólum (BRT) sem ekur á sérrými með forgangi á gatnamótum, þannig eykst áreiðanleiki, hagkvæmni og þjónusta verður betri.</p>\n<p>Tíðni ferða verður mikil, stöðvar verða yfir- byggðar, aðlaðandi og þægilegar með góðu aðgengi beint inn í vagnanna.</p> <p>-ENSKA-</p> <p>cack and ballz</p>"
-
 const renderHTML = html => {
   let split = html.split("<p>-ENSKA-</p>")
   return split
