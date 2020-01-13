@@ -17,6 +17,8 @@ const GetQandA = () => (
             html
             frontmatter {
               title
+              entitle
+              enbody
               mynd {
                 childImageSharp {
                   fluid(traceSVG: { color: "#BEDCC8" }) {
