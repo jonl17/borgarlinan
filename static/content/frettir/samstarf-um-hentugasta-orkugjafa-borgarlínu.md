@@ -1,6 +1,7 @@
 ---
 title: Samstarf um hentugasta orkugjafa Borgarlínu
-dagsetning: 2019-10-24
+dagsetning: 2019-10-24T00:00:00.000Z
+frettamynd: data/temp.png
 ---
 
 Landsvirkjun, Strætó, Samtök sveitarfélaga á höfuðborgarsvæðinu og Vegagerðin hafa efnt til samstarfs um greiningu á hentugasta orkugjafa fyrir Borgarlínu.
