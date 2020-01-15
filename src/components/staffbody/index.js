@@ -15,6 +15,7 @@ const index = ({
   staff: {
     title: nafn,
     starfslysing,
+    starfslysing_enska,
     netfang,
     verkefnastjori,
     portrait_mynd: {
@@ -22,6 +23,7 @@ const index = ({
     },
   },
   device,
+  language,
 }) => {
   return (
     <Container>
@@ -31,13 +33,15 @@ const index = ({
       <Name device={device} className="bold">
         {nafn}
       </Name>
-      <Job>{starfslysing}</Job>
+      <Job>{language === `icelandic` ? starfslysing : starfslysing_enska}</Job>
       <Mail device={device} target="_blank" href={"mailto:" + netfang}>
         <MailText className="bold">{netfang}</MailText>
       </Mail>
 
       {verkefnastjori ? (
-        <SubJob className="bold">{"Verkefnastjóri"}</SubJob>
+        <SubJob className="bold">
+          {language === `icelandic` ? `Verkefnastjóri` : `Project Manager`}
+        </SubJob>
       ) : (
         <></>
       )}

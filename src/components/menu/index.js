@@ -1,21 +1,48 @@
 import React from "react"
-import { connect } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { graphql, StaticQuery } from "gatsby"
 import { triggerNav } from "../../state/actions"
 
 /** components */
-import {
-  Navbar,
-  Item,
-  Text,
-  Dropdown,
-  Sensor,
-  HomeLangContainer,
-} from "./Styled"
+import { Navbar, Sensor } from "./Styled"
 import Burger from "../burger"
-import LanguageButton from "../buttons/language"
+import MenuItems from "./components/menuItems"
 
-const getMenuItems = (device, navStatus, burgerHeight) => (
+const Menu = ({
+  burger,
+  data: {
+    site: {
+      siteMetadata: { navbaritems },
+    },
+  },
+}) => {
+  // store fetching
+  const dispatch = useDispatch()
+  const device = useSelector(state => state.reducer.device)
+  const navStatus = useSelector(state => state.reducer.navStatus)
+  // each item in menu is burgerHeight px in height
+  return (
+    <>
+      <Sensor
+        display={navStatus === `open` ? `block` : `none`}
+        onMouseOver={() => dispatch(triggerNav("closed"))}
+        onTouchStart={() => dispatch(triggerNav("closed"))}
+      ></Sensor>
+      {device === `mobile` ? <Burger></Burger> : ""}
+      <Navbar
+        onMouseOver={() =>
+          device !== `mobile` ? dispatch(triggerNav("open")) : ""
+        }
+        burger={burger}
+        device={device}
+      >
+        <MenuItems navbaritems={navbaritems}></MenuItems>
+      </Navbar>
+    </>
+  )
+}
+
+export default props => (
   <StaticQuery
     query={graphql`
       {
@@ -29,80 +56,6 @@ const getMenuItems = (device, navStatus, burgerHeight) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <HomeLangContainer>
-          <Item device={device} to={data.site.siteMetadata.navbaritems[0].url}>
-            <Text device={device} className="bold" titill>
-              {data.site.siteMetadata.navbaritems[0].name} {/*  Borgarlínan */}
-            </Text>
-          </Item>
-          <LanguageButton>
-            <Text device={device}>IS | EN</Text>
-          </LanguageButton>
-        </HomeLangContainer>
-        <Dropdown
-          device={device}
-          height={
-            navStatus === "open"
-              ? (data.site.siteMetadata.navbaritems.length - 1) * burgerHeight +
-                "px"
-              : "0"
-          }
-        >
-          {data.site.siteMetadata.navbaritems.map((item, index) =>
-            index !== 0 ? (
-              <Item dropdown={"true"} key={index} device={device} to={item.url}>
-                <Text device={device} className="bold">
-                  {item.name}
-                </Text>
-              </Item>
-            ) : (
-              ""
-            )
-          )}{" "}
-        </Dropdown>
-      </>
-    )}
+    render={data => <Menu data={data} {...props}></Menu>}
   ></StaticQuery>
 )
-
-const Menu = ({ device, burger, dispatch, navStatus, language }) => {
-  let burgerHeight
-  if (device === `mobile`) {
-    burgerHeight = 75
-  } else {
-    burgerHeight = 75
-  }
-  return (
-    <>
-      <Sensor
-        display={navStatus === `open` ? `block` : `none`}
-        onMouseOver={() => dispatch(triggerNav("closed"))}
-        onTouchStart={() => dispatch(triggerNav("closed"))}
-      ></Sensor>
-      {device === `mobile` ? <Burger></Burger> : ""}
-      {device !== `mobile` ? (
-        <Navbar
-          onMouseOver={() => dispatch(triggerNav("open"))}
-          burger={burger}
-          device={device}
-        >
-          {getMenuItems(device, navStatus, burgerHeight)}
-        </Navbar>
-      ) : (
-        <Navbar burger={burger} device={device}>
-          {getMenuItems(device, navStatus, burgerHeight)}
-        </Navbar>
-      )}
-    </>
-  )
-}
-
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-  language: state.reducer.language,
-  navStatus: state.reducer.navStatus,
-})
-
-export default connect(mapStateToProps)(Menu)

@@ -33,6 +33,7 @@ export default props => (
             frontmatter {
               title
               starfslysing
+              starfslysing_enska
               netfang
               verkefnastjori
               portrait_mynd {

@@ -48,3 +48,19 @@ export const renderHTML = html => {
   let split = html.split("<p>-ENSKA-</p>")
   return split
 }
+
+// filterar út fréttir ef enskan er á | tímabundin lausn, eyða síðar!
+export const filterMenu = (items, language) => {
+  let newMenu = []
+  if (language === `english`) {
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].name !== `Fréttasafn`) {
+        newMenu.push(items[i])
+      }
+    }
+  } else {
+    newMenu = items
+  }
+  console.log(newMenu)
+  return newMenu
+}

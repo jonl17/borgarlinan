@@ -36,8 +36,8 @@ class NewsSection extends React.Component {
     )
   }
   render() {
-    const { device } = this.props
-    return (
+    const { device, language } = this.props
+    return language === `icelandic` ? (
       <PageContainer>
         <Container device={device}>
           <Title
@@ -48,6 +48,15 @@ class NewsSection extends React.Component {
             Fréttir
           </Title>
           <LatestNews></LatestNews>
+        </Container>
+      </PageContainer>
+    ) : (
+      <PageContainer>
+        <Container device={device}>
+          <Title
+            device={device}
+            ref={titleElement => (this.titleElement = titleElement)}
+          ></Title>
         </Container>
       </PageContainer>
     )
