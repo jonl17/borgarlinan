@@ -84,7 +84,6 @@ const mapStateToProps = state => ({
   height: state.reducer.height,
   lineHeight: state.reducer.lineHeight,
   firstLineStop: state.reducer.firstLineStop,
-  language: state.reducer.language,
   whiteLineStop: state.reducer.whiteLineStop,
 })
 

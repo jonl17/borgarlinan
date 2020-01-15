@@ -15,6 +15,7 @@ module.exports = {
   siteMetadata: {
     title: `Borgarlínan`,
     subtitle: `beinustu leið til framtíðar`,
+    subtitleEnska: `the future of Icelandic public transit`,
     seoTitle: `Verkefnastofa Borgarlínu`,
     about: `Borgarlína er nýtt og afkastamikið almenningssamgöngukerfi sem 
         sveitarfélögin á höfuðborgarsvæðinu undirbúa nú í sameiningu. Borgarlína 

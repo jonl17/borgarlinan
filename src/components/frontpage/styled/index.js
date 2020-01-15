@@ -42,6 +42,7 @@ export const TitleContainer = styled.div`
       margin-left: 0;
       left: 50px;
       top: 85%;
+      border: none;
       ${props =>
         !props.white &&
         css`
