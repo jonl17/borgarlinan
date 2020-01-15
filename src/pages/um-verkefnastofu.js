@@ -21,7 +21,7 @@ const UmVerkefnaStofu = ({
   location: { pathname },
   data: {
     markdownRemark: {
-      frontmatter: { title },
+      frontmatter: { title, title_en },
       html,
     },
   },
@@ -31,7 +31,7 @@ const UmVerkefnaStofu = ({
     <>
       <AboutBody
         device={device}
-        title={language === `icelandic` ? title : ""}
+        title={language === `icelandic` ? title : title_en}
         subject={language === `icelandic` ? splitLanguage[0] : splitLanguage[1]}
       ></AboutBody>
       <StaffSection></StaffSection>
@@ -52,6 +52,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        title_en
       }
     }
   }
