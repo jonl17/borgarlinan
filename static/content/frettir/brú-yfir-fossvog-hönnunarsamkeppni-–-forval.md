@@ -1,6 +1,7 @@
 ---
 title: 'Brú yfir Fossvog, hönnunarsamkeppni – forval'
 dagsetning: 2019-11-19T00:00:00.000Z
+frettamynd: ''
 ---
 Mikilvægur áfangi í leiðarkerfi Borgarlínu.
 
