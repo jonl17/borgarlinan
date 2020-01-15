@@ -91,6 +91,11 @@ collections:
       - { label: "Nafn", name: "title", widget: "string" }
       - { label: "Mynd", name: "portrait_mynd", widget: "image" }
       - { label: "Starfslýsing", name: "starfslysing", widget: "string" }
+      - {
+          label: "Starfslýsing enska",
+          name: "starfslysing_enska",
+          widget: "string",
+        }
       - { label: "Netfang", name: "netfang", widget: "string" }
       - {
           label: "Verkefnastjóri",
