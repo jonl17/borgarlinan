@@ -1,6 +1,6 @@
 ---
 title: Prufa
-dagsetning: '2020-01-15'
-frettamynd: data/fyrstu-tveir-áfangar-borgarl.png
+dagsetning: '2017-12-06'
+frettamynd: data/tasker-8.jpg
 ---
 Prufa
