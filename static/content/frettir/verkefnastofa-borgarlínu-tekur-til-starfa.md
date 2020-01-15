@@ -1,6 +1,7 @@
 ---
 title: Verkefnastofa Borgarlínu tekur til starfa
-dagsetning: 2019-07-06
+dagsetning: 2019-07-06T00:00:00.000Z
+frettamynd: data/temp.png
 ---
 
 Verkefnastofa Borgarlínu hefur tekið formlega til starfa og mun sinna undirbúningi fyrir fyrsta áfanga Borgarlínu á höfuðborgarsvæðinu. Verkefnastofan starfar á grundvelli samnings Vegagerðarinnar og sveitarfélaganna á höfuðborgarsvæðinu, sem lagður var grunnur að í samgönguáætlun. Samkomulagið felur í sér að Samtök sveitarfélaga á höfuðborgarsvæðinu (SSH) og Vegagerðin skipta með sér kostnaði vegna undirbúningsvinnunnar á árunum 2019 og 2020 og brúa þannig bil þar til samkomulag hefur náðst um fyrirkomulag og fjármögnun á öllum samgöngukerfum á höfuðborgarsvæðinu næstu 15 árin.
