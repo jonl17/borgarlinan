@@ -1,6 +1,7 @@
 ---
 title: Samið við Mannvit og COWI um nýtt samgöngulíkan fyrir höfuðborgarsvæðið
-dagsetning: 2019-08-15
+dagsetning: 2019-08-15T00:00:00.000Z
+frettamynd: data/temp.png
 ---
 
 Í dag var gengið frá samningi við Mannvit og dönsku ráðgjafastofuna COWI um gerð nýs samgöngulíkans fyrir höfuðborgarsvæðið.
