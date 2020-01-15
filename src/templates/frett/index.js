@@ -25,13 +25,15 @@ const FrettTemplate = ({
   },
 }) => {
   const device = useSelector(state => state.reducer.device)
+  console.log(frettamynd.childImageSharp.fluid.originalName)
   return (
     <>
       <Container device={device}>
         <Back slug={`/frettir/`}></Back>
         <Date> {formatDate(dagsetning.slice(0, 10))}</Date>
         <Title className="bold">{title}</Title>
-        {frettamynd ? (
+        {frettamynd &&
+        frettamynd.childImageSharp.fluid.originalName !== "temp.png" ? (
           <ImageContainer device={device}>
             <Image fluid={frettamynd.childImageSharp.fluid}></Image>
           </ImageContainer>
@@ -60,6 +62,7 @@ export const query = graphql`
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
+              originalName
             }
           }
         }

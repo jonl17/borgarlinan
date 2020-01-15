@@ -1,5 +1,5 @@
 import React from "react"
-import SVG from "../../static/data/svg/skipurit_skjar.svg"
+import SVG from "../../static/svg/skipurit_skjar.svg"
 import { connect } from "react-redux"
 import StaffSection from "../components/staffsection"
 import { graphql } from "gatsby"

@@ -4,6 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+var netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`,
+  },
+}
+
 module.exports = {
   siteMetadata: {
     title: `Borgarlínan`,
@@ -81,12 +88,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 930,
             },
           },
         ],
       },
     },
+    netlifyCmsPaths,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
@@ -95,7 +103,7 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: `${__dirname}\\static\\data\\svg\\`, // See below to configure properly
+          include: `${__dirname}\\static\\svg\\`, // See below to configure properly
         },
       },
     },
