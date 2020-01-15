@@ -1,8 +1,11 @@
 import React from "react"
-import SVG from "../../static/svg/skipurit_skjar.svg"
 import { connect } from "react-redux"
-import StaffSection from "../components/staffsection"
 import { graphql } from "gatsby"
+import { renderHTML } from "../methods"
+
+/** components */
+import SVG from "../../static/svg/skipurit_skjar.svg"
+import StaffSection from "../components/staffsection"
 import AboutBody from "../components/aboutbody"
 import SchemaData from "../components/schemadata"
 import Footer from "../components/footer"
@@ -14,17 +17,22 @@ import {
 
 const UmVerkefnaStofu = ({
   device,
+  language,
   location: { pathname },
   data: {
-    markdownRemark: { frontmatter, html },
+    markdownRemark: {
+      frontmatter: { title },
+      html,
+    },
   },
 }) => {
+  let splitLanguage = renderHTML(html)
   return (
     <>
       <AboutBody
         device={device}
-        title={frontmatter.title}
-        subject={html}
+        title={language === `icelandic` ? title : ""}
+        subject={language === `icelandic` ? splitLanguage[0] : splitLanguage[1]}
       ></AboutBody>
       <StaffSection></StaffSection>
       <Background>

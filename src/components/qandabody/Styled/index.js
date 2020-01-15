@@ -90,6 +90,30 @@ export const LineBlock = styled.div`
 export const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 0.6fr;
+  .spurt-og-svarad-content > * {
+    color: gray !important;
+    font-size: 18px;
+  }
+  .spurt-og-svarad-content > p {
+    font-size: 18px;
+    line-height: 160%;
+    width: 85%;
+  }
+  .spurt-og-svarad-content > * > a {
+    color: gray !important;
+    z-index: 8;
+  }
+  .spurt-og-svarad-content > ul {
+    list-style: square;
+  }
+
+  @media only screen and (max-width: 750px) {
+    /* device === mobile */
+    .spurt-og-svarad-content > * {
+      width: 100%;
+      font-size: 15px !important;
+    }
+  }
   ${props =>
     props.device === `mobile` &&
     css`

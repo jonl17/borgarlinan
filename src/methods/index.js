@@ -42,3 +42,9 @@ export const filterSkyrslur = (skyrslur, filter) => {
     return skyrslur.sort(compareDate)
   }
 }
+
+// fyrir íslenska og enskar þýðingar
+export const renderHTML = html => {
+  let split = html.split("<p>-ENSKA-</p>")
+  return split
+}
