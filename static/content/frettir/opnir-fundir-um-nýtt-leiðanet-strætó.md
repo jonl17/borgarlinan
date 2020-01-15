@@ -1,6 +1,7 @@
 ---
 title: Opnir fundir um nýtt Leiðanet Strætó
-dagsetning: 2019-10-22
+dagsetning: 2019-10-22T00:00:00.000Z
+frettamynd: data/temp.png
 ---
 
 Starfsfólk Strætó og verkefnastofu Borgarlínu verða til skrafs og ráðgerða varðandi tillögur að nýju Leiðaneti Strætó á höfuðborgarsvæðinu næstu daga. Þar gefst áhugasömum tækifæri til að koma með ábendingar og fræðast um hið nýja leiðanet sem Borgarlína mun ferðast um í framtíðinni.
