@@ -3,6 +3,8 @@ backend:
 
 media_folder: "static/data"
 public_folder: "data"
+slug:
+  encoding: "ascii"
 
 collections:
   - name: "spurt_og_svarad"
