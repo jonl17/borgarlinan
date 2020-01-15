@@ -1,4 +1,8 @@
 import React from "react"
+import { connect } from "react-redux"
+import { renderHTML } from "../../methods"
+
+/** components */
 import {
   Body,
   Group,
@@ -11,13 +15,6 @@ import {
   ContentContainer,
   ImageContainer,
 } from "./Styled"
-import { connect } from "react-redux"
-import "./index.css"
-
-const renderHTML = html => {
-  let split = html.split("<p>-ENSKA-</p>")
-  return split
-}
 
 class QandABody extends React.Component {
   render() {
