@@ -32,12 +32,12 @@ export const Content = styled.div`
   box-sizing: border-box;
   overflow: hidden;
   padding-top: 25px;
-  margin-bottom: 25px;c
+  margin-bottom: 25px;
 `
 export const ImageContainer = styled.a`
   position: absolute;
-  right: 25px;
-  top: 35px;
+  right: 15px;
+  bottom: 15px;
   height: 55px;
   width: 55px;
 `
