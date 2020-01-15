@@ -1,6 +1,7 @@
 ---
 title: Fjármögnun Borgarlínu tryggð
-dagsetning: 2019-09-27
+dagsetning: 2019-09-27T00:00:00.000Z
+frettamynd: data/temp.png
 ---
 
 Undirritun samkomulags mili ríkisvaldsins og sex sveitarfélaga á höfuðborgarsvæðinu markar þáttaskil í rekstri og undirbúningi Borgarlínu. Fjármögnun Borgarlínu liggur nú fyrir og framundan er áframhaldandi vinna við skipulag og hönnun.
