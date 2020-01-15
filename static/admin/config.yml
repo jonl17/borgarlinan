@@ -7,6 +7,7 @@ slug:
   encoding: "ascii"
 
 collections:
+  # SPURT & SVARAÐ
   - name: "spurt_og_svarad"
     editor:
       preview: false
@@ -30,6 +31,7 @@ collections:
           format: "YYYY-MM-DD",
           hint: "Óþarfi að breyta þessum dálk - Nema þú viljir endurraða færslum.",
         }
+  # FRÉTTIR
   - name: "frettir"
     editor:
       preview: false
@@ -52,6 +54,7 @@ collections:
           default: "static/data/temp.png",
         }
       - { label: "Texti", name: "body", widget: "markdown" }
+  # VERKEFNASTOFA BORGARLÍNU
   - name: "verkefnastofa_borgarlinu"
     editor:
       preview: false
@@ -60,7 +63,14 @@ collections:
     create: true
     fields:
       - { label: "Titill", name: "title", widget: "string" }
-      - { label: "Texti", name: "body", widget: "markdown" }
+      - { label: "Enskur Titill", name: "title_en", widget: "string" }
+      - {
+          label: "Texti",
+          name: "body",
+          widget: "markdown",
+          hint: "Skrifaðu nákvæmlega -ENSKA- í nýrri línu og síðan enska þýðingu í nýrri línu fyrir neðan það. Sjá hvernig er gert í öðrum færslum.",
+        }
+    # HÓPAR
   - name: "hopar"
     editor:
       preview: false
@@ -70,6 +80,7 @@ collections:
     fields:
       - { label: "Nafn", name: "title", widget: "string" }
       - { label: "Texti", name: "texti", widget: "text" }
+  # STARFSFÓLK
   - name: "starfsfolk"
     editor:
       preview: false
@@ -95,6 +106,7 @@ collections:
           max: 4,
           valueType: "int",
         }
+  # SKÝRSLUR
   - name: "skyrslur"
     editor:
       preview: false

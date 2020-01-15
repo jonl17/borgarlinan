@@ -16,10 +16,11 @@ class index extends React.Component {
   render() {
     const {
       device,
+      language,
       location: { pathname },
       data: {
         site: {
-          siteMetadata: { title, subtitle },
+          siteMetadata: { title, subtitle: ice, subtitleEnska: en },
         },
       },
     } = this.props
@@ -27,7 +28,10 @@ class index extends React.Component {
       <>
         {device !== undefined ? (
           <>
-            <Frontpage title={title} subtitle={subtitle}></Frontpage>
+            <Frontpage
+              title={title}
+              subtitle={language === `icelandic` ? ice : en}
+            ></Frontpage>
             <QandASection></QandASection>
             <NewsSection></NewsSection>
             <Footer page={pathname}></Footer>
@@ -46,6 +50,7 @@ export const query = graphql`
       siteMetadata {
         title
         subtitle
+        subtitleEnska
       }
     }
   }
@@ -54,6 +59,7 @@ export const query = graphql`
 const mapStateToProps = state => ({
   device: state.reducer.device,
   history: state.reducer.history,
+  language: state.reducer.language,
 })
 
 export default connect(mapStateToProps)(index)
