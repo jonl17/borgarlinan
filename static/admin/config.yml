@@ -44,7 +44,13 @@ collections:
           widget: "datetime",
           format: "YYYY-MM-DD",
         }
-      - { label: "Mynd", name: "frettamynd", widget: "image", required: false }
+      - {
+          label: "Mynd",
+          name: "frettamynd",
+          widget: "image",
+          required: false,
+          default: "static/data/temp.png",
+        }
       - { label: "Texti", name: "body", widget: "markdown" }
   - name: "verkefnastofa_borgarlinu"
     editor:
