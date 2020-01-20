@@ -6,7 +6,6 @@ const BoxStyle = css`
   height: 200px;
   width: auto;
   background: ${styles.BackGroundGray};
-  overflow: hidden;
   display: -webkit-box;
   padding: 25px 25px 0 25px;
   display: flex;
@@ -22,7 +21,7 @@ export const Box = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      height: 350px;
+      height: auto;
     `}
 `
 
@@ -33,6 +32,11 @@ export const Content = styled.div`
   overflow: hidden;
   padding-top: 15px;
   margin-left: 75px;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      padding-bottom: 15px;
+    `}
   ul {
     list-style: square;
     padding-left: 15px;

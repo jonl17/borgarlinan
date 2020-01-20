@@ -24,6 +24,7 @@ const Skyrsla = ({
         date={formatDate(frontmatter.dagsetning.slice(0, 10))}
       ></Banner>
       <Content
+        device={device}
         className="skyrsla-content"
         dangerouslySetInnerHTML={{ __html: html }}
       ></Content>
