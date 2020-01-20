@@ -13,10 +13,8 @@ const Fade = keyframes`
 
 const ContainerStyle = css`
   display: grid;
-
-  grid-gap: 30px;
   margin: 0;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-columns: 1fr;
   ${props =>
     props.fade === "fade" &&
     css`

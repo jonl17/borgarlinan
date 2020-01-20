@@ -3,16 +3,16 @@ import { styles } from "../../../../../../../constants"
 import Img from "gatsby-image"
 
 const BoxStyle = css`
-  height: 330px;
+  height: 200px;
   width: auto;
   background: ${styles.BackGroundGray};
   overflow: hidden;
   display: -webkit-box;
-  padding: 25px;
+  padding: 25px 25px 0 25px;
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
+  justify-content: flex-start;
   transition: 0.2s ease-in-out;
   box-sizing: border-box;
 `
@@ -22,7 +22,7 @@ export const Box = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      height: 400px;
+      height: 350px;
     `}
 `
 
@@ -31,15 +31,34 @@ export const Content = styled.div`
   -webkit-box-orient: vertical;
   box-sizing: border-box;
   overflow: hidden;
-  padding-top: 25px;
-  margin-bottom: 25px;
+  padding-top: 15px;
+  margin-left: 75px;
+  ul {
+    list-style: square;
+    padding-left: 15px;
+  }
+  ul > li {
+    padding-bottom: 15px;
+  }
+  @media only screen and (max-width: 750px) {
+    /* device === mobile */
+    * {
+      font-size: 15px !important;
+    }
+  }
+  * {
+    color: gray;
+    line-height: 160%;
+    font-size: 15px;
+    margin: 0;
+    z-index: 8;
+  }
 `
 export const ImageContainer = styled.a`
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
   height: 55px;
   width: 55px;
+  position: absolute;
+  top: 65px;
 `
 export const PDF = styled(Img)`
   height: 100%;

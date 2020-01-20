@@ -9,6 +9,7 @@ import Filter from "./components/filter"
 import Takki from "../takki"
 import Footer from "../footer"
 
+// AKA útgefið efni
 const Skyrslur = () => {
   const device = useSelector(state => state.reducer.device)
   const skyrslurShowCount = useSelector(
