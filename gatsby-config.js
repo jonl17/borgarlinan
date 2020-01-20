@@ -26,9 +26,13 @@ module.exports = {
     url: `https://www.borgarlinan.is/`,
     navbaritems: [
       { name: `Borgarlínan`, url: `/` },
-      { name: `Um Verkefnastofu`, url: "/um-verkefnastofu/" },
+      {
+        name: `Um Verkefnastofu`,
+        name_en: `Project Office`,
+        url: "/um-verkefnastofu/",
+      },
       { name: `Fréttasafn`, url: "/frettir/" },
-      { name: `Útgefið efni`, url: "/utgefid-efni/" },
+      { name: `Útgefið efni`, name_en: `Archive`, url: "/utgefid-efni/" },
     ],
   },
   plugins: [

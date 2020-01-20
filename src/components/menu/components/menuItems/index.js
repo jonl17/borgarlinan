@@ -48,7 +48,7 @@ const MenuItems = ({ navbaritems }) => {
               to={item.url}
             >
               <Text device={device} className="bold">
-                {item.name}
+                {language === `icelandic` ? item.name : item.name_en}
               </Text>
             </Item>
           ) : (

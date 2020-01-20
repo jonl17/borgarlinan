@@ -16,12 +16,13 @@ const Skyrslur = () => {
   )
   const skyrslurCount = useSelector(state => state.reducer.skyrslurCount)
   const dispatch = useDispatch()
+  const language = useSelector(state => state.reducer.language)
   return (
     <>
       <Container device={device}>
         <TopBox device={device}>
           <Title device={device} className="bold">
-            Útgefið efni
+            {language === `icelandic` ? "Útgefið efni" : "Archive"}
           </Title>
           <Filter></Filter>
         </TopBox>

@@ -50,6 +50,7 @@ export default props => (
           siteMetadata {
             navbaritems {
               name
+              name_en
               url
             }
           }
