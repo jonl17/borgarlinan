@@ -77,7 +77,7 @@ export const Title = styled.h1`
       ${props =>
         props.sub &&
         css`
-          font-size: 55px;
+          font-size: 45px;
           top: -100px;
         `}
     `}
