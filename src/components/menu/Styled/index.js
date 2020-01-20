@@ -18,6 +18,14 @@ export const Navbar = styled.div`
   top: 0;
   z-index: 10;
   ${props =>
+    props.device === `tablet` &&
+    css`
+      height: 75px;
+      width: 100%;
+      padding: 0;
+      background: rgb(244, 244, 244);
+    `}
+  ${props =>
     props.device === `mobile` &&
     css`
       height: 75px;

@@ -22,6 +22,13 @@ export const Item = styled(Link)`
       border-top: 2px solid rgba(40, 160, 120, 0.6);
     `}
   ${props =>
+    props.device === `tablet` &&
+    css`
+      height: 75px;
+      padding: 0;
+      margin: 0 25px 0 25px;
+    `}
+  ${props =>
     props.device === `mobile` &&
     css`
       height: 75px;
@@ -41,7 +48,7 @@ export const Text = styled.p`
   color: ${styles.Blue};
   transition: .2s;
   ${props =>
-    props.device !== `mobile` &&
+    props.device === `browser` &&
     css`
       ${Item}:hover & {
         color: ${styles.LinuLitur};
@@ -62,6 +69,14 @@ export const Dropdown = styled.div`
   padding-left: 75px;
   transition: 0.3s ease-in-out;
   z-index: 10;
+  ${props =>
+    props.device === `tablet` &&
+    css`
+      top: 75px;
+      width: 100%;
+      padding: 0;
+      background: rgb(244, 244, 244);
+    `}
   ${props =>
     props.device === `mobile` &&
     css`

@@ -1,15 +1,13 @@
 import React from "react"
 import { Box, PDF, Content, ImageContainer } from "./Styled"
 import { graphql, StaticQuery } from "gatsby"
-import "./index.css"
 import { useSelector } from "react-redux"
 import { formatDate } from "../../../../../../methods"
-import slugify from "slugify"
 
 /** components */
-import Takki from "../../../../../takki"
 import Banner from "./components/Banner"
 
+// AKA útgefið efni single
 const Skyrsla = ({
   skyrsla: { frontmatter, html },
   data: {
@@ -26,6 +24,7 @@ const Skyrsla = ({
         date={formatDate(frontmatter.dagsetning.slice(0, 10))}
       ></Banner>
       <Content
+        device={device}
         className="skyrsla-content"
         dangerouslySetInnerHTML={{ __html: html }}
       ></Content>
@@ -39,12 +38,6 @@ const Skyrsla = ({
       ) : (
         <></>
       )}
-      <Takki
-        link
-        slug={`/utgefid-efni/` + slugify(frontmatter.title)}
-        texti={"Lesa meira"}
-        basic
-      ></Takki>
     </Box>
   )
 }

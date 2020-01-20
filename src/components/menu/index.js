@@ -28,7 +28,7 @@ const Menu = ({
         onMouseOver={() => dispatch(triggerNav("closed"))}
         onTouchStart={() => dispatch(triggerNav("closed"))}
       ></Sensor>
-      {device === `mobile` ? <Burger></Burger> : ""}
+      {device === `mobile` || device === `tablet` ? <Burger></Burger> : ""}
       <Navbar
         onMouseOver={() =>
           device !== `mobile` ? dispatch(triggerNav("open")) : ""
