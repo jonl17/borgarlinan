@@ -25,7 +25,6 @@ const FrettTemplate = ({
   },
 }) => {
   const device = useSelector(state => state.reducer.device)
-  console.log(frettamynd.childImageSharp.fluid.originalName)
   return (
     <>
       <Container device={device}>

@@ -49,7 +49,7 @@ const Grid = ({
   )
   dispatch(setSkyrslurCount(files.length))
   return (
-    <ExtraContainer>
+    <ExtraContainer device={device}>
       <CategoryFilter></CategoryFilter>
       <Container
         fade={skyrslurFade ? "fade" : ""}
