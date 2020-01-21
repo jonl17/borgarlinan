@@ -17,6 +17,18 @@ const filter = (files, filterType) => {
     return filterSkyrslur(files, filterType)
   }
 }
+const categoryFilter = (files, filterType) => {
+  let filteredFiles = []
+  if (filterType === `Allt`) {
+    return files
+  }
+  for (var i = 0; i < files.length; i++) {
+    if (files[i].frontmatter.malaflokkur === filterType) {
+      filteredFiles.push(files[i])
+    }
+  }
+  return filteredFiles
+}
 /*** */
 
 const Grid = ({
@@ -32,6 +44,9 @@ const Grid = ({
   )
   const dispatch = useDispatch()
   const files = filter(nodes, skyrslurFilterBy)
+  const skyrslurCategoryFilter = useSelector(
+    state => state.reducer.skyrslurCategoryFilter
+  )
   dispatch(setSkyrslurCount(files.length))
   return (
     <ExtraContainer>
@@ -41,7 +56,7 @@ const Grid = ({
         onAnimationEnd={() => dispatch(triggerSkyrsluFade())}
         device={device}
       >
-        {files.map((skyrsla, index) =>
+        {categoryFilter(files, skyrslurCategoryFilter).map((skyrsla, index) =>
           index < skyrslurShowCount ? (
             <Skyrsla key={index} skyrsla={skyrsla}></Skyrsla>
           ) : (

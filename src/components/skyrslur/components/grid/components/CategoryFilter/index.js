@@ -1,8 +1,12 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { useSelector, useDispatch } from "react-redux"
+import { selectCategoryFilter } from "../../../../../../state/actions"
 
 /** components */
-import { CategoryBox, Item } from "./Styled"
+import { CategoryBox, Item, Button } from "./Styled"
+
+const filterItemHeight = 50
 
 const CategoryFilter = ({
   data: {
@@ -11,10 +15,35 @@ const CategoryFilter = ({
     },
   },
 }) => {
+  const device = useSelector(state => state.reducer.device)
+  const skyrslurCategoryFilterOpen = useSelector(
+    state => state.reducer.skyrslurCategoryFilterOpen
+  )
+  const skyrslurCategoryFilter = useSelector(
+    state => state.reducer.skyrslurCategoryFilter
+  )
+  const dispatch = useDispatch()
+  const language = useSelector(state => state.reducer.language)
   return (
-    <CategoryBox height={utgefid_efni_filter_items.length * 50 + "px"}>
-      {utgefid_efni_filter_items.map(item => (
-        <Item itemheight={50 + "px"}>{item}</Item>
+    <CategoryBox
+      device={device}
+      height={
+        skyrslurCategoryFilterOpen || device === `browser`
+          ? utgefid_efni_filter_items.length * filterItemHeight + "px"
+          : 1 * filterItemHeight + "px"
+      }
+    >
+      {utgefid_efni_filter_items.map((item, index) => (
+        <Item
+          device={device}
+          border={index !== 0}
+          className="bold"
+          itemheight={filterItemHeight + "px"}
+          onClick={() => dispatch(selectCategoryFilter(item.name))}
+        >
+          <Button selected={skyrslurCategoryFilter === item.name}></Button>
+          {language === `icelandic` ? item.name : item.name_en}
+        </Item>
       ))}
     </CategoryBox>
   )
@@ -26,7 +55,10 @@ export default props => (
       {
         site {
           siteMetadata {
-            utgefid_efni_filter_items
+            utgefid_efni_filter_items {
+              name
+              name_en
+            }
           }
         }
       }

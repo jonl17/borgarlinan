@@ -17,6 +17,8 @@ import {
   SET_FRETTIR_COUNT,
   TRIGGER_FRETTIR_FADE,
   PUSH_HISTORY,
+  TRIGGER_CATEGORY_FILTER,
+  SELECT_CATEGORY_FILTER,
 } from "./actions"
 
 const initialState = {
@@ -34,6 +36,8 @@ const initialState = {
   skyrslurFade: false /** skýrslu fade */,
   skyrslurShowCount: 4,
   skyrslurCount: undefined,
+  skyrslurCategoryFilterOpen: false,
+  skyrslurCategoryFilter: `Allt`,
   /** fréttir */
   frettirFilterBy: `date` /** default filtered by date from graphql query */,
   frettirFade: false /** fréttir fade */,
@@ -99,6 +103,13 @@ export default (state = initialState, action) => {
       return { ...state, frettirCount: action.number }
     case PUSH_HISTORY:
       return { ...state, history: [...state.history, action.location] }
+    case TRIGGER_CATEGORY_FILTER:
+      return {
+        ...state,
+        skyrslurCategoryFilterOpen: !state.skyrslurCategoryFilterOpen,
+      }
+    case SELECT_CATEGORY_FILTER:
+      return { ...state, skyrslurCategoryFilter: action.filter }
     default:
       return state
   }

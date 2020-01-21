@@ -31,5 +31,6 @@ export const Container = styled.div`
 `
 
 export const ExtraContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 `

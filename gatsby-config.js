@@ -35,10 +35,10 @@ module.exports = {
       { name: `Útgefið efni`, name_en: `Archive`, url: "/utgefid-efni/" },
     ],
     utgefid_efni_filter_items: [
-      `Allt`,
-      `Kynningarefni`,
-      `Samningar`,
-      `Skýrslur`,
+      { name: `Allt`, name_en: `Show all` },
+      { name: `Kynningarefni`, name_en: `Promotional materials` },
+      { name: `Samningar`, name_en: `Contracts` },
+      { name: `Skýrslur`, name_en: `Reports` },
     ],
   },
   plugins: [
