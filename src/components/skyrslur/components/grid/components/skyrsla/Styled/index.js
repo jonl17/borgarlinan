@@ -3,7 +3,7 @@ import { styles } from "../../../../../../../constants"
 import Img from "gatsby-image"
 
 const BoxStyle = css`
-  height: 200px;
+  min-height: 175px;
   width: auto;
   background: ${styles.BackGroundGray};
   display: -webkit-box;

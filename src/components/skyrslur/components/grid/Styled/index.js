@@ -29,3 +29,7 @@ export const Container = styled.div`
       margin-bottom: 75px;
     `}
 `
+
+export const ExtraContainer = styled.div`
+  display: flex;
+`

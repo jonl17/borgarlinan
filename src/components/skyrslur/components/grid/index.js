@@ -1,5 +1,4 @@
 import React from "react"
-import { Container } from "./Styled"
 import { graphql, StaticQuery } from "gatsby"
 import { filterSkyrslur } from "../../../../methods"
 import { useSelector, useDispatch } from "react-redux"
@@ -7,6 +6,8 @@ import { triggerSkyrsluFade, setSkyrslurCount } from "../../../../state/actions"
 
 /** components */
 import Skyrsla from "./components/skyrsla"
+import { Container, ExtraContainer } from "./Styled"
+import CategoryFilter from "./components/CategoryFilter"
 
 /** filtering */
 const filter = (files, filterType) => {
@@ -33,19 +34,22 @@ const Grid = ({
   const files = filter(nodes, skyrslurFilterBy)
   dispatch(setSkyrslurCount(files.length))
   return (
-    <Container
-      fade={skyrslurFade ? "fade" : ""}
-      onAnimationEnd={() => dispatch(triggerSkyrsluFade())}
-      device={device}
-    >
-      {files.map((skyrsla, index) =>
-        index < skyrslurShowCount ? (
-          <Skyrsla key={index} skyrsla={skyrsla}></Skyrsla>
-        ) : (
-          ""
-        )
-      )}
-    </Container>
+    <ExtraContainer>
+      <CategoryFilter></CategoryFilter>
+      <Container
+        fade={skyrslurFade ? "fade" : ""}
+        onAnimationEnd={() => dispatch(triggerSkyrsluFade())}
+        device={device}
+      >
+        {files.map((skyrsla, index) =>
+          index < skyrslurShowCount ? (
+            <Skyrsla key={index} skyrsla={skyrsla}></Skyrsla>
+          ) : (
+            ""
+          )
+        )}
+      </Container>
+    </ExtraContainer>
   )
 }
 

@@ -34,6 +34,12 @@ module.exports = {
       { name: `Fréttasafn`, url: "/frettir/" },
       { name: `Útgefið efni`, name_en: `Archive`, url: "/utgefid-efni/" },
     ],
+    utgefid_efni_filter_items: [
+      `Allt`,
+      `Kynningarefni`,
+      `Samningar`,
+      `Skýrslur`,
+    ],
   },
   plugins: [
     {
