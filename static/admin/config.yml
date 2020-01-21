@@ -121,6 +121,13 @@ collections:
     fields:
       - { label: "Titill", name: "title", widget: "string" }
       - {
+          label: "Málaflokkur",
+          name: "malaflokkur",
+          widget: "select",
+          options: ["Kynningarefni", "Samningar", "Skýrslur"],
+          hint: "Hafðu samband við forritara til bæta við eða taka út málaflokka.",
+        }
+      - {
           label: "Dagsetning",
           name: "dagsetning",
           widget: "datetime",
