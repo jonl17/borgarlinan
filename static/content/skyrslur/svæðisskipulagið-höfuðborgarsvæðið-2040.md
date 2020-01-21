@@ -1,5 +1,6 @@
 ---
 title: Svæðisskipulagið höfuðborgarsvæðið 2040
+malaflokkur: Samningar
 dagsetning: '2020-01-09'
 vidhengi-pdf: data/Svaedisskipulagid-hofudborgarsvaedid-2040.pdf
 ---
