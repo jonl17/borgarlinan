@@ -61,6 +61,5 @@ export const filterMenu = (items, language) => {
   } else {
     newMenu = items
   }
-  console.log(newMenu)
   return newMenu
 }
