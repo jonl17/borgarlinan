@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { renderHTML } from "../methods"
 
 /** components */
-import SVG from "../../static/svg/skipurit_skjar.svg"
+import SVG from "../../static/svg/skipurit_skjar_nytt.svg"
 import StaffSection from "../components/staffsection"
 import AboutBody from "../components/aboutbody"
 import SchemaData from "../components/schemadata"
