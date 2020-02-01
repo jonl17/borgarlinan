@@ -1,60 +1,51 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { SET_DEVICE, GET_HEIGHT, SET_LINEHEIGHT, START } from "../state/actions"
+
+/** components */
 import { Body } from "./Styled"
 import { GlobCSS } from "../components/globalstyles"
 import Menu from "../components/menu"
 import SEO from "../components/seo"
-import { connect } from "react-redux"
-import { setDevice, getHeight, setLineHeight, setStart } from "../state/actions"
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.scrollCallBack = this.scrollCallBack.bind(this)
-    this.deviceDispatches = this.deviceDispatches.bind(this)
-  }
-  componentDidMount() {
-    const { dispatch } = this.props
-    this.deviceDispatches(dispatch)
-    /* monitor screen size of resize */
-    window.addEventListener("resize", () => this.deviceDispatches(dispatch))
-    /* start the line  */
-    window.addEventListener("scroll", () => this.scrollCallBack())
-  }
-  componentWillUnmount() {
-    const { dispatch } = this.props
-    window.removeEventListener("scroll", () => this.scrollCallBack())
-    window.removeEventListener("resize", () => this.deviceDispatches(dispatch))
-  }
-  deviceDispatches(dispatch) {
-    if (this.bodyelement != null) {
-      dispatch(setDevice(this.bodyelement.clientWidth))
-      dispatch(getHeight(this.bodyelement.clientHeight))
-    }
-  }
-  scrollCallBack() {
-    const { dispatch, started } = this.props
-    dispatch(setLineHeight(document.scrollingElement.scrollTop))
+const Layout = ({ children }) => {
+  const bodyElement = useRef()
+  const dispatch = useDispatch()
+  const started = useSelector(state => state.reducer.started)
+  const device = useSelector(state => state.reducer.device)
+
+  const callBack = () => {
+    dispatch({
+      type: SET_LINEHEIGHT,
+      height: document.scrollingElement.scrollTop,
+    })
     if (!started) {
-      dispatch(setStart())
+      dispatch({ type: START })
     }
   }
-  render() {
-    const { children } = this.props
-    return (
-      <>
-        <SEO></SEO>
-        <GlobCSS></GlobCSS>
-        <Menu></Menu>
-        <Body ref={bodyelement => (this.bodyelement = bodyelement)}>
-          {children}
-        </Body>
-      </>
-    )
+
+  const deviceDispatches = () => {
+    dispatch({ type: SET_DEVICE, width: bodyElement.current.clientWidth })
+    dispatch({ type: GET_HEIGHT, height: bodyElement.current.clientHeight })
   }
+
+  useEffect(() => {
+    deviceDispatches()
+    window.addEventListener("resize", deviceDispatches)
+    window.addEventListener("scroll", callBack)
+  })
+
+  return (
+    <>
+      <SEO></SEO>
+      <GlobCSS></GlobCSS>
+      <Body device={device} ref={bodyElement}>
+        <Menu></Menu>
+
+        {children}
+      </Body>
+    </>
+  )
 }
 
-const mapStateToProps = state => ({
-  started: state.reducer.started,
-})
-
-export default connect(mapStateToProps)(Layout)
+export default Layout
