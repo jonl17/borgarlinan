@@ -1,4 +1,7 @@
 import React from "react"
+import { connect } from "react-redux"
+
+/** components */
 import {
   Container,
   Name,
@@ -9,7 +12,6 @@ import {
   ImageContainer,
   Image,
 } from "./Styled"
-import { connect } from "react-redux"
 
 const index = ({
   staff: {
