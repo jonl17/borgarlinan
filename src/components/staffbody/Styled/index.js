@@ -5,10 +5,12 @@ import Img from "gatsby-image"
 export const Container = styled.div`
   position: relative;
   margin: 0 auto;
+  height: 100%;
+  max-width: 100%;
 `
 export const Name = styled.p`
   color: black;
-  font-size: 17px;
+  font-size: 13px;
   margin: 0;
   ${props =>
     props.device === `mobile` &&
@@ -16,7 +18,6 @@ export const Name = styled.p`
       margin: auto;
     `}
   padding: 16px 0 0 0;
-  max-width: 200px;
   border-top: 4px solid ${styles.Blue};
 `
 export const Job = styled.p`
@@ -26,21 +27,21 @@ export const Job = styled.p`
 `
 export const ImageContainer = styled.div`
   padding-bottom: 45px;
-  height: 260px;
-  width: 200px;
+  height: 200px;
+  width: 100%;
 `
 export const Image = styled(Img)`
   height: 100%;
 `
 export const Mail = styled.a`
+  height: 200px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 260px;
   text-decoration: none;
   top: 0;
-  width: 200px;
   background: linear-gradient(
     180deg,
     rgba(40, 160, 120, 0.6) 0%,
@@ -51,21 +52,16 @@ export const Mail = styled.a`
   &&:hover {
     opacity: 1;
   }
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      left: 50%;
-      margin-left: -100px !important;
-    `}
 `
 export const MailText = styled.p`
   color: white;
   position: absolute;
   bottom: 16px;
+  font-size: 12px;
 `
 export const SubJob = styled.p`
   color: ${styles.Blue};
   position: absolute;
-  top: 260px;
   width: 100%;
+  top: 200px;
 `

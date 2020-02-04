@@ -30,21 +30,25 @@ const index = ({
       <ImageContainer>
         <Image fluid={fluid}></Image>
       </ImageContainer>
-      <Name device={device} className="bold">
-        {nafn}
-      </Name>
-      <Job>{language === `icelandic` ? starfslysing : starfslysing_enska}</Job>
-      <Mail device={device} target="_blank" href={"mailto:" + netfang}>
-        <MailText className="bold">{netfang}</MailText>
-      </Mail>
+      <div>
+        <Name device={device} className="bold">
+          {nafn}
+        </Name>
+        <Job>
+          {language === `icelandic` ? starfslysing : starfslysing_enska}
+        </Job>
+        <Mail device={device} target="_blank" href={"mailto:" + netfang}>
+          <MailText className="bold">{netfang}</MailText>
+        </Mail>
 
-      {verkefnastjori ? (
-        <SubJob className="bold">
-          {language === `icelandic` ? `Verkefnastjóri` : `Project Manager`}
-        </SubJob>
-      ) : (
-        <></>
-      )}
+        {verkefnastjori ? (
+          <SubJob className="bold">
+            {language === `icelandic` ? `Verkefnastjóri` : `Project Manager`}
+          </SubJob>
+        ) : (
+          <></>
+        )}
+      </div>
     </Container>
   )
 }

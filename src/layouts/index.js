@@ -33,6 +33,10 @@ const Layout = ({ children }) => {
     deviceDispatches()
     window.addEventListener("resize", deviceDispatches)
     window.addEventListener("scroll", callBack)
+    return () => {
+      window.removeEventListener("resize", deviceDispatches)
+      window.removeEventListener("scroll", callBack)
+    }
   })
 
   return (
@@ -41,7 +45,6 @@ const Layout = ({ children }) => {
       <GlobCSS></GlobCSS>
       <Body device={device} ref={bodyElement}>
         <Menu></Menu>
-
         {children}
       </Body>
     </>

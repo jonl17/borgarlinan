@@ -27,16 +27,6 @@ export const Title = styled.h1`
 export const Grid = styled.div`
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(4, 1fr);
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      grid-template-columns: repeat(3, 1fr);
-    `}
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(1, 1fr);
-    `}
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 300px;
 `
