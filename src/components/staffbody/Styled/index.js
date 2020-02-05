@@ -6,11 +6,16 @@ export const Container = styled.div`
   position: relative;
   margin: 0 auto;
   height: 100%;
-  max-width: 100%;
+  width: 100%;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      width: 200px;
+    `}
 `
 export const Name = styled.p`
   color: black;
-  font-size: 13px;
+  font-size: 15px;
   margin: 0;
   ${props =>
     props.device === `mobile` &&
@@ -57,7 +62,7 @@ export const MailText = styled.p`
   color: white;
   position: absolute;
   bottom: 16px;
-  font-size: 12px;
+  font-size: 14px;
 `
 export const SubJob = styled.p`
   color: ${styles.Blue};

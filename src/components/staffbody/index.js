@@ -28,7 +28,7 @@ const index = ({
   language,
 }) => {
   return (
-    <Container>
+    <Container device={device}>
       <ImageContainer>
         <Image fluid={fluid}></Image>
       </ImageContainer>
