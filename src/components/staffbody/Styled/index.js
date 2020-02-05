@@ -27,7 +27,7 @@ export const Name = styled.p`
 `
 export const Job = styled.p`
   color: ${styles.Gray};
-  font-size: 16px;
+  font-size: 15px;
   margin: 0;
 `
 export const ImageContainer = styled.div`
