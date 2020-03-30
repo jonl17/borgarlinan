@@ -4,28 +4,16 @@ dagsetning: '2020-03-30'
 frettamynd: static/data/temp.png
 ---
 Föstudaginn 20. mars sl. fór fram kynningarfundur um stöðu Borgarlínuverkefnisins og annara verkefna samgöngusáttmálans.  \
-Fundinum var streymt og eru upptökur aðgengilegar á Youtuberás Borgarlínu. 
+Fundinum var streymt og eru upptökur aðgengilegar á Youtuberás Borgarlínu. \
+<https://www.youtube.com/channel/UCcXQhlMGNJhQzXID_vvqXTQ/>Dagskrá 
 
-Dagskrá 
-
-**Gerð frumdraga fyrstu Borgarlínuframkvæmda**Hrafnkell Á. Proppé verkefnastjóri verkefnastofu
-
-```
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SDCgr0Ir5rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
-```
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jGMjJn35k9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
-
-
-
-```
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-1eK79jdmOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
+**Gerð frumdraga fyrstu Borgarlínuframkvæmda**\
+Hrafnkell Á. Proppé verkefnastjóri verkefnastofu
 
 \
+\
 **Undirbúningur annarra framkvæmda samgöngusáttmálans**Bergþóra Þorkelsdóttir framkvæmdastjóri Vegagerðarinnar og Bryndís Friðriksdóttir svæðisstjóri Vegagerðarinnar fyrir höfuðborgarsvæðið og verkefnastjóra á verkefnastofu Borgarlínu.\
+\
 \
 **Umgjörð samgöngusáttmálans**\
 Páll Björgvin Guðmundsson framkvæmdastjóri
