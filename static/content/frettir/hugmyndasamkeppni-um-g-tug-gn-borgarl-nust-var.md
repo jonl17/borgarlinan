@@ -22,8 +22,6 @@ Götugögnin munu einkenna Borgarlínuna í öllum sveitarfélögum og stuðla a
 * Að efnisval og útfærsla taki mið af hagkvæmni í framleiðslu, viðhaldi og uppsetningu götugagna.
 * Að götugögnin uppfylli kröfur um algilda hönnun, þá sérstaklega þarfir og upplifun fólks með fatlanir, líkt og sjónskerta, hreyfihamlaða og fleiri. Til hliðsjónar skal hafa leiðbeiningar um algilda hönnun utandyra.[Sjá hér.](https://www.vegagerdin.is/vefur2.nsf/Files/honnun_f_alla_algid_honnun/$file/H%C3%B6nnun_fyrir_alla_Algild_h%C3%B6nnun_utandyra_Handb%C3%B3k%20%28ID%20103788%29.pdf)[](https://www.vegagerdin.is/vefur2.nsf/Files/honnun_f_alla_algid_honnun/$file/H%C3%B6nnun_fyrir_alla_Algild_h%C3%B6nnun_utandyra_Handb%C3%B3k%20%28ID%20103788%29.pdf)
 
-
-
 ***Þau götugögn sem þarf að útfæra innan línunnar eru:***
 
 * Bekkir
