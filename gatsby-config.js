@@ -120,5 +120,6 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_CODE || "none",
       },
     },
+    `gatsby-plugin-react-helmet`
   ],
 }
