@@ -32,13 +32,13 @@ class index extends React.Component {
               title={title}
               subtitle={language === `icelandic` ? ice : en}
             ></Frontpage>
-            <QandASection></QandASection>
             <NewsSection></NewsSection>
+            <QandASection></QandASection>
             <Footer page={pathname}></Footer>
           </>
         ) : (
-          <></>
-        )}
+            <></>
+          )}
       </>
     )
   }
