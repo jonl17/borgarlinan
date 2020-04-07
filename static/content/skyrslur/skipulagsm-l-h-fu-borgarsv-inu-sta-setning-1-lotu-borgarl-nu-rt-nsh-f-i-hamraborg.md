@@ -14,7 +14,8 @@ Gögn
 
 Verk- og marslýsing eru aðgengilegar á eftirfarandi stöðum: - samradsgatt.island.is\
 -borgarlinan.is\
-- kopavogur.is
+
+* kopavogur.is
 
 \- reykjavik.is/skipulag-i-kynningu - adalskipulag.is
 
