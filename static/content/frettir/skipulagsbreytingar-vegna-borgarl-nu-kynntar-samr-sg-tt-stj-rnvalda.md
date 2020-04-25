@@ -8,7 +8,7 @@ Samtök sveitarfélaga á höfuðborgarsvæðinu hafa lagt sameiginlega verk- og
 Þetta er í fyrsta skipti sem samráðsgátt stjórnvalda er notuð til að kynna skipulagsbreytingar á vegum sveitarfélaga en Borgarlínuverkefnið er samstarfsverkefni ríkis og sveitarfélaga og því liggur beint við að nýta gáttir beggja aðila í samráðsferlinu.
 
 Verk- og matslýsingar verkefnisins verða í kynningu frá 7. apríl til og með 9. maí og verður hægt að nálgast þær á eftirfarandi slóðir:\
-[samradsgatt.islands.is](http://samradsgatt.islands.is/);  \
+[samradsgatt.island.is](http://samradsgatt.islands.is/);  \
 [borgarlinan.is](http://www.borgarlinan.is/);[  \
 kopavogur.is](http://kopavogur.is/);[  \
 reykjavik.is/skipulag-i-kynningu](http://reykjavik.is/skipulag-i-kynningu);[adalskipulag.is](http://www.adalskipulag.is/).
