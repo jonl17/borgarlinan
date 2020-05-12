@@ -1,5 +1,5 @@
 ---
-title: Fjögur tilboð í stoðráðgjöf fyrir Borgarlínuna**
+title: Fjögur tilboð í stoðráðgjöf fyrir Borgarlínuna
 dagsetning: '2020-05-12'
 frettamynd: ''
 ---
