@@ -1,5 +1,5 @@
 ---
-title: Auglýsing um drög að matsáætlun
+title: 'Auglýsing um drög að matsáætlun, Borgarlína | Ártúnshöfði - Hamraborg '
 dagsetning: '2020-05-14'
 frettamynd: data/Screenshot 2020-05-14 at 12.51.41.png
 ---
