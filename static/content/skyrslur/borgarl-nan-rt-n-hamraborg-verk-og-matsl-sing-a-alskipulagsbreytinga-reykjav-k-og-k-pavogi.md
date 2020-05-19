@@ -4,6 +4,6 @@ title: >-
   Reykjavík og Kópavogi
 malaflokkur: Kynningarefni
 dagsetning: '2020-04-07'
-vidhengi-pdf: data/Borgarlína_Skipulagslýsing_AR-AK_200402.pdf
+vidhengi-pdf: data/Drög_matsáætlun_Borgarlinan.pdf
 ---
 
