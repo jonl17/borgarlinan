@@ -17,7 +17,7 @@ Verkefnastofa Borgarlínu kynnir drög að matsáætlun vegna fyrstu lotu Borgar
 * Umhverfisþáttum sem kunna að verða fyrir áhrifum
 * Gögnum og rannsóknum sem lögð verða til grundvallar matinu
 
-Drögin eru aðgengileg **[hér](https://www.borgarlinan.is/static/Drog_matsaaetlun_Borgarlinan%20(1)-d0ca7588d64a3ffd802f914cd9b4b34f.pdf)**. Einnig er **[vefsjá](https://borgarlinavefsja.netlify.app/)** um verkefnið og matsáætlunina. Þar er jafnframt hægt að koma á framfæri ábendingum og merkja þær á kort.
+Drögin eru aðgengileg **[hér](https://www.borgarlinan.is/static/Dro%CC%88g_matsa%CC%81%C3%A6tlun_Borgarlinan-2f1f5344e2c12b1659498f3335ea8722.pdf)**. Einnig er **[vefsjá](https://borgarlinavefsja.netlify.app/)** um verkefnið og matsáætlunina. Þar er jafnframt hægt að koma á framfæri ábendingum og merkja þær á kort.
 
 Þau sem vilja koma á framfæri ábendingum um verkefnið og umhverfismatsvinnu skulu senda skriflegar athugasemdir eða ábendingar um drög að matsáætlun á netfangið [borgarlinan@borgarlinan.is](mailto:borgarlinan@borgarlinan.is) eða Borgarlínan, Hamraborg 9, 200 Kópavogur. Jafnframt er hægt að senda ábendingar í vefsjánni.
 
