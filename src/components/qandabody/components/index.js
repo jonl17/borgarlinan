@@ -1,7 +1,5 @@
-import React, { useMemo } from "react"
 import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
-import safeGet from "lodash.get"
+import React from "react"
 
 const QandaImage = () => {
   return <Img></Img>

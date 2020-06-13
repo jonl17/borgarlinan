@@ -1,11 +1,11 @@
 import React from "react"
 import { connect } from "react-redux"
-import { setFirstlineStop } from "../../state/actions"
 import { getPosition } from "../../methods"
-
-/** components */
-import { PageContainer, Container, Title } from "./Styled"
+import { setFirstlineStop } from "../../state/actions"
 import LatestNews from "./components/LatestNews"
+/** components */
+import { Container, PageContainer, Title } from "./Styled"
+
 
 class NewsSection extends React.Component {
   constructor(props) {
@@ -51,15 +51,8 @@ class NewsSection extends React.Component {
         </Container>
       </PageContainer>
     ) : (
-      <PageContainer>
-        <Container device={device}>
-          <Title
-            device={device}
-            ref={titleElement => (this.titleElement = titleElement)}
-          ></Title>
-        </Container>
-      </PageContainer>
-    )
+        null
+      )
   }
 }
 
