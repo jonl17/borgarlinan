@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 /* full section container */
 export const Container = styled.div`
   display: grid;
-  margin: 125px auto auto auto;
+  margin: 125px auto 75px auto;
   align-items: center;
   width: 900px;
   ${props =>
