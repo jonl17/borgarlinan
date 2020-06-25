@@ -1,9 +1,9 @@
 ---
 title: Formatyka sigrar í samkeppni um götugögn fyrir Borgarlínuna
-dagsetning: 2020-06-25
+dagsetning: 2020-06-25T00:00:00.000Z
 frettamynd: data/screenshot-2020-06-25-at-14.45.08.png
 ---
-Hönnunarmiðstöð Íslands og Borgarlínan stóðu á dögunum fyrir samkeppni um götugögn á Borgarlínustöðvar en tilkynnt var um sigurvegara keppninnar í gær við athöfn í Ráðhúsi Reykjavíkur. **Í fyrsta sæti var tillagan Lifa, njóta, ferðast – endurtaka**eftir þau Krystian Dziopa og Iga Szczugiel sem saman mynda hönnunarteymið [Formatyka](https://formatyka.com/en).!
+Hönnunarmiðstöð Íslands og Borgarlínan stóðu á dögunum fyrir samkeppni um götugögn á Borgarlínustöðvar en tilkynnt var um sigurvegara keppninnar í gær við athöfn í Ráðhúsi Reykjavíkur. **Í fyrsta sæti var tillagan Lifa, njóta, ferðast – endurtaka** eftir þau Krystian Dziopa og Iga Szczugiel sem saman mynda hönnunarteymið [Formatyka](https://formatyka.com/en).
 
 Annað sætið hlaut tillagan **Taktur** eftir Önnu Leoniak og Bjarna Kristinsson en þriðja sætið hlotnaðist þeim Karli Kvaran, Lilju Kristínu Ólafsdóttur og Sahar Ghaderi með tillöguna **Línan.** Alls bárust 16 tillögur í samkeppnina en þrjár þeirra hlutu verðlaun, auk þess sem dómnefnd veitti þrem teymum sérstaka viðurkenningu fyrir vel útfærðar tillögur.
 
