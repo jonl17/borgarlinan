@@ -3,7 +3,6 @@ import { styles } from "../../../../../../../constants"
 import Img from "gatsby-image"
 
 const BoxStyle = css`
-  height: 200px;
   width: auto;
   background: ${styles.BackGroundGray};
   display: -webkit-box;
@@ -32,11 +31,7 @@ export const Content = styled.div`
   overflow: hidden;
   padding-top: 15px;
   margin-left: 75px;
-  ${props =>
-    props.device === `mobile` &&
-    css`
-      padding-bottom: 15px;
-    `}
+  padding-bottom: 15px;
   ul {
     list-style: square;
     padding-left: 15px;

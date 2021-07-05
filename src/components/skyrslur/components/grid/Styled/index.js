@@ -12,9 +12,7 @@ const Fade = keyframes`
 `
 
 const ContainerStyle = css`
-  display: grid;
   margin: 0;
-  grid-template-columns: 1fr;
   ${props =>
     props.fade === "fade" &&
     css`
@@ -27,5 +25,16 @@ export const Container = styled.div`
     props.device === `mobile` &&
     css`
       margin-bottom: 75px;
+    `}
+`
+
+export const ExtraContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 75vh;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      grid-template-columns: 1fr;
     `}
 `

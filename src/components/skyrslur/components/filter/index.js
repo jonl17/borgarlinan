@@ -16,21 +16,22 @@ const dispatches = (dispatch, type) => {
 
 const Filter = () => {
   const skyrslurFilterBy = useSelector(state => state.reducer.skyrslurFilterBy)
+  const language = useSelector(state => state.reducer.language)
   const dispatch = useDispatch()
   return (
     <Box>
-      <Name>Raða eftir: </Name>
+      <Name>{language === `icelandic` ? "Raða eftir" : "Order by"} </Name>
       <BTNContainer>
         {/* by date */}
         <Takki
           selected={skyrslurFilterBy === `date` ? true : false}
-          texti={"Dagsetningu"}
+          texti={language === `icelandic` ? "Dagsetningu" : "Date"}
           click={() => dispatches(dispatch, "date")}
         ></Takki>
         {/* by title */}
         <Takki
           selected={skyrslurFilterBy === `title` ? true : false}
-          texti={"Nafni"}
+          texti={language === `icelandic` ? "Nafni" : "Name"}
           click={() => dispatches(dispatch, "title")}
         ></Takki>
       </BTNContainer>

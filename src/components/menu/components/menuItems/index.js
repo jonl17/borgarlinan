@@ -26,7 +26,21 @@ const MenuItems = ({ navbaritems }) => {
           </Text>
         </Item>
         <LanguageButton>
-          <Text device={device}>IS | EN</Text>
+          <Text device={device}>
+            <span
+              style={
+                language === `icelandic` ? { opacity: 1 } : { opacity: 0.6 }
+              }
+            >
+              IS
+            </span>
+            <span> | </span>
+            <span
+              style={language === `english` ? { opacity: 1 } : { opacity: 0.6 }}
+            >
+              EN
+            </span>
+          </Text>
         </LanguageButton>
       </HomeLangContainer>
       <Dropdown

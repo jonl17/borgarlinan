@@ -83,3 +83,13 @@ export const pushHistory = location => ({
   type: PUSH_HISTORY,
   location,
 })
+// category filter í útgefið efni height
+export const TRIGGER_CATEGORY_FILTER = "TRIGGER_CATEGORY_FILTER"
+export const triggerCategoryFilter = () => ({
+  type: TRIGGER_CATEGORY_FILTER,
+})
+export const SELECT_CATEGORY_FILTER = "SELECT_CATEGORY_FILTER"
+export const selectCategoryFilter = filter => ({
+  type: SELECT_CATEGORY_FILTER,
+  filter,
+})
